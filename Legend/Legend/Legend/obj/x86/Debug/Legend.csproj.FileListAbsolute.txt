@@ -1,0 +1,204 @@
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+G:\project\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+G:\project\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\project\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+G:\project\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+G:\project\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+F:\test\project\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+F:\test\project\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+F:\test\project\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+F:\test\project\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+F:\test\project\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+F:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+F:\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+F:\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+F:\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+F:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+F:\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+F:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+F:\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+F:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+F:\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+G:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+G:\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+G:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+G:\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+G:\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+G:\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+G:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+G:\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+G:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+G:\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+D:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+D:\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+D:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+D:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+D:\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+D:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+D:\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+D:\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+D:\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+D:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+D:\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+E:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+E:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+E:\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+E:\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+E:\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+E:\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+E:\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+E:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+E:\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+E:\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+E:\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb
+F:\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb
+G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb

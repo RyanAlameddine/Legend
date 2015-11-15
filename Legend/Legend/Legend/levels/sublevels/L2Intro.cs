@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Legend.levels.functions;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
+using Legend.inventory;
+
+namespace Legend.levels.sublevels
+{
+    public class L2Intro :  Level
+    {
+        Texture2D tshirt;
+        SpriteFont font;
+        Button button;
+        int state = 1;
+
+        public L2Intro(Texture2D playertxture, Texture2D portaltxture, Song song, SpriteFont font, Texture2D buttontx2d, Texture2D buttontx2dhover, Texture2D tshirt)
+            : base(playertxture, portaltxture, song)
+        {
+            button = new Button(buttontx2d, buttontx2dhover, font, "Continue", new Vector2(120, 270));
+            this.font = font;
+            this.tshirt = tshirt;
+        }
+
+        public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        {
+            if (state == 1)
+            {
+                if (button.buttonpressed(ms))
+                {
+                    if (Game1.inventory.equiptedWeapon.name == "foam sword")
+                    {
+                        state++;
+                        Game1.inventory.AddItem(new Armour("tshirt armour", tshirt, 1, 1));
+                    }
+                }
+            }
+            else if (state == 2)
+            {
+                if (button.buttonpressed(ms))
+                {
+                    if (Game1.inventory.equiptedArmour.name == "tshirt armour")
+                    {
+                        Game1.rendColor = new Color(0, 0, 0);
+                        Game1.resetRend = true;
+                        MediaPlayer.Volume = 0f;
+                        Game1.level++;
+                    }
+                }
+            }
+            base.Update(ks, ms, gameTime);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            if (state == 1)
+            {
+                spriteBatch.DrawString(font, "Hold  the  L  key  and  click  on\nthe  foam  sword  to  equip  it", new Vector2(22, 100) * Settings.Scale, Color.White, 0f, Vector2.Zero, 1.5f * Settings.Scale, SpriteEffects.None, 0.6f);
+                button.Draw(spriteBatch);
+            }
+            else if (state == 2)
+            {
+                spriteBatch.DrawString(font, "I  just  gave  you  tshirt  armour\nequip  it  and  then  continue", new Vector2(22, 100) * Settings.Scale, Color.White, 0f, Vector2.Zero, 1.5f * Settings.Scale, SpriteEffects.None, 0.6f);
+                button.Draw(spriteBatch);
+            }
+
+            base.Draw(spriteBatch);
+        }
+
+    }
+}

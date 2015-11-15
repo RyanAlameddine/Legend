@@ -1,0 +1,23 @@
+Content\fonts\normal.xnb
+Content\fonts\descriptions.xnb
+Content\buttons\button.xnb
+Content\buttons\button hover.xnb
+Content\guis\text box.xnb
+Content\background\grass.xnb
+Content\mouse\mouse.xnb
+Content\player\playermove.xnb
+Content\obstacles\grassbarrier.xnb
+Content\weapons\foam sword.xnb
+Content\objects\portal.xnb
+Content\guis\inventory.xnb
+Content\buttons\selectedinventory.xnb
+Content\Armour\tshirt.xnb
+Content\fourpixels.xnb
+Content\logo.xnb
+Content\music\cantina_theme.xnb
+Content\music\cantina_theme.wma
+Content\music\8bit.xnb
+Content\music\8bit.wma
+Content\sound effects\typewriter.xnb
+Content\sound effects\typewriter-space.xnb
+Content\music\arcade.xnb

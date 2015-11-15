@@ -1,0 +1,68 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Legend.levels.functions;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
+using Legend.characters;
+using Legend.levels.objects;
+using Legend.functions;
+
+namespace Legend.levels.sublevels
+{
+    public class L2 : Level
+    {
+        List<Sprite> grassBarriers = new List<Sprite>();
+        Texture2D fourpixels;
+
+        public L2(Texture2D playertxture, Texture2D portaltxture, Song song, Texture2D fourpixels)
+            : base(playertxture, portaltxture, song)
+        {
+            player = new Player(playertxture, new Vector2(150, 245));
+            this.fourpixels = fourpixels;
+            background = new Background(fourpixels);
+            exitportal = new ExitPortal(portaltxture, new Vector2(155, 250));
+            player.State = PlayerState.Interacting;
+            player.scale = 0.4f;
+            player._frame = player._downWalkingFrames[1];
+        }
+
+        public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        {
+            player.Update(ks, grassBarriers, ms, gameTime);
+            foreach (Tile tile in background.materials)
+            {
+                if (player.Hitbox.Intersects(tile.Hitbox))
+                {
+                    tile.color = new Color(Game1.rand.Next(0, 255), Game1.rand.Next(0, 255), Game1.rand.Next(0, 255));
+                }
+                else
+                {
+                    if (tile.color != Color.White)
+                    {
+                        tile.color = Color.Lerp(tile.color, Color.White, 0.07f);
+                        if (tile.color.R > 240 && tile.color.G > 240 && tile.color.B > 240)
+                        {
+                            tile.color = Color.White;
+                        }
+                    }
+                }
+            }
+            exitportal.Update();
+            ExitPortal();
+            base.Update(ks, ms, gameTime);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            exitportal.Draw(spriteBatch);
+            background.Draw(spriteBatch);
+            player.Draw(spriteBatch);
+            base.Draw(spriteBatch);
+        }
+
+    }
+}

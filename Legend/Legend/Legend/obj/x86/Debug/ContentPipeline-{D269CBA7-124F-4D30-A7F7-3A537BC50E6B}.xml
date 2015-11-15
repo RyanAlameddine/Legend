@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>fonts\normal.spritefont</Source>
+      <Name>fonts\normal</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb</Output>
+      <Time>2015-09-06T11:22:18-07:00</Time>
+    </Item>
+    <Item>
+      <Source>fonts\descriptions.spritefont</Source>
+      <Name>fonts\descriptions</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb</Output>
+      <Time>2015-09-06T11:21:34-07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button.png</Source>
+      <Name>buttons\button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb</Output>
+      <Time>2015-01-31T10:33:32-08:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\button hover.png</Source>
+      <Name>buttons\button hover</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb</Output>
+      <Time>2015-01-31T10:33:38-08:00</Time>
+    </Item>
+    <Item>
+      <Source>guis\text box.png</Source>
+      <Name>guis\text box</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb</Output>
+      <Time>2015-02-14T10:31:06-08:00</Time>
+    </Item>
+    <Item>
+      <Source>background\grass.png</Source>
+      <Name>background\grass</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb</Output>
+      <Time>2015-02-07T10:57:14-08:00</Time>
+    </Item>
+    <Item>
+      <Source>mouse\mouse.png</Source>
+      <Name>mouse\mouse</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb</Output>
+      <Time>2015-02-07T11:20:22-08:00</Time>
+    </Item>
+    <Item>
+      <Source>player\playermove.png</Source>
+      <Name>player\playermove</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb</Output>
+      <Time>2015-02-14T11:44:04-08:00</Time>
+    </Item>
+    <Item>
+      <Source>obstacles\grassyrock.png</Source>
+      <Name>obstacles\grassbarrier</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb</Output>
+      <Time>2015-02-28T11:02:20-08:00</Time>
+    </Item>
+    <Item>
+      <Source>weapons\foam sword.png</Source>
+      <Name>weapons\foam sword</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb</Output>
+      <Time>2015-03-14T11:12:08-07:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\swirl portal.png</Source>
+      <Name>objects\portal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb</Output>
+      <Time>2015-04-18T11:34:04-07:00</Time>
+    </Item>
+    <Item>
+      <Source>guis\inventory.png</Source>
+      <Name>guis\inventory</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb</Output>
+      <Time>2015-06-14T12:25:28-07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\selectedinventory.png</Source>
+      <Name>buttons\selectedinventory</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb</Output>
+      <Time>2015-06-28T10:58:38-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Armour\tshirt.png</Source>
+      <Name>Armour\tshirt</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb</Output>
+      <Time>2015-09-20T11:30:32-07:00</Time>
+    </Item>
+    <Item>
+      <Source>fourpixels.png</Source>
+      <Name>fourpixels</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb</Output>
+      <Time>2015-10-25T11:30:38-07:00</Time>
+    </Item>
+    <Item>
+      <Source>logo.png</Source>
+      <Name>logo</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb</Output>
+      <Time>2015-11-01T09:59:06-08:00</Time>
+    </Item>
+    <Item>
+      <Source>music\cantina_theme.wav</Source>
+      <Name>music\cantina_theme</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb</Output>
+      <Extra>G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma</Extra>
+      <Time>2015-08-23T10:26:54-07:00</Time>
+    </Item>
+    <Item>
+      <Source>music\8bit.wav</Source>
+      <Name>music\8bit</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb</Output>
+      <Extra>G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma</Extra>
+      <Time>2015-08-23T10:41:00-07:00</Time>
+    </Item>
+    <Item>
+      <Source>sound effects\typewriter.wav</Source>
+      <Name>sound effects\typewriter</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb</Output>
+      <Time>2015-09-06T11:45:16-07:00</Time>
+    </Item>
+    <Item>
+      <Source>sound effects\typewriter-space.wav</Source>
+      <Name>sound effects\typewriter-space</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb</Output>
+      <Time>2015-09-13T11:16:26-07:00</Time>
+    </Item>
+    <Item>
+      <Source>music\arcade.wav</Source>
+      <Name>music\arcade</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>G:\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
+      <Time>2015-11-08T10:18:10-08:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <ContentProjectGUID>{D269CBA7-124F-4D30-A7F7-3A537BC50E6B}</ContentProjectGUID>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>G:\Legend\Legend\LegendContent\</RootDirectory>
+      <LoggerRootDirectory>G:\Legend\Legend\Legend\</LoggerRootDirectory>
+      <IntermediateDirectory>G:\Legend\Legend\Legend\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>G:\Legend\Legend\Legend\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2011-09-01T17:22:30-07:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-12-22T22:29:23.1189466-08:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>
