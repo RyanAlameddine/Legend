@@ -1,9 +1,0 @@
-diff a/Legend/Legend/Legend/bin/x86/Debug/save.xml b/Legend/Legend/Legend/bin/x86/Debug/save.xml	(rejected hunks)
-@@ -1,4 +1,4 @@
- ﻿<?xml version="1.0" encoding="UTF-8"?>
- <users>
--
--</users>
-\ No newline at end of file
-+  <user name="Ham" level="1"></user>
-+</users>
