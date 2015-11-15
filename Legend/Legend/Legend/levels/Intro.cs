@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
+using System.Xml;
 
 namespace Legend.levels
 {
@@ -20,12 +21,12 @@ namespace Legend.levels
         Button button;
         string text = "";
         string targetText = "One  day,  in  a  land  called  gliir,\noverrun  with  monsters,  there  was  a\nperson  who  must  bring  order\nand  stop  the  chaos  that  has\ncovered  the  land.  You  are  that  person.\nfirst,  enter  your  name.\nThen  press  k  to  recover  your  first  sword.....";
-        //string targetText = "ham";
         public TimeSpan timer = new TimeSpan(0, 0, -1);
         SoundEffect typewriter;
         SoundEffect spacebar;
         bool soundPlayed;
         Random random;
+        bool error = false;
 
         public Intro(SpriteFont font, Texture2D textbox, Texture2D buttontx2d, Texture2D buttontx2dhover, SoundEffect typewriter, SoundEffect spacebar)
         {
@@ -77,8 +78,21 @@ namespace Legend.levels
             {
                 if (word != "")
                 {
-                    Game1.screen = Screens.Level;
-                    Game1.name = word;
+                    foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
+                    {
+                        if (e.Attributes["name"].Value == word.ToLower())
+                        {
+                            error = true;
+                            break;
+                        }
+                        else
+                        {
+                            add user to list
+                            Game1.screen = Screens.Level;
+                            Game1.name = word;
+                        }
+                    }
+                    Game1.xmlDoc.Save("save.xml");
                 }
 
             }
@@ -177,7 +191,10 @@ namespace Legend.levels
             spriteBatch.DrawString(_font, word + "|", new Vector2(x, 155) * Settings.Scale, Color.Green, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
             spriteBatch.Draw(_textbox, new Vector2(-22, 150) * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.8f);
             button.Draw(spriteBatch);
-
+            if (error)
+            {
+                spriteBatch.DrawString(_font, "This name is already taken!", new Vector2(50, 240) * Settings.Scale, Color.Red, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
+            }
         }
     }
 }

@@ -121,10 +121,12 @@
     <Compile Include="weapons\WeaponOnFloor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="functions\save.xml" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png">
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
+    </Content>
+    <Content Include="save.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

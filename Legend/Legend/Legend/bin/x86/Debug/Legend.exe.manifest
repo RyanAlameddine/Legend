@@ -75,7 +75,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IV3Wh8I5Q9SHvwn10iXHyi3QVtw=</dsig:DigestValue>
+        <dsig:DigestValue>q2DQsIgb7pT0PAJv+yLnJTNGjdc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -193,7 +193,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>aU31xDZ+nK724xZe+8IORNmpO9Y=</dsig:DigestValue>
+      <dsig:DigestValue>fROcS2OxoZVJoo3Njq8VcQa9kjY=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\8bit.xnb" size="122">
@@ -220,7 +220,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>yhAItr+ME4K9NPbOLgCkGhYfRgI=</dsig:DigestValue>
+      <dsig:DigestValue>Q7xalwKxho1ZhAbce9e2cXwTNJ0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\cantina_theme.xnb" size="131">
@@ -286,15 +286,6 @@
       <dsig:DigestValue>O9tXzna1Gro5qJQmC2KYb66ggl8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="functions\save.xml" size="129" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Rv7Di/dsXxllsjQ0GlAR9bgRsAc=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Game.ico" size="4286">
     <hash>
       <dsig:Transforms>
@@ -311,6 +302,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="save.xml" size="62" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oJ1N7B+Ttr15Xg5W0fyHJqIMz2s=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

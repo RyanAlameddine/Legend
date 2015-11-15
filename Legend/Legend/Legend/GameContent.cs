@@ -61,26 +61,23 @@ namespace Legend
             GameContent.spacebar = content.Load<SoundEffect>("sound effects/typewriter-space");
         }
 
-        public static void Loadxml()
+        public static void Loadxml(ContentManager Content)
         {
+
             Game1.xmlDoc = new XmlDocument();
-            Game1.xmlDoc.Load("/Legend/Legend/Legend/functions/save.xml");
-            /**
-             * 
-             * 
-                foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
-                {
-                    if (e.Attributes["name"].Value == user)
-                    {
-                        Game1.level = int.Parse(e.Attributes["level"].Value);
-                        break;
-                    }
-                }
-             * 
-             * 
-             * 
-             * 
-            **/
+            Game1.xmlDoc.Load("save.xml");            
+
+            //foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
+            //{
+            //    if (e.Attributes["name"].Value == "Dank Memes")
+            //    {
+            //        Game1.level = int.Parse(e.Attributes["level"].Value);
+            //        e.SetAttribute("name", "Steel Beams");
+            //        break;
+            //    }
+
+            //}
+            //Game1.xmlDoc.Save("save.xml");
         }
     }
 }

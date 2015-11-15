@@ -105,7 +105,7 @@ namespace Legend
             ttle = new TransitionToLevelEffect();
 
             GameContent.LoadContent(Content);
-            GameContent.Loadxml();
+            GameContent.Loadxml(Content);
 
             currentSong = "8bit";
             MediaPlayer.Play(GameContent.eightbit);
