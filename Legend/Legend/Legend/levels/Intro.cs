@@ -87,7 +87,7 @@ namespace Legend.levels
                         }
                         else
                         {
-                            add user to list
+                            //add user to list
                             Game1.screen = Screens.Level;
                             Game1.name = word;
                         }

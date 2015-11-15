@@ -6,3 +6,4 @@ G:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAss
 D:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
 E:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache

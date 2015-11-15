@@ -236,3 +236,37 @@ C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Deb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
