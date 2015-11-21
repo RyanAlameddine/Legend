@@ -4,4 +4,8 @@
     <name>"bob"</name>
     <level>"2"</level>
   </user>
+  <user>
+    <name>"billy"</name>
+    <level>"1"</level>
+  </user>
 </users>
