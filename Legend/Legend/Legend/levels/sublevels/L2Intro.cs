@@ -32,10 +32,10 @@ namespace Legend.levels.sublevels
             {
                 if (button.buttonpressed(ms))
                 {
-                    if (Game1.inventory.equiptedWeapon.name == "foam sword")
+                    if (Game1.inventory.equiptedWeapon.name == "Foam Sword")
                     {
                         state++;
-                        Game1.inventory.AddItem(new Armour("tshirt armour", tshirt, 1, 1));
+                        Game1.inventory.AddItem(Items.GetItem("T-Shirt Armour"));
                     }
                 }
             }
@@ -43,12 +43,13 @@ namespace Legend.levels.sublevels
             {
                 if (button.buttonpressed(ms))
                 {
-                    if (Game1.inventory.equiptedArmour.name == "tshirt armour")
+                    if (Game1.inventory.equiptedArmour.name == "T-Shirt Armour")
                     {
                         Game1.rendColor = new Color(0, 0, 0);
                         Game1.resetRend = true;
                         MediaPlayer.Volume = 0f;
                         Game1.level++;
+                        save();
                     }
                 }
             }

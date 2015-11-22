@@ -20,7 +20,7 @@ namespace Legend.levels.sublevels
         Texture2D _grass;
         Texture2D _grassbarrier;
         Texture2D _foamsword;
-        WeaponOnFloor sword;
+        ItemOnFloor sword;
         List<Sprite> grassBarriers = new List<Sprite>();
         ParticleSystem particleSystem;
 
@@ -30,7 +30,8 @@ namespace Legend.levels.sublevels
             _grassbarrier = grassbarrier;
             _grass = grass;
             _foamsword = foamsword;
-            particleSystem = new ParticleSystem(_foamsword, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true);
+            sword = new ItemOnFloor(Items.GetItem("Foam Sword"), new Vector2(150, 30), 0.5f);
+            particleSystem = new ParticleSystem(sword.item.texture, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true);
             int dy = 50;
             float layerDepth = .2f;
             for (int i = 0; i < 8; i++)
@@ -51,7 +52,6 @@ namespace Legend.levels.sublevels
 
             background = new Background(_grass);
             player = new Player(playermove, new Vector2(150, 300));
-            sword = new WeaponOnFloor(_foamsword, new Vector2(150, 30), 0.5f);
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
         }
@@ -62,17 +62,16 @@ namespace Legend.levels.sublevels
             sword.Update(gameTime);
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);
-            if (player.DidPickUpWeapon(ks, sword) && sword.State != WeaponOnGroundState.GettingPickedUp)
+            if (player.DidPickUpWeapon(ks, sword) && sword.State != ItemOnGroundState.GettingPickedUp)
             {
                 player.State = PlayerState.Interacting;
-                sword.State = WeaponOnGroundState.GettingPickedUp;
+                sword.State = ItemOnGroundState.GettingPickedUp;
             }
-            if (sword.State == WeaponOnGroundState.DoneAnimating)
+            if (sword.State == ItemOnGroundState.DoneAnimating)
             {
-                sword.State = WeaponOnGroundState.OnGround;
+                sword.State = ItemOnGroundState.OnGround;
                 player.State = PlayerState.Moving;
                 portalobj.hidden = false;
-                Game1.inventory.AddItem(new Weapon("foam sword", _foamsword, 1, WeaponPower.no, 10));
                 for (int i = 0; i < 50; i++)
                 {
                     particleSystem.addParticle();

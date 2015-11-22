@@ -7,8 +7,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb</Output>
-      <Time>2015-11-15T13:24:45.8484182-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb</Output>
+      <Time>2015-09-06T11:22:18-07:00</Time>
     </Item>
     <Item>
       <Source>fonts\descriptions.spritefont</Source>
@@ -16,8 +16,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb</Output>
-      <Time>2015-11-15T13:24:45.8394113-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb</Output>
+      <Time>2015-09-06T11:21:34-07:00</Time>
     </Item>
     <Item>
       <Source>buttons\button.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb</Output>
-      <Time>2015-11-15T13:24:45.8133929-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb</Output>
+      <Time>2015-01-31T10:33:32-08:00</Time>
     </Item>
     <Item>
       <Source>buttons\button hover.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb</Output>
-      <Time>2015-11-15T13:24:45.8073886-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb</Output>
+      <Time>2015-01-31T10:33:38-08:00</Time>
     </Item>
     <Item>
       <Source>guis\text box.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb</Output>
-      <Time>2015-11-15T13:24:45.8944513-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb</Output>
+      <Time>2015-02-14T10:31:06-08:00</Time>
     </Item>
     <Item>
       <Source>background\grass.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb</Output>
-      <Time>2015-11-15T13:24:45.7833716-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb</Output>
+      <Time>2015-02-07T10:57:14-08:00</Time>
     </Item>
     <Item>
       <Source>mouse\mouse.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb</Output>
-      <Time>2015-11-15T13:24:45.9434851-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb</Output>
+      <Time>2015-02-07T11:20:22-08:00</Time>
     </Item>
     <Item>
       <Source>player\playermove.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb</Output>
-      <Time>2015-11-15T13:24:48.0693879-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb</Output>
+      <Time>2015-02-14T11:44:04-08:00</Time>
     </Item>
     <Item>
       <Source>obstacles\grassyrock.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb</Output>
-      <Time>2015-11-15T13:24:48.053377-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb</Output>
+      <Time>2015-02-28T11:02:20-08:00</Time>
     </Item>
     <Item>
       <Source>weapons\foam sword.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb</Output>
-      <Time>2015-11-15T13:24:48.1004099-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb</Output>
+      <Time>2015-03-14T11:12:08-07:00</Time>
     </Item>
     <Item>
       <Source>objects\swirl portal.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb</Output>
-      <Time>2015-11-15T13:24:48.0348637-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb</Output>
+      <Time>2015-04-18T11:34:04-07:00</Time>
     </Item>
     <Item>
       <Source>guis\inventory.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb</Output>
-      <Time>2015-11-15T13:24:45.8834425-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb</Output>
+      <Time>2015-06-14T12:25:28-07:00</Time>
     </Item>
     <Item>
       <Source>buttons\selectedinventory.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb</Output>
-      <Time>2015-11-15T13:24:45.8224002-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb</Output>
+      <Time>2015-06-28T10:58:38-07:00</Time>
     </Item>
     <Item>
       <Source>Armour\tshirt.png</Source>
@@ -124,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb</Output>
-      <Time>2015-11-15T13:24:45.7643581-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb</Output>
+      <Time>2015-09-20T11:30:32-07:00</Time>
     </Item>
     <Item>
       <Source>fourpixels.png</Source>
@@ -133,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb</Output>
-      <Time>2015-11-15T13:24:45.8594255-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb</Output>
+      <Time>2015-10-25T11:30:38-07:00</Time>
     </Item>
     <Item>
       <Source>logo.png</Source>
@@ -142,8 +142,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb</Output>
-      <Time>2015-11-15T13:24:45.9074596-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb</Output>
+      <Time>2015-11-01T09:59:06-08:00</Time>
     </Item>
     <Item>
       <Source>music\cantina_theme.wav</Source>
@@ -151,9 +151,9 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb</Output>
-      <Extra>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma</Extra>
-      <Time>2015-11-15T13:24:47.9087164-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb</Output>
+      <Extra>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma</Extra>
+      <Time>2015-08-23T10:26:54-07:00</Time>
     </Item>
     <Item>
       <Source>music\8bit.wav</Source>
@@ -161,9 +161,9 @@
       <Importer>WavImporter</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb</Output>
-      <Extra>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma</Extra>
-      <Time>2015-11-15T13:24:46.722019-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb</Output>
+      <Extra>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma</Extra>
+      <Time>2015-08-23T10:41:00-07:00</Time>
     </Item>
     <Item>
       <Source>sound effects\typewriter.wav</Source>
@@ -171,8 +171,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb</Output>
-      <Time>2015-11-15T13:24:48.0894021-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb</Output>
+      <Time>2015-09-06T11:45:16-07:00</Time>
     </Item>
     <Item>
       <Source>sound effects\typewriter-space.wav</Source>
@@ -180,8 +180,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb</Output>
-      <Time>2015-11-15T13:24:48.0798956-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb</Output>
+      <Time>2015-09-13T11:16:26-07:00</Time>
     </Item>
     <Item>
       <Source>music\arcade.wav</Source>
@@ -189,8 +189,8 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
-      <Time>2015-11-15T13:24:47.3883474-08:00</Time>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
+      <Time>2015-11-08T10:18:10-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -199,39 +199,39 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\LegendContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\LegendContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2011-09-01T16:22:30-07:00</Value>
+        <Value>2011-09-01T17:22:30-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-10-09T20:18:43.2898205-07:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-12-22T22:29:23.1189466-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

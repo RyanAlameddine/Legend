@@ -9,9 +9,7 @@ namespace Legend.inventory
 {
     public class Armour : Item
     {
-        int defence;
-        string description;
-        int cost;
+        public int defence;
         
 
         public Armour(string name, Texture2D texture, int defence, int cost)
@@ -32,6 +30,11 @@ namespace Legend.inventory
         public override string getDescription()
         {
             return description;
+        }
+
+        public override Item Copy()
+        {
+            return new Armour(name, texture, defence, cost);
         }
     }
 }

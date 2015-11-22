@@ -65,7 +65,7 @@ namespace Legend
         {
 
             Game1.xmlDoc = new XmlDocument();
-            Game1.xmlDoc.Load("save.xml");            
+            Game1.xmlDoc.Load(Game1.saveFile);            
 
             //foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
             //{
@@ -77,7 +77,7 @@ namespace Legend
             //    }
 
             //}
-            //Game1.xmlDoc.Save("save.xml");
+            //Game1.xmlDoc.Save(Game1.saveFile);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Legend
     public class Inventory
     {
         bool draw;
-        List<Item> items = new List<Item>();
+        public List<Item> items = new List<Item>();
         Texture2D invtxture;
         Texture2D selectedinventory;
         string description = "";

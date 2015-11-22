@@ -75,7 +75,7 @@ namespace Legend.characters
             _currentAnimation = _upWalkingFrames;
         }
 
-        public bool DidPickUpWeapon(KeyboardState ks, WeaponOnFloor weapon)
+        public bool DidPickUpWeapon(KeyboardState ks, ItemOnFloor weapon)
         {
             if (hitbox.Intersects(weapon.HitBox) && ks.IsKeyDown(Keys.K))
             {

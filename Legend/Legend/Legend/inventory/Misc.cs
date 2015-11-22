@@ -9,9 +9,6 @@ namespace Legend.inventory
 {
     public class Misc : Item
     {
-        string description;
-        int cost;
-
         public Misc(string name, Texture2D texture, int cost, string description)
             :base(texture)
         {
@@ -29,6 +26,11 @@ namespace Legend.inventory
         public override string getDescription()
         {
             return description;
+        }
+
+        public override Item Copy()
+        {
+            return new Misc(name, texture, cost, description);
         }
     }
 }

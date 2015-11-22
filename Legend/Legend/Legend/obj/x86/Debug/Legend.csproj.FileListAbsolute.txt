@@ -235,7 +235,6 @@ C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Deb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.application
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
-C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
@@ -270,3 +269,4 @@ C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.application
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml

@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <users>
-  <user>
-    <name>bob</name>
-    <level>2</level>
+  <user name = "bob" level = "2">
+    <inventory>
+      <item name ="foam sword"/>
+      <item name ="foam sword"/>
+    </inventory>
   </user>
 </users>

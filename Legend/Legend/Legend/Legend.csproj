@@ -97,6 +97,7 @@
     <Compile Include="inventory\Consumable.cs" />
     <Compile Include="inventory\Inventory.cs" />
     <Compile Include="inventory\Item.cs" />
+    <Compile Include="inventory\Items.cs" />
     <Compile Include="inventory\Misc.cs" />
     <Compile Include="inventory\Weapon.cs" />
     <Compile Include="functions\Background.cs" />
@@ -118,7 +119,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Sprite.cs" />
-    <Compile Include="weapons\WeaponOnFloor.cs" />
+    <Compile Include="weapons\ItemOnFloor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -126,6 +127,7 @@
       <XnaPlatformSpecific>true</XnaPlatformSpecific>
     </Content>
     <Content Include="save.xml">
+      <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

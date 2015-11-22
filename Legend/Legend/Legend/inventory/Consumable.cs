@@ -9,9 +9,7 @@ namespace Legend.inventory
 {
     public class Consumable : Item
     {
-        int health;
-        string description;
-        int cost;
+        public int health;
 
         public Consumable(string name, Texture2D texture, int health, int cost)
             :base(texture)
@@ -31,6 +29,11 @@ namespace Legend.inventory
         public override string getDescription()
         {
             return description;
+        }
+
+        public override Item Copy()
+        {
+            return new Consumable(name, texture, health, cost);
         }
     }
 }

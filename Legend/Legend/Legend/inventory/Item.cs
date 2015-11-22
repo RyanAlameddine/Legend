@@ -9,11 +9,13 @@ namespace Legend.inventory
 {
     public class Item
     {
-        protected Texture2D texture;
+        public Texture2D texture;
         public Rectangle Hitbox;
         public ItemType type;
         public string equiptstatus = "not equipped.";
-        public string name;
+        public string description = "";
+        public string name = "";
+        public int cost = 0;
 
         public Item(Texture2D texture)
         {
@@ -46,6 +48,11 @@ namespace Legend.inventory
             {
                 equiptstatus = "not equipped.";
             }
+        }
+
+        public virtual Item Copy()
+        {
+            return new Item(texture) { name = this.name, type = this.type };
         }
     }
 }

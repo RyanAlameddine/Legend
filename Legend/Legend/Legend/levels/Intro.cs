@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Audio;
 using System.Xml;
+using Legend.inventory;
 
 namespace Legend.levels
 {
@@ -27,8 +28,12 @@ namespace Legend.levels
         bool soundPlayed;
         Random random;
         bool error = false;
+        Color errorcolor = Color.Red;
+        bool continuebool;
+        Vector2 pos = new Vector2(25, 20);
+        String errortext = "This name is already taken!";
 
-        public Intro(SpriteFont font, Texture2D textbox, Texture2D buttontx2d, Texture2D buttontx2dhover, SoundEffect typewriter, SoundEffect spacebar)
+        public Intro(SpriteFont font, Texture2D textbox, Texture2D buttontx2d, Texture2D buttontx2dhover, SoundEffect typewriter, SoundEffect spacebar, bool continuebool)
         {
             random = new Random();
             this.typewriter = typewriter;
@@ -36,6 +41,12 @@ namespace Legend.levels
             _font = font;
             _textbox = textbox;
             button = new Button(buttontx2d, buttontx2dhover, _font, "Begin", new Vector2(118, 200));
+            this.continuebool = continuebool;
+            if (continuebool)
+            {
+                targetText = "Welcome  Back!";
+                pos = new Vector2(108, 75);
+            }
         }
 
         public void Update(KeyboardState keyboard, MouseState ms, GameTime gameTime)
@@ -76,35 +87,14 @@ namespace Legend.levels
 
             if (button.buttonpressed(ms))
             {
-                if (word != "")
-                {
-                    foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
-                    {
-                        if (e.Attributes["name"].Value == word.ToLower())
-                        {
-                            error = true;
-                            break;
-                        }
-                        else
-                        {
-                            //add user to list
-                            Game1.screen = Screens.Level;
-                            Game1.name = word;
-                        }
-                    }
-                    Game1.xmlDoc.Save("save.xml");
-                }
+                levelplus();
 
             }
             foreach (Keys key in keyboard.GetPressedKeys())
             {
                 if (key == Keys.Enter)
                 {
-                    if (word != "")
-                    {
-                        Game1.screen = Screens.Level;
-                        Game1.name = word;
-                    }
+                    levelplus();
                 }
                 if (word.Length <= 12 || key == Keys.Back)
                 {
@@ -184,16 +174,84 @@ namespace Legend.levels
 
         }
 
+        void levelplus()
+        {
+            if (continuebool == false)
+            {
+                if (word != "")
+                {
+                    foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
+                    {
+
+                        //XmlElement name = ((XmlElement)e.GetElementsByTagName("name")[0]);
+                        if (e.Attributes["name"].Value.ToLower() == word.ToLower())
+                        {
+                            error = true;
+                            errorcolor = Color.Red;
+                            break;
+                        }
+                    }
+                    if (error == false)
+                    {
+                        XmlElement characterElement = Game1.xmlDoc.CreateElement("user");
+                        characterElement.SetAttribute("name", word);
+                        characterElement.SetAttribute("level", "0");
+
+                        XmlElement inventoryElement = Game1.xmlDoc.CreateElement("inventory");
+
+                        characterElement.AppendChild(inventoryElement);
+
+                        Game1.xmlDoc.DocumentElement.AppendChild(characterElement);
+                        Game1.xmlDoc.Save(Game1.saveFile);
+
+                        Game1.screen = Screens.Level;
+                        Game1.name = word;
+                    }
+                }
+            }
+            else
+            {
+                if (word != "")
+                {
+                    foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
+                    {
+                        error = true;
+                        if (e.Attributes["name"].Value.ToLower() == word.ToLower())
+                        {
+                            foreach (XmlElement elem in ((XmlElement)e.GetElementsByTagName("inventory")[0]).GetElementsByTagName("item"))
+                            {
+                                Game1.inventory.AddItem(Items.GetItem(elem.GetAttribute("name")));
+                            }
+                            Game1.level = int.Parse(e.GetAttribute("level"));
+                            Game1.screen = Screens.Level;
+                            Game1.name = word;
+                        }
+                    }
+                    if (error)
+                    {
+                        errorcolor = Color.Red;
+                        errortext = " This user does not exist!";
+                    }
+                }
+            }
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(_font, text, new Vector2(25, 20) * Settings.Scale, Color.Black, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
+            spriteBatch.DrawString(_font, text, pos * Settings.Scale, Color.Black, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
             spriteBatch.DrawString(_font, "Your  name  is:", new Vector2(110, 130) * Settings.Scale, Color.Black, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
             spriteBatch.DrawString(_font, word + "|", new Vector2(x, 155) * Settings.Scale, Color.Green, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
             spriteBatch.Draw(_textbox, new Vector2(-22, 150) * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.8f);
             button.Draw(spriteBatch);
             if (error)
             {
-                spriteBatch.DrawString(_font, "This name is already taken!", new Vector2(50, 240) * Settings.Scale, Color.Red, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
+                spriteBatch.DrawString(_font, errortext, new Vector2(75, 240) * Settings.Scale, errorcolor, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.6f);
+                errorcolor = Color.Lerp(errorcolor, Color.Transparent, 0.015f);
+                if (errorcolor.R < 10 && errorcolor.G < 10 && errorcolor.B < 10)
+                {
+                    errorcolor = Color.Transparent;
+                    error = false;
+                }
             }
         }
     }

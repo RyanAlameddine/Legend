@@ -9,11 +9,8 @@ namespace Legend.inventory
 {
     public class Weapon : Item
     {
-        int damage;
-        string description;
-        WeaponPower power;
-        int cost;
-
+        public int damage;
+        public WeaponPower power;
 
         public Weapon(string name, Texture2D texture, int damage, WeaponPower power, int cost)
             :base(texture)
@@ -34,6 +31,11 @@ namespace Legend.inventory
         public override string getDescription()
         {
             return description;
+        }
+
+        public override Item Copy()
+        {
+            return new Weapon(name, texture, damage, power, cost);
         }
     }
 }

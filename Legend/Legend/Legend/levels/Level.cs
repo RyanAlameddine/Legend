@@ -9,6 +9,8 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using Legend.levels.functions;
+using System.Xml;
+using Legend.inventory;
 
 namespace Legend.levels
 {
@@ -72,11 +74,57 @@ namespace Legend.levels
                         Game1.transitioneffect = false;
                         Game1.ttle.Reset();
                         Game1.level++;
+                        save();
                     }
                 }
                 if (angle > 360)
                 {
                     angle -= 360;
+                }
+            }
+        }
+
+        protected void save()
+        {
+            foreach (XmlElement userElement in Game1.xmlDoc.GetElementsByTagName("user"))
+            {
+                if (userElement.GetAttribute("name") == Game1.name)
+                {
+                    userElement.SetAttribute("level", Game1.level.ToString());
+                    XmlElement inventoryElement = (XmlElement)userElement.GetElementsByTagName("inventory")[0];
+                    inventoryElement.RemoveAll();
+                    foreach (Item item in Game1.inventory.items)
+                    {
+                        XmlElement itemElement = Game1.xmlDoc.CreateElement("item");
+                        itemElement.SetAttribute("name", item.name);
+                        itemElement.SetAttribute("type", item.type.ToString());
+                        itemElement.SetAttribute("cost", item.cost.ToString());
+                        switch (item.type)
+                        {
+                            case ItemType.Armour:
+                                Armour armour = (Armour)item;
+                                itemElement.SetAttribute("defence", armour.defence.ToString());
+                                itemElement.SetAttribute("equiptstatus", armour.equiptstatus);
+                                break;
+                            case ItemType.Consumable:
+                                Consumable consumable = (Consumable)item;
+                                itemElement.SetAttribute("health", consumable.health.ToString());
+                                break;
+                            case ItemType.Weapon:
+                                Weapon weapon = (Weapon)item;
+                                itemElement.SetAttribute("damage", weapon.damage.ToString());
+                                itemElement.SetAttribute("power", weapon.power.ToString());
+                                itemElement.SetAttribute("equiptstatus", weapon.equiptstatus);
+                                break;
+                            case ItemType.Misc:
+                                break;
+                            default:
+                                break;
+                        }
+                        inventoryElement.AppendChild(itemElement);
+                    }
+                    Game1.xmlDoc.Save(Game1.saveFile);
+                    break;
                 }
             }
         }

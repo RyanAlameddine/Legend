@@ -21,12 +21,14 @@ namespace Legend
     public class Game1 : Microsoft.Xna.Framework.Game
     {
         public static XmlDocument xmlDoc;
+        public static String saveFile = "save.xml";
         public static Random rand = new Random();
         RenderTarget2D rend;
         public static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Home home;
         Intro intro;
+        Intro continueintro;
         KeyboardState ks;
         KeyboardState lastks;
         MouseState ms;
@@ -114,7 +116,8 @@ namespace Legend
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             home = new Home(GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.logo);
-            intro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar);
+            intro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, false);
+            continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
             levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
         }
@@ -137,6 +140,7 @@ namespace Legend
             }
             if (screen == Screens.Home) home.Update(ms);
             if (screen == Screens.Intro) intro.Update(ks, ms, gameTime);
+            if (screen == Screens.Continue) continueintro.Update(ks, ms, gameTime);
             if (screen == Screens.Level)
             {
                 levellist[level - 1].Update(ks, ms, gameTime);
@@ -170,6 +174,7 @@ namespace Legend
             inventory.Draw(spriteBatch, GameContent.descriptionsfont);
             if (screen == Screens.Home) home.Draw(spriteBatch);
             if (screen == Screens.Intro) intro.Draw(spriteBatch);
+            if (screen == Screens.Continue) continueintro.Draw(spriteBatch);
             if (screen == Screens.Level)
             {
                 levellist[level - 1].Draw(spriteBatch);

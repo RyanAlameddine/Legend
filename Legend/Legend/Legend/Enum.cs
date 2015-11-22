@@ -17,6 +17,7 @@ namespace Legend
     {
         Home,
         Intro,
+        Continue,
         Level
     }
 
@@ -28,7 +29,7 @@ namespace Legend
         Interacting
     }
 
-    public enum WeaponOnGroundState
+    public enum ItemOnGroundState
     {
         OnGround,
         GettingPickedUp,
