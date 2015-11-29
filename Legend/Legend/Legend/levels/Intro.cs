@@ -51,6 +51,10 @@ namespace Legend.levels
 
         public void Update(KeyboardState keyboard, MouseState ms, GameTime gameTime)
         {
+            if (keyboard.IsKeyDown(Keys.Escape))
+            {
+                Game1.screen = Screens.Home;
+            }
             timer += gameTime.ElapsedGameTime;
             if (!soundPlayed && targetText.Length > text.Length && timer.Milliseconds > 85)
             {
@@ -220,11 +224,22 @@ namespace Legend.levels
                         {
                             foreach (XmlElement elem in ((XmlElement)e.GetElementsByTagName("inventory")[0]).GetElementsByTagName("item"))
                             {
-                                Game1.inventory.AddItem(Items.GetItem(elem.GetAttribute("name")));
+                                Item tempitem = Items.GetItem(elem.GetAttribute("name"));
+                                if (elem.GetAttribute("equiptstatus") == "equipped.")
+                                {
+                                    tempitem.togglequpited();
+                                    if(elem.GetAttribute("type") == "Weapon"){
+                                        Game1.inventory.weapon = (Weapon) tempitem;
+                                    }else{
+                                        Game1.inventory.armour = (Armour) tempitem;
+                                    }
+                                }
+                                Game1.inventory.AddItem(tempitem);
                             }
                             Game1.level = int.Parse(e.GetAttribute("level"));
                             Game1.screen = Screens.Level;
                             Game1.name = word;
+                            Game1.inventory.setsword();
                         }
                     }
                     if (error)

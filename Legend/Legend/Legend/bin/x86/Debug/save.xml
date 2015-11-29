@@ -6,7 +6,4 @@
       <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
     </inventory>
   </user>
-  <user name="ham  guyty" level="0">
-    <inventory />
-  </user>
 </users>

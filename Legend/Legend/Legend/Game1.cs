@@ -36,7 +36,7 @@ namespace Legend
         public static Vector2 rendpos = Vector2.Zero;
         public static Color rendColor = Color.White;
         public static int level = 1;
-        List<Level> levellist = new List<Level>();
+        public static List<Level> levellist = new List<Level>();
         float rendscale = 1f;
         public static string name = "";
         public static Screens screen = Screens.Home;
@@ -118,7 +118,7 @@ namespace Legend
             home = new Home(GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.logo);
             intro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, false);
             continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
-            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels);
+            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
         }
         protected override void Update(GameTime gameTime)

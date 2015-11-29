@@ -32,7 +32,7 @@ namespace Legend.levels.sublevels
             {
                 if (button.buttonpressed(ms))
                 {
-                    if (Game1.inventory.equiptedWeapon.name == "Foam Sword")
+                    if (Game1.inventory.weapon.name == "Foam Sword")
                     {
                         state++;
                         Game1.inventory.AddItem(Items.GetItem("T-Shirt Armour"));
@@ -43,7 +43,7 @@ namespace Legend.levels.sublevels
             {
                 if (button.buttonpressed(ms))
                 {
-                    if (Game1.inventory.equiptedArmour.name == "T-Shirt Armour")
+                    if (Game1.inventory.armour.name == "T-Shirt Armour")
                     {
                         Game1.rendColor = new Color(0, 0, 0);
                         Game1.resetRend = true;

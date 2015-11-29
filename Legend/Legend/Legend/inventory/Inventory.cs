@@ -6,6 +6,7 @@ using Legend.inventory;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Legend.levels.objects;
 
 namespace Legend
 {
@@ -17,18 +18,9 @@ namespace Legend
         Texture2D selectedinventory;
         string description = "";
         bool testing = false;
-        Armour armour;
-        Weapon weapon;
-
-        public Weapon equiptedWeapon
-        {
-            get { return weapon; }
-        }
-
-        public Armour equiptedArmour
-        {
-            get { return armour; }
-        }
+        public Armour armour;
+        public Weapon weapon;
+        public Sword sword;
 
         public Inventory(Texture2D invtxture, Texture2D selectedinventory)
         {
@@ -36,6 +28,12 @@ namespace Legend
             this.selectedinventory = selectedinventory;
             this.armour = new Armour("", selectedinventory, 0, 0);
             this.weapon = new Weapon("", selectedinventory, 0, WeaponPower.no, 0);
+            setsword();
+        }
+
+        public void setsword()
+        {
+            sword = new Sword(weapon.texture, Game1.levellist[Game1.level-1].player, new Vector2(weapon.texture.Width / 2, weapon.texture.Height));
         }
 
         public void AddItem(Item add){
@@ -44,6 +42,7 @@ namespace Legend
 
         public void Update(KeyboardState ks, MouseState ms)
         {
+            sword.Update();
             foreach(Item i in items){
                 i.Update();
             }
@@ -94,6 +93,7 @@ namespace Legend
                                     weapon = (Weapon) item;
                                     item.togglequpited();
                                     testing = true;
+                                    setsword();
                                 }
                                 else
                                 {
@@ -107,6 +107,7 @@ namespace Legend
                                         }
                                     }
                                     weapon = (Weapon)item;
+                                    setsword();
                                 }
                             }
                         }
@@ -121,6 +122,7 @@ namespace Legend
 
         public void Draw(SpriteBatch spriteBatch, SpriteFont font)
         {
+            sword.Draw(spriteBatch);
             if (draw)
             {
                 Vector2 pos = new Vector2(0, 0);

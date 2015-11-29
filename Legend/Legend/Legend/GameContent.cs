@@ -29,6 +29,7 @@ namespace Legend
 
         public static Song cantina_theme;
         public static Song eightbit;
+        public static Song arcade;
 
         public static SoundEffect typewriter;
         public static SoundEffect spacebar;
@@ -57,6 +58,7 @@ namespace Legend
 
             GameContent.eightbit = content.Load<Song>("music/8bit");
             GameContent.cantina_theme = content.Load<Song>("music/cantina_theme");
+            GameContent.arcade = content.Load<Song>("music/arcade");
             GameContent.typewriter = content.Load<SoundEffect>("sound effects/typewriter");
             GameContent.spacebar = content.Load<SoundEffect>("sound effects/typewriter-space");
         }
@@ -65,19 +67,7 @@ namespace Legend
         {
 
             Game1.xmlDoc = new XmlDocument();
-            Game1.xmlDoc.Load(Game1.saveFile);            
-
-            //foreach (XmlElement e in Game1.xmlDoc.GetElementsByTagName("user"))
-            //{
-            //    if (e.Attributes["name"].Value == "Dank Memes")
-            //    {
-            //        Game1.level = int.Parse(e.Attributes["level"].Value);
-            //        e.SetAttribute("name", "Steel Beams");
-            //        break;
-            //    }
-
-            //}
-            //Game1.xmlDoc.Save(Game1.saveFile);
+            Game1.xmlDoc.Load(Game1.saveFile);
         }
     }
 }

@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="47104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="48128">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fsNKDHCwYakTWirj4a+S6w1lZ1w=</dsig:DigestValue>
+        <dsig:DigestValue>gtpNqD4ZhyMS5nczwWtH/UX5YvQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -205,13 +205,22 @@
       <dsig:DigestValue>ts9xLwSaCRTc2cLnFuy6l8Kr4W8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\music\arcade.xnb" size="26708073">
+  <file name="Content\music\arcade.wma" size="3655763">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>mTffcqlBtG/EJKDJcV1ZG6tX6Jc=</dsig:DigestValue>
+      <dsig:DigestValue>eRY23zmfFNzxsCwNuxO0bpPHcgk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\music\arcade.xnb" size="124">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2A35dx0llLx16uhvT1icfkzSyyc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\cantina_theme.wma" size="2814651">
@@ -304,13 +313,13 @@
       <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="save.xml" size="209" writeableType="applicationData">
+  <file name="save.xml" size="60" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>NIUEOgE7B344HuQfPzC7/biXrCk=</dsig:DigestValue>
+      <dsig:DigestValue>cPLZFwYRFQ4mpG3D3kVJiDTfesQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

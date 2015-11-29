@@ -127,6 +127,7 @@ namespace Legend.levels
                     break;
                 }
             }
+            Game1.inventory.setsword();
         }
 
         public void ExitPortal()

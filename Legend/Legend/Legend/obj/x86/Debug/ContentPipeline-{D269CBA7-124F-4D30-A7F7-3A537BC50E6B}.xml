@@ -187,9 +187,10 @@
       <Source>music\arcade.wav</Source>
       <Name>music\arcade</Name>
       <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
+      <Processor>SongProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
+      <Extra>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma</Extra>
       <Time>2015-11-08T10:18:10-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>

@@ -99,7 +99,7 @@
     <Compile Include="inventory\Item.cs" />
     <Compile Include="inventory\Items.cs" />
     <Compile Include="inventory\Misc.cs" />
-    <Compile Include="inventory\Weapon.cs" />
+    <Compile Include="levels\Weapon.cs" />
     <Compile Include="functions\Background.cs" />
     <Compile Include="levels\objects\ExitPortal.cs" />
     <Compile Include="functions\TransitionToLevelEffect.cs" />

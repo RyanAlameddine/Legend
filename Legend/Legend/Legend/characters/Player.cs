@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using Legend.weapons;
+using Legend.levels.objects;
 
 namespace Legend.characters
 {
@@ -67,6 +68,7 @@ namespace Legend.characters
         Keys k1;
         Keys k2;
         public PlayerState State = PlayerState.Idle;
+        bool attackedlast = false;
         public Player(Texture2D playermovetx, Vector2 position)
         {
             _playermovetx = playermovetx;
@@ -107,7 +109,7 @@ namespace Legend.characters
 
             
 
-            if (State == PlayerState.Idle || State == PlayerState.Moving || State == PlayerState.Attacking)
+            if (State == PlayerState.Idle || State == PlayerState.Moving)
             {
                 bool inter = false;
                 for (int i = 0; i < grassbarriers.Count(); i++)
@@ -308,7 +310,12 @@ namespace Legend.characters
 
                 speedy = 0;
                 speedx = 0;
-
+                if (ks.IsKeyDown(Keys.J))
+                {
+                    Game1.inventory.sword.swing();
+                    attackedlast = true;
+                }
+                else attackedlast = false;
             }
             hitbox.X = (int)_position.X;
             hitbox.Y = (int)_position.Y;
