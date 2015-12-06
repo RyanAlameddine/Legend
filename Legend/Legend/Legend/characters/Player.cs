@@ -310,12 +310,19 @@ namespace Legend.characters
 
                 speedy = 0;
                 speedx = 0;
+
                 if (ks.IsKeyDown(Keys.J))
                 {
-                    Game1.inventory.sword.swing();
-                    attackedlast = true;
+                    if (!attackedlast)
+                    {
+                        Game1.inventory.sword.swing();
+                        attackedlast = true;
+                    }
                 }
-                else attackedlast = false;
+                else
+                {
+                    attackedlast = false;
+                }
             }
             hitbox.X = (int)_position.X;
             hitbox.Y = (int)_position.Y;

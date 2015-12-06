@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Legend.characters;
+using Legend.inventory;
 
 namespace Legend.levels.objects
 {
@@ -18,6 +19,7 @@ namespace Legend.levels.objects
         Vector2 hilt;
         bool swinging = false;
         Player p;
+        float layerDepth = .4f;
         public Sword(Texture2D txture, Player p, Vector2 hilt)
         {
             this.hilt = hilt;
@@ -33,43 +35,62 @@ namespace Legend.levels.objects
             {
                 if (rotation > endrotation)
                 {
-                    rotation -= 0.4f;
+                    rotation -= 0.25f;
                 }
                 else
                 {
                     p.State = PlayerState.Idle;
                     swinging = false;
                 }
+
             }
         }
 
-        public void swing(){
-            position = p._position;
-            swinging = true;
-            p.State = PlayerState.Attacking;
-            if (p.dir == Direction.Up)
+        public void swing()
+        {
+            if (txture != GameContent.selectedinventory)
             {
-                rotation = 0;
+                swinging = true;
+                p.State = PlayerState.Attacking;
+                if (p.dir == Direction.Up)
+                {
+                    rotation = 0;
+                    position.X = p._position.X + 9;
+                    position.Y = p._position.Y + 3;
+                    layerDepth = .4f;
+                }
+                else if (p.dir == Direction.Down)
+                {
+                    rotation = (float)Math.PI;
+                    position.X = p._position.X + 5;
+                    position.Y = p._position.Y + 10;
+                    layerDepth = .6f;
+                }
+                else if (p.dir == Direction.Left)
+                {
+                    rotation = 3f * (float)Math.PI / 2f;
+                    position.X = p._position.X;
+                    position.Y = p._position.Y + 11;
+                    layerDepth = .4f;
+                }
+                else if (p.dir == Direction.Right)
+                {
+                    rotation = (float)Math.PI / 2f;
+                    position.X = p._position.X + 9;
+                    position.Y = p._position.Y + 10;
+                    layerDepth = .4f;
+                }
+                endrotation = (float)(rotation - Math.PI / 6f);
+                rotation += (float)Math.PI / 2f;
             }
-            else if (p.dir == Direction.Down)
-            {
-                rotation = (float)Math.PI;
-            }
-            else if (p.dir == Direction.Left)
-            {
-                rotation = 3f * (float)Math.PI / 2f;
-            }
-            else if (p.dir == Direction.Right)
-            {
-                rotation = (float)Math.PI / 2f;
-            }
-            endrotation = (float)(rotation - Math.PI / 4f);
-            rotation += (float)Math.PI / 4f;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(txture, position * Settings.Scale, null, Color.White, rotation, hilt, .6f * Settings.Scale, SpriteEffects.None, 0.6f);
+            if (swinging)
+            {
+                spriteBatch.Draw(txture, position * Settings.Scale, null, Color.White, rotation, hilt, .6f * Settings.Scale, SpriteEffects.None, layerDepth);
+            }
         }
     }
 }

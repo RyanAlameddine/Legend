@@ -181,7 +181,7 @@ namespace Legend.levels
                 }
                 starting = false;
             }
-            Game1.inventory.Update(ks, ms);
+            Game1.inventory.Update(ks, ms, gameTime);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)

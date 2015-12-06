@@ -199,7 +199,7 @@ namespace Legend.levels
                     {
                         XmlElement characterElement = Game1.xmlDoc.CreateElement("user");
                         characterElement.SetAttribute("name", word);
-                        characterElement.SetAttribute("level", "0");
+                        characterElement.SetAttribute("level", "1");
 
                         XmlElement inventoryElement = Game1.xmlDoc.CreateElement("inventory");
 

@@ -15,7 +15,7 @@ namespace Legend
         bool draw;
         public List<Item> items = new List<Item>();
         Texture2D invtxture;
-        Texture2D selectedinventory;
+        public Texture2D selectedinventory;
         string description = "";
         bool testing = false;
         public Armour armour;
@@ -33,14 +33,19 @@ namespace Legend
 
         public void setsword()
         {
-            sword = new Sword(weapon.texture, Game1.levellist[Game1.level-1].player, new Vector2(weapon.texture.Width / 2, weapon.texture.Height));
+            int lvl = Game1.level;
+            if (Game1.screen != Screens.Level || lvl == 0)
+            {
+                lvl++;
+            }
+            sword = new Sword(weapon.texture, Game1.levellist[lvl - 1].player, new Vector2(15, 25));
         }
 
         public void AddItem(Item add){
             items.Add(add);
         }
 
-        public void Update(KeyboardState ks, MouseState ms)
+        public void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
             sword.Update();
             foreach(Item i in items){

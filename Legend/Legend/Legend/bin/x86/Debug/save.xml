@@ -6,4 +6,16 @@
       <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
     </inventory>
   </user>
+  <user name="swah" level="3">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+    </inventory>
+  </user>
+  <user name="random  guy" level="3">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+    </inventory>
+  </user>
 </users>
