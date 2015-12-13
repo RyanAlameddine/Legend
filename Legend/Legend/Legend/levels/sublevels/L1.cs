@@ -24,7 +24,7 @@ namespace Legend.levels.sublevels
         List<Sprite> grassBarriers = new List<Sprite>();
         ParticleSystem particleSystem;
 
-        public L1(Texture2D playermove, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song)
+        public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song)
             :base(playermove, portal, song)
         {
             _grassbarrier = grassbarrier;
@@ -51,7 +51,7 @@ namespace Legend.levels.sublevels
             }
 
             background = new Background(_grass);
-            player = new Player(playermove, new Vector2(150, 300));
+            player = new Player(playermove, playerattack, new Vector2(150, 300));
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
         }

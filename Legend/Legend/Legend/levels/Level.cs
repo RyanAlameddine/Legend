@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 using Legend.levels.functions;
 using System.Xml;
 using Legend.inventory;
+using Legend.enemy;
 
 namespace Legend.levels
 {
@@ -30,6 +31,7 @@ namespace Legend.levels
         TimeSpan timer;
         TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
+        public List<Glob> enemies = new List<Glob>();
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
         {
@@ -138,6 +140,7 @@ namespace Legend.levels
                 playerToPortalCenter = new Vector2(player._position.X + player.Hitbox.Width / 2 - exitportal.Position.X + exitportal.Hitbox.Width / 2, player._position.Y + player.Hitbox.Height / 2 - exitportal.Position.Y + exitportal.Hitbox.Height / 2);
                 spinRadius = playerToPortalCenter.Length();
                 angle = MathHelper.ToDegrees((float)Math.Atan2(playerToPortalCenter.Y, playerToPortalCenter.X));
+                player.scale = 0f;
             }
             if (spinning)
             {
@@ -149,13 +152,13 @@ namespace Legend.levels
 
                 if (spinRadius < 40)
                 {
-                    player.scale += 0.002f;
+                    player.scale += 0.0005f;
                     spinRadius = spinRadius + .1f;
                 }
                 else
                 {
                     smaller = true;
-                    player.scale = 1;
+                    player.scale = 1/5.5f;
                     player.State = PlayerState.Idle;
                     exitportal.state = PortalState.Smaller;
                     spinning = false;

@@ -12,7 +12,9 @@ namespace Legend.characters
 {
     public class Player
     {
-        Texture2D _playermovetx;
+        public Texture2D texture;
+        public Texture2D playermove;
+        Texture2D playerattack;
         public Vector2 _position;
         public Direction dir = Direction.Up;
         public Rectangle _frame = new Rectangle(0, 0, 12, 16);
@@ -28,27 +30,33 @@ namespace Legend.characters
         float speedx = 0;
         int currentFrame = 0;
 
-        TimeSpan _elapsedTime;
+        public TimeSpan _elapsedTime;
         TimeSpan _timePerFrame = new TimeSpan(0, 0, 0, 0, 150);
 
         Rectangle[] _currentAnimation;
 
         public Rectangle[] _leftWalkingFrames = {
-                                             new Rectangle(28, 0, 12, 16),
-                                             new Rectangle(0, 18, 11, 16)
+                                             new Rectangle(132, 0, 66, 88),
+                                             new Rectangle(0, 88, 61, 88)
                                          };
         public Rectangle[] _rightWalkingFrames = {
-                                             new Rectangle(14, 19, 12, 15),
-                                             new Rectangle(28, 18, 11, 16)
+                                             new Rectangle(61, 88, 66, 88),
+                                             new Rectangle(127, 88, 60, 87)
                                          };
         public Rectangle[] _upWalkingFrames = {
-                                             new Rectangle(0, 0, 12, 16),
-                                             new Rectangle(14, 0, 12, 16)
+                                             new Rectangle(0, 0, 67, 88),
+                                             new Rectangle(67, 0, 65, 88)
                                          };
         public Rectangle[] _downWalkingFrames = {
-                                             new Rectangle(0, 36, 13, 15),
-                                             new Rectangle(15, 36, 13, 15)
+                                             new Rectangle(0, 177, 72, 82),
+                                             new Rectangle(72, 177, 71, 82)
                                          };
+        public Rectangle[] attackFrames = {
+                                              new Rectangle(0, 0, 84, 90),
+                                              new Rectangle(84, 0, 78, 90),
+                                              new Rectangle(0, 90, 78, 84),
+                                              new Rectangle(79, 90, 78, 84)
+                                          };
 
 
         public Rectangle[] CurrentAnimation{
@@ -61,20 +69,21 @@ namespace Legend.characters
                 _currentAnimation = value;
             }
         }
-
-        public float scale = 1;
         public float speed = 3;
+        public float scale = 1/5.5f;
 
         Keys k1;
         Keys k2;
         public PlayerState State = PlayerState.Idle;
         bool attackedlast = false;
-        public Player(Texture2D playermovetx, Vector2 position)
+        public Player(Texture2D playermove, Texture2D playerattack, Vector2 position)
         {
-            _playermovetx = playermovetx;
+            this.playermove = playermove;
             _position = position;
-
+            this.playerattack = playerattack;
+            texture = playermove;
             _currentAnimation = _upWalkingFrames;
+            _frame = _upWalkingFrames[0];
         }
 
         public bool DidPickUpWeapon(KeyboardState ks, ItemOnFloor weapon)
@@ -87,7 +96,8 @@ namespace Legend.characters
         }
 
         public void Update(KeyboardState ks, List<Sprite> grassbarriers, MouseState ms, GameTime gameTime)
-        {
+        {            
+
             if (ks.IsKeyDown(Keys.LeftShift))
             {
                 _position.X = ms.X/Settings.Scale;
@@ -106,8 +116,10 @@ namespace Legend.characters
                     _frame = _currentAnimation[currentFrame];
                 }
             }
-
-            
+            else if (State == PlayerState.Attacking)
+            {
+                texture = playerattack;
+            }
 
             if (State == PlayerState.Idle || State == PlayerState.Moving)
             {
@@ -331,7 +343,7 @@ namespace Legend.characters
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            spriteBatch.Draw(_playermovetx, _position * Settings.Scale, _frame, Color.White, 0f, Vector2.Zero, scale * Settings.Scale, SpriteEffects.None, 0.5f);
+            spriteBatch.Draw(texture, _position * Settings.Scale, _frame, Color.White, 0f, Vector2.Zero, scale * Settings.Scale, SpriteEffects.None, 0.5f);
         }
     }
 }

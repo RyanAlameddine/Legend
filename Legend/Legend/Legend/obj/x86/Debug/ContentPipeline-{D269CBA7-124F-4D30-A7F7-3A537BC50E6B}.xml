@@ -71,7 +71,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb</Output>
-      <Time>2015-02-14T11:44:04-08:00</Time>
+      <Time>2015-12-13T10:21:08.1549932-08:00</Time>
     </Item>
     <Item>
       <Source>obstacles\grassyrock.png</Source>
@@ -192,6 +192,15 @@
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
       <Extra>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma</Extra>
       <Time>2015-11-08T10:18:10-08:00</Time>
+    </Item>
+    <Item>
+      <Source>player\playerattack.png</Source>
+      <Name>player\playerattack</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playerattack.xnb</Output>
+      <Time>2015-12-13T09:41:58.6077554-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework;
 using Legend.characters;
 using Legend.levels.objects;
 using Legend.functions;
+using Legend.enemy;
 
 namespace Legend.levels.sublevels
 {
@@ -18,16 +19,16 @@ namespace Legend.levels.sublevels
         List<Sprite> grassBarriers = new List<Sprite>();
         Texture2D fourpixels;
 
-        public L2(Texture2D playertxture, Texture2D portaltxture, Song song, Texture2D fourpixels)
+        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels)
             : base(playertxture, portaltxture, song)
         {
-            player = new Player(playertxture, new Vector2(150, 245));
+            player = new Player(playertxture, playerattack, new Vector2(150, 245));
             this.fourpixels = fourpixels;
             background = new Background(fourpixels);
             exitportal = new ExitPortal(portaltxture, new Vector2(155, 250));
             player.State = PlayerState.Interacting;
-            player.scale = 0.4f;
             player._frame = player._downWalkingFrames[1];
+            enemies.Add(new Glob(GameContent.selectedinventory, new Vector2(20, 20)));
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
@@ -61,6 +62,7 @@ namespace Legend.levels.sublevels
             exitportal.Draw(spriteBatch);
             background.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            enemies[0].Draw(spriteBatch);
             base.Draw(spriteBatch);
         }
 

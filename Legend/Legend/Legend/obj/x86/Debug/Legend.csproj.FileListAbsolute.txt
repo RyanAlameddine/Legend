@@ -271,3 +271,4 @@ C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playerattack.xnb

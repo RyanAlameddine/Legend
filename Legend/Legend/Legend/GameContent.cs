@@ -18,6 +18,7 @@ namespace Legend
         public static Texture2D mouse;
         public static Texture2D grass;
         public static Texture2D playermove;
+        public static Texture2D playerattack;
         public static Texture2D grassbarrier;
         public static Texture2D foamsword;
         public static Texture2D portal;
@@ -49,6 +50,7 @@ namespace Legend
             GameContent.buttonhover = content.Load<Texture2D>("buttons/button hover");
             GameContent.grass = content.Load<Texture2D>("background/grass");
             GameContent.playermove = content.Load<Texture2D>("player/playermove");
+            GameContent.playerattack = content.Load<Texture2D>("player/playerattack");
             GameContent.grassbarrier = content.Load<Texture2D>("obstacles/grassbarrier");
             GameContent.portal = content.Load<Texture2D>("objects/portal");
             GameContent.invtxture = content.Load<Texture2D>("guis/inventory");

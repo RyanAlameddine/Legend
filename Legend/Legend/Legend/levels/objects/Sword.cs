@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Legend.characters;
 using Legend.inventory;
+using Legend.enemy;
 
 namespace Legend.levels.objects
 {
@@ -20,6 +21,7 @@ namespace Legend.levels.objects
         bool swinging = false;
         Player p;
         float layerDepth = .4f;
+        Rectangle f;
         public Sword(Texture2D txture, Player p, Vector2 hilt)
         {
             this.hilt = hilt;
@@ -31,16 +33,35 @@ namespace Legend.levels.objects
 
         public void Update()
         {
+
+            Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
+
+            Vector2 translatedPosition = Vector2.Transform((Game1.levellist[Game1.level - 1].enemies[0].pos - position) * Settings.Scale, invRotationMatrix);
+
+            Rectangle swordOriginalHitBox = new Rectangle((int)(-hilt.X), (int)(-hilt.Y), (int)(txture.Width * 0.6f * Settings.Scale), (int)(txture.Height * 0.6f * Settings.Scale));
+
+            Rectangle globTranslatedHitBox = new Rectangle((int)(translatedPosition.X - Game1.levellist[Game1.level - 1].enemies[0].ori.X), (int)(translatedPosition.Y - Game1.levellist[Game1.level - 1].enemies[0].ori.Y),
+                                                           (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Width * Settings.Scale), (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Height * Settings.Scale));
+
+            if (swordOriginalHitBox.Intersects(globTranslatedHitBox))
+            {
+                position.X = 0;
+                position.Y = 0;
+            }
+
+
             if (swinging)
             {
                 if (rotation > endrotation)
                 {
-                    rotation -= 0.25f;
+                    rotation -= 0.10f; // .25
                 }
                 else
                 {
                     p.State = PlayerState.Idle;
                     swinging = false;
+                    p.texture = p.playermove;
+                    p._frame = f;
                 }
 
             }
@@ -50,35 +71,38 @@ namespace Legend.levels.objects
         {
             if (txture != GameContent.selectedinventory)
             {
+                Hitbox.X = (int)position.X;
+                Hitbox.Y = (int)position.Y;
+                f = p._frame;
                 swinging = true;
                 p.State = PlayerState.Attacking;
                 if (p.dir == Direction.Up)
                 {
                     rotation = 0;
-                    position.X = p._position.X + 9;
+                    position.X = p._position.X + 10;
                     position.Y = p._position.Y + 3;
-                    layerDepth = .4f;
+                    p._frame = p.attackFrames[0];
                 }
                 else if (p.dir == Direction.Down)
                 {
                     rotation = (float)Math.PI;
-                    position.X = p._position.X + 5;
-                    position.Y = p._position.Y + 10;
-                    layerDepth = .6f;
+                    position.X = p._position.X + 11;
+                    position.Y = p._position.Y + 15;
+                    p._frame = p.attackFrames[1];
                 }
                 else if (p.dir == Direction.Left)
                 {
                     rotation = 3f * (float)Math.PI / 2f;
-                    position.X = p._position.X;
+                    position.X = p._position.X + 1;
                     position.Y = p._position.Y + 11;
-                    layerDepth = .4f;
+                    p._frame = p.attackFrames[2];
                 }
                 else if (p.dir == Direction.Right)
                 {
                     rotation = (float)Math.PI / 2f;
-                    position.X = p._position.X + 9;
+                    position.X = p._position.X + 11;
                     position.Y = p._position.Y + 10;
-                    layerDepth = .4f;
+                    p._frame = p.attackFrames[3];
                 }
                 endrotation = (float)(rotation - Math.PI / 6f);
                 rotation += (float)Math.PI / 2f;

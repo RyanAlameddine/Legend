@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System.Xml;
 
 namespace Legend
 {
@@ -33,7 +34,7 @@ namespace Legend
             {
                 Game1.screen = Screens.Intro;
             }
-            if (continuebutton.buttonpressed(ms))
+            if (continuebutton.buttonpressed(ms) && Game1.xmlDoc.GetElementsByTagName("user")[0] != null)
             {
                 Game1.screen = Screens.Continue;
             }
@@ -42,7 +43,10 @@ namespace Legend
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_logo, new Vector2(60, 80) * Settings.Scale, null, Color.White, 0f, Vector2.Zero, .4f * Settings.Scale, SpriteEffects.None, 0.5f);
-            continuebutton.Draw(spriteBatch);
+            if (Game1.xmlDoc.GetElementsByTagName("user")[0] != null)
+            {
+                continuebutton.Draw(spriteBatch);
+            }
             thebutton.Draw(spriteBatch);
         }
 

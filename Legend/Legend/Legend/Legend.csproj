@@ -90,6 +90,7 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="characters\Player.cs" />
+    <Compile Include="enemy\Glob.cs" />
     <Compile Include="functions\Tile.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="Enum.cs" />
@@ -167,6 +168,7 @@
   <ItemGroup>
     <None Include="Legend_TemporaryKey.pfx" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\Microsoft.Xna.GameStudio.targets" />
   <!--
