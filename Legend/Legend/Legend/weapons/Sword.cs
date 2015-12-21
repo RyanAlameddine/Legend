@@ -8,7 +8,7 @@ using Legend.characters;
 using Legend.inventory;
 using Legend.enemy;
 
-namespace Legend.levels.objects
+namespace Legend.weapons
 {
     public class Sword
     {
@@ -33,28 +33,28 @@ namespace Legend.levels.objects
 
         public void Update()
         {
-
-            Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
-
-            Vector2 translatedPosition = Vector2.Transform((Game1.levellist[Game1.level - 1].enemies[0].pos - position) * Settings.Scale, invRotationMatrix);
-
-            Rectangle swordOriginalHitBox = new Rectangle((int)(-hilt.X), (int)(-hilt.Y), (int)(txture.Width * 0.6f * Settings.Scale), (int)(txture.Height * 0.6f * Settings.Scale));
-
-            Rectangle globTranslatedHitBox = new Rectangle((int)(translatedPosition.X - Game1.levellist[Game1.level - 1].enemies[0].ori.X), (int)(translatedPosition.Y - Game1.levellist[Game1.level - 1].enemies[0].ori.Y),
-                                                           (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Width * Settings.Scale), (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Height * Settings.Scale));
-
-            if (swordOriginalHitBox.Intersects(globTranslatedHitBox))
+            if (Game1.levellist[Game1.level - 1].enemies.Count > 0)
             {
-                position.X = 0;
-                position.Y = 0;
-            }
+                Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
 
+                Vector2 translatedPosition = Vector2.Transform((Game1.levellist[Game1.level - 1].enemies[0].pos - position) * Settings.Scale, invRotationMatrix);
+
+                Rectangle swordOriginalHitBox = new Rectangle((int)(-hilt.X), (int)(-hilt.Y), (int)(txture.Width * 0.6f * Settings.Scale), (int)(txture.Height * 0.6f * Settings.Scale));
+
+                Rectangle globTranslatedHitBox = new Rectangle((int)(translatedPosition.X - Game1.levellist[Game1.level - 1].enemies[0].ori.X), (int)(translatedPosition.Y - Game1.levellist[Game1.level - 1].enemies[0].ori.Y),
+                                                               (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Width * Settings.Scale), (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Height * Settings.Scale));
+
+                if (swordOriginalHitBox.Intersects(globTranslatedHitBox))
+                {
+                    Game1.levellist[Game1.level - 1].enemyHit(0);
+                }
+            }
 
             if (swinging)
             {
                 if (rotation > endrotation)
                 {
-                    rotation -= 0.10f; // .25
+                    rotation -= 0.15f; // .1
                 }
                 else
                 {
@@ -62,6 +62,7 @@ namespace Legend.levels.objects
                     swinging = false;
                     p.texture = p.playermove;
                     p._frame = f;
+                    position.X = 100000;
                 }
 
             }

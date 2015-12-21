@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Legend.levels.objects;
+using Legend.weapons;
 
 namespace Legend
 {
@@ -53,11 +54,11 @@ namespace Legend
             }
             if (ks.IsKeyDown(Keys.L))
             {
-                this.draw = true;
+                draw = true;
             }
             else
             {
-                this.draw = false;
+                draw = false;
             }
             this.description = "";
             foreach (Item item in items)

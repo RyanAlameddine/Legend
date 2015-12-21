@@ -7,13 +7,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Legend.enemy
 {
-    public class Glob
+    public class Enemy
     {
         public Vector2 pos;
         public Vector2 ori;
         Texture2D txture;
         public Rectangle Hitbox;
-        public Glob(Texture2D txture, Vector2 pos)
+        public Enemy(Texture2D txture, Vector2 pos)
         {
             this.pos = pos;
             this.txture = txture;

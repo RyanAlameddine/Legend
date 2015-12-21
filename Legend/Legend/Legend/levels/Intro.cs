@@ -96,52 +96,78 @@ namespace Legend.levels
             }
             foreach (Keys key in keyboard.GetPressedKeys())
             {
-                if (key == Keys.Enter)
-                {
-                    levelplus();
-                }
-                if (word.Length <= 12 || key == Keys.Back)
-                {
-
-                    if (key != lk)
+                if(key != Keys.None){
+                    if (key == Keys.Enter)
                     {
-                        if (key == Keys.Space)
+                        levelplus();
+                    }
+                    int l = word.Length;
+                    int x = 0;
+                    foreach (char c in word)
+                    {
+                        if (c == ' ')
                         {
-                            word += "  ";
+                            x++;
                         }
-                        else if (key == Keys.Back)
+                        if (x == 5)
                         {
-                            if (word.Count() > 0)
+                            l -= 4;
+                        }
+                    }
+                    if (l <= 12 || key == Keys.Back)
+                    {
+                        if (key != lk)
+                        {
+                            if (key == Keys.Space)
                             {
-                                word = word.Substring(0, word.Count() - 1);
+                                word += "  ";
                             }
-                        }
-                        else if (key == Keys.OemPeriod)
-                        {
-                            word += ".";
-                        }
-                        else if (key == Keys.OemComma)
-                        {
-                            word += ",";
-                        }
-                        else if ((int)key >= 0 && (int)key <= 47)
-                        {
-                            //ignoring characters
-                        }
-                        else if ((int)key >= 91 && (int)key <= 254)
-                        {
-                            //ignoring characters
-                        }
-                        else if ((int)key >= (int)Keys.D0 && (int)key <= (int)Keys.D9)
-                        {
-                            word += (int)key - 48;
-                        }
-                        else
-                        {
-
-                            if (keyboard.IsKeyDown(Keys.LeftShift) || keyboard.IsKeyDown(Keys.RightShift))
+                            else if (key == Keys.Back)
                             {
-                                if (!System.Windows.Forms.Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
+                                if (word.Count() > 0)
+                                {
+                                    if (word[word.Count() - 1] == ' ')
+                                    {
+                                        word = word.Substring(0, word.Count() - 1);
+                                    }
+                                    word = word.Substring(0, word.Count() - 1);
+                                }
+                            }
+                            else if (key == Keys.OemPeriod)
+                            {
+                                word += ".";
+                            }
+                            else if (key == Keys.OemComma)
+                            {
+                                word += ",";
+                            }
+                            else if ((int)key >= 0 && (int)key <= 47)
+                            {
+                                //ignoring characters
+                            }
+                            else if ((int)key >= 91 && (int)key <= 254)
+                            {
+                                //ignoring characters
+                            }
+                            else if ((int)key >= (int)Keys.D0 && (int)key <= (int)Keys.D9)
+                            {
+                                word += (int)key - 48;
+                            }
+                            else
+                            {
+
+                                if (keyboard.IsKeyDown(Keys.LeftShift) || keyboard.IsKeyDown(Keys.RightShift))
+                                {
+                                    if (!System.Windows.Forms.Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
+                                    {
+                                        word += key.ToString();
+                                    }
+                                    else
+                                    {
+                                        word += key.ToString().ToLower();
+                                    }
+                                }
+                                else if (System.Windows.Forms.Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
                                 {
                                     word += key.ToString();
                                 }
@@ -150,32 +176,23 @@ namespace Legend.levels
                                     word += key.ToString().ToLower();
                                 }
                             }
-                            else if (System.Windows.Forms.Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
-                            {
-                                word += key.ToString();
-                            }
-                            else
-                            {
-                                word += key.ToString().ToLower();
-                            }
-                        }
-                        wait = 0;
-                        lk = key;
-                    }
-                    else
-                    {
-                        wait++;
-                        if (wait >= 10)
-                        {
-                            lk = null;
                             wait = 0;
+                            lk = key;
                         }
+                        else
+                        {
+                            wait++;
+                            if (wait >= 10)
+                            {
+                                lk = null;
+                                wait = 0;
+                            }
 
+                        }
                     }
+                    break;
                 }
-                break;
             }
-
         }
 
         void levelplus()

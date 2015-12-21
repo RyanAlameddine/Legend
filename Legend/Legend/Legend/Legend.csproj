@@ -90,7 +90,7 @@
   <ItemGroup>
     <Compile Include="Button.cs" />
     <Compile Include="characters\Player.cs" />
-    <Compile Include="enemy\Glob.cs" />
+    <Compile Include="enemy\Enemy.cs" />
     <Compile Include="functions\Tile.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="Enum.cs" />
@@ -107,7 +107,7 @@
     <Compile Include="levels\Level.cs" />
     <Compile Include="levels\Home.cs" />
     <Compile Include="levels\Intro.cs" />
-    <Compile Include="levels\objects\Sword.cs" />
+    <Compile Include="weapons\Sword.cs" />
     <Compile Include="levels\SubLevels.cs" />
     <Compile Include="levels\sublevels\L1.cs" />
     <Compile Include="levels\objects\Portal.cs" />

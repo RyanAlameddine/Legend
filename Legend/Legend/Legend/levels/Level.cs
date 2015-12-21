@@ -31,7 +31,7 @@ namespace Legend.levels
         TimeSpan timer;
         TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
-        public List<Glob> enemies = new List<Glob>();
+        public List<Enemy> enemies = new List<Enemy>();
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
         {
@@ -188,6 +188,11 @@ namespace Legend.levels
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
+        {
+
+        }
+
+        public virtual void enemyHit(int index)
         {
 
         }
