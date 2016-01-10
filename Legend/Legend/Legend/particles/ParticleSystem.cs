@@ -21,11 +21,12 @@ namespace Legend.particles
         public TimeSpan SpawnTime;
         bool fadeOut;
         float test;
+        float times;
         TimeSpan Timer = new TimeSpan();
 
         public List<Particle> particles = new List<Particle>();
         
-        public ParticleSystem(Texture2D particleTxt, float minStartSize, float maxStartSize, Color color, Vector2 speedX, Vector2 speedY, TimeSpan lifetime, float minDrag, float maxDrag, float minRotation, float maxRotation, Vector2 position, TimeSpan spawnTime, bool fadeOut)
+        public ParticleSystem(Texture2D particleTxt, float minStartSize, float maxStartSize, Color color, Vector2 speedX, Vector2 speedY, TimeSpan lifetime, float minDrag, float maxDrag, float minRotation, float maxRotation, Vector2 position, TimeSpan spawnTime, bool fadeOut, float times)
         {
             this.particleTxt = particleTxt;
             this.startSize = new Vector2(minStartSize, maxStartSize);
@@ -38,6 +39,7 @@ namespace Legend.particles
             this.SpawnTime = spawnTime;
             this.position = position;
             this.fadeOut = fadeOut;
+            this.times = times;
             if (fadeOut)
             {
                 if (lifetime.TotalSeconds <= 3)
@@ -52,7 +54,7 @@ namespace Legend.particles
         }
 
         public ParticleSystem(Texture2D particleTxt, float startSize, Color color, Vector2 speedX, Vector2 speedY, TimeSpan lifetime, float drag, float rotation, Vector2 position, TimeSpan spawnTime, bool fadeOut)
-            :this(particleTxt, startSize, startSize, color, speedX, speedY, lifetime, drag, drag, rotation, rotation, position, spawnTime, fadeOut)
+            :this(particleTxt, startSize, startSize, color, speedX, speedY, lifetime, drag, drag, rotation, rotation, position, spawnTime, fadeOut, 0f)
         {
         }
 
@@ -70,7 +72,7 @@ namespace Legend.particles
                 {
                     if (lifetime.TotalSeconds <= 3)
                     {
-                        particles[i].color = Color.Lerp(particles[i].color, Color.Transparent, (float)lifetime.TotalMilliseconds * test);
+                        particles[i].color = Color.Lerp(particles[i].color, Color.Transparent, (float)lifetime.TotalMilliseconds * times);
                     }
                     else
                     {

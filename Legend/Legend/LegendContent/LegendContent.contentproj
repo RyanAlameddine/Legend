@@ -86,9 +86,7 @@
       <Processor>TextureProcessor</Processor>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="monsters\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Compile Include="objects\swirl portal.png">
       <Name>portal</Name>
@@ -184,6 +182,13 @@
   <ItemGroup>
     <Compile Include="player\playermove.png">
       <Name>playermove</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="monsters\glob.png">
+      <Name>glob</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

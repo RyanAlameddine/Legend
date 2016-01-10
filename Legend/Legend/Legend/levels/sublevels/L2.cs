@@ -19,7 +19,6 @@ namespace Legend.levels.sublevels
     {
         List<Sprite> grassBarriers = new List<Sprite>();
         Texture2D fourpixels;
-        ParticleSystem particleSystem;
 
         public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels)
             : base(playertxture, portaltxture, song)
@@ -30,14 +29,12 @@ namespace Legend.levels.sublevels
             exitportal = new ExitPortal(portaltxture, new Vector2(155, 250));
             player.State = PlayerState.Interacting;
             player._frame = player._downWalkingFrames[1];
-            enemies.Add(new Enemy(GameContent.selectedinventory, new Vector2(150, 30)));
-            particleSystem = new ParticleSystem(GameContent.fourpixels, 0f, 1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true);
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30)));
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
             player.Update(ks, grassBarriers, ms, gameTime);
-            particleSystem.Update(gameTime);
             foreach (Tile tile in background.materials)
             {
                 if (player.Hitbox.Intersects(tile.Hitbox))
@@ -63,20 +60,14 @@ namespace Legend.levels.sublevels
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            particleSystem.Draw(spriteBatch);
             exitportal.Draw(spriteBatch);
             background.Draw(spriteBatch);
             player.Draw(spriteBatch);
-            enemies[0].Draw(spriteBatch);
             base.Draw(spriteBatch);
         }
 
         public override void enemyHit(int index)
         {
-            for (int i = 0; i < 20; i++)
-            {
-                particleSystem.addParticle();
-            }
             base.enemyHit(index);
         }
     }

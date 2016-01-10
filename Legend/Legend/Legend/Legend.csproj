@@ -91,6 +91,7 @@
     <Compile Include="Button.cs" />
     <Compile Include="characters\Player.cs" />
     <Compile Include="enemy\Enemy.cs" />
+    <Compile Include="enemy\Glob.cs" />
     <Compile Include="functions\Tile.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="Enum.cs" />

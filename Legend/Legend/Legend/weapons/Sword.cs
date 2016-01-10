@@ -35,6 +35,7 @@ namespace Legend.weapons
         {
             if (Game1.levellist[Game1.level - 1].enemies.Count > 0)
             {
+                asdfjalsj;//MAKE FOREACH ENEMY
                 Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
 
                 Vector2 translatedPosition = Vector2.Transform((Game1.levellist[Game1.level - 1].enemies[0].pos - position) * Settings.Scale, invRotationMatrix);

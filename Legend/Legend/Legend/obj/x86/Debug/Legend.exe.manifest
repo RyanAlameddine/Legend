@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="51592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="50688">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>umfirEW1GrWBt6B0nMTGEjBKq/A=</dsig:DigestValue>
+        <dsig:DigestValue>uEJflieUYn5SDwJ9y0hjlz6eUAM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -130,7 +130,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>KU94xWzrZnK8TCA4ttfd7m5kMPQ=</dsig:DigestValue>
+      <dsig:DigestValue>zLOCdScZlZOJKQjPD4aL1ylrHno=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\fonts\normal.xnb" size="13486">
@@ -178,6 +178,15 @@
       <dsig:DigestValue>uu/e+ViGJRrKw5tOYCHunfvlsoU=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\monsters\glob.xnb" size="8123">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IY0j1xdTdSsPkY0Xvmjmp+yYNZQ=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\mouse\mouse.xnb" size="587">
     <hash>
       <dsig:Transforms>
@@ -187,13 +196,13 @@
       <dsig:DigestValue>IqVE0KNcrmLemjK0rMTWkeRlLDI=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\music\8bit.wma" size="4380553">
+  <file name="Content\music\8bit.wma" size="4380551">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DOQow/zqJC4VqsUsEUawSR/0Jx0=</dsig:DigestValue>
+      <dsig:DigestValue>OveLwPCmq4BORMoIGkFeVqjwrPE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\8bit.xnb" size="122">
@@ -205,13 +214,13 @@
       <dsig:DigestValue>ts9xLwSaCRTc2cLnFuy6l8Kr4W8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\music\arcade.wma" size="3655765">
+  <file name="Content\music\arcade.wma" size="3655763">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>KI85l1HsrDw6jRZNolhDQPivwBE=</dsig:DigestValue>
+      <dsig:DigestValue>Wb52kBWRNR+pGFgq4RY+ue8uWCM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\arcade.xnb" size="124">
@@ -223,13 +232,13 @@
       <dsig:DigestValue>2A35dx0llLx16uhvT1icfkzSyyc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\music\cantina_theme.wma" size="2814653">
+  <file name="Content\music\cantina_theme.wma" size="2814651">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>oj919e1hQA4aJvr2/tskXRrDh2Q=</dsig:DigestValue>
+      <dsig:DigestValue>+pNiWuch+3X8n6Y7ODTwtvZ8Xqk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\music\cantina_theme.xnb" size="131">

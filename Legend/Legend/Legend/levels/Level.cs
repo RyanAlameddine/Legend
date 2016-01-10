@@ -12,6 +12,7 @@ using Legend.levels.functions;
 using System.Xml;
 using Legend.inventory;
 using Legend.enemy;
+using Legend.particles;
 
 namespace Legend.levels
 {
@@ -32,12 +33,14 @@ namespace Legend.levels
         TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
         public List<Enemy> enemies = new List<Enemy>();
+        ParticleSystem particleSystem;
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
         {
             this.music = music;
             this.portal = portal;
             this.playermove = playermove;
+            particleSystem = new ParticleSystem(GameContent.fourpixels, 0f, 1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, .00015f);
         }
 
         public void Portal(GameTime gameTime, Color portalcolor)
@@ -172,6 +175,10 @@ namespace Legend.levels
 
         public virtual void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
+            foreach (Enemy e in enemies)
+            {
+                e.Update(gameTime);
+            }
             if (starting)
             {
                 string[] thing = music.Name.Split('\\');
@@ -185,16 +192,24 @@ namespace Legend.levels
                 starting = false;
             }
             Game1.inventory.Update(ks, ms, gameTime);
+            particleSystem.Update(gameTime);
         }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-
+            particleSystem.Draw(spriteBatch);
+            foreach (Enemy e in enemies)
+            {
+                e.Draw(spriteBatch);
+            }
         }
 
         public virtual void enemyHit(int index)
         {
-
+            for (int i = 0; i < 20; i++)
+            {
+                particleSystem.addParticle();
+            }
         }
     }
 }

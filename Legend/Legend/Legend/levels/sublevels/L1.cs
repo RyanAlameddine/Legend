@@ -31,7 +31,7 @@ namespace Legend.levels.sublevels
             _grass = grass;
             _foamsword = foamsword;
             sword = new ItemOnFloor(Items.GetItem("Foam Sword"), new Vector2(150, 30), 0.5f);
-            particleSystem = new ParticleSystem(sword.item.texture, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true);
+            particleSystem = new ParticleSystem(sword.item.texture, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, 0.0002f);
             int dy = 50;
             float layerDepth = .2f;
             for (int i = 0; i < 8; i++)
