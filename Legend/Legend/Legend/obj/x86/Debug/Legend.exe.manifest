@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="50688">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="51712">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uEJflieUYn5SDwJ9y0hjlz6eUAM=</dsig:DigestValue>
+        <dsig:DigestValue>d2uZY/tkskxOgHabjgDL1os9BZQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -177,7 +177,7 @@ namespace Legend.levels
         {
             foreach (Enemy e in enemies)
             {
-                e.Update(gameTime);
+                e.Update(gameTime, player);
             }
             if (starting)
             {
@@ -206,7 +206,8 @@ namespace Legend.levels
 
         public virtual void enemyHit(int index)
         {
-            for (int i = 0; i < 20; i++)
+            particleSystem.position = enemies[index].pos;
+            for (int i = 0; i < 5; i++)
             {
                 particleSystem.addParticle();
             }

@@ -30,6 +30,7 @@ namespace Legend.levels.sublevels
             player.State = PlayerState.Interacting;
             player._frame = player._downWalkingFrames[1];
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30)));
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150)));
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)

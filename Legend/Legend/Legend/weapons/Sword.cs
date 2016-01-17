@@ -35,19 +35,20 @@ namespace Legend.weapons
         {
             if (Game1.levellist[Game1.level - 1].enemies.Count > 0)
             {
-                asdfjalsj;//MAKE FOREACH ENEMY
-                Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
-
-                Vector2 translatedPosition = Vector2.Transform((Game1.levellist[Game1.level - 1].enemies[0].pos - position) * Settings.Scale, invRotationMatrix);
-
-                Rectangle swordOriginalHitBox = new Rectangle((int)(-hilt.X), (int)(-hilt.Y), (int)(txture.Width * 0.6f * Settings.Scale), (int)(txture.Height * 0.6f * Settings.Scale));
-
-                Rectangle globTranslatedHitBox = new Rectangle((int)(translatedPosition.X - Game1.levellist[Game1.level - 1].enemies[0].ori.X), (int)(translatedPosition.Y - Game1.levellist[Game1.level - 1].enemies[0].ori.Y),
-                                                               (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Width * Settings.Scale), (int)(Game1.levellist[Game1.level - 1].enemies[0].Hitbox.Height * Settings.Scale));
-
-                if (swordOriginalHitBox.Intersects(globTranslatedHitBox))
+                foreach (Enemy e in Game1.levellist[Game1.level - 1].enemies)
                 {
-                    Game1.levellist[Game1.level - 1].enemyHit(0);
+                    Matrix invRotationMatrix = Matrix.Invert(Matrix.CreateRotationZ(rotation));
+
+                    Vector2 translatedPosition = Vector2.Transform((e.pos - position) * Settings.Scale, invRotationMatrix);
+
+                    Rectangle swordOriginalHitBox = new Rectangle((int)(-hilt.X), (int)(-hilt.Y), (int)(txture.Width * 0.6f * Settings.Scale), (int)(txture.Height * 0.6f * Settings.Scale));
+
+                    Rectangle globTranslatedHitBox = new Rectangle((int)(translatedPosition.X - e.ori.X), (int)(translatedPosition.Y - e.ori.Y), (int)(e.Hitbox.Width * Settings.Scale), (int)(e.Hitbox.Height * Settings.Scale));
+
+                    if (swordOriginalHitBox.Intersects(globTranslatedHitBox))
+                    {
+                        Game1.levellist[Game1.level - 1].enemyHit(Game1.levellist[Game1.level - 1].enemies.IndexOf(e));
+                    }
                 }
             }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Legend.characters;
 
 namespace Legend.enemy
 {
@@ -18,11 +19,11 @@ namespace Legend.enemy
         {
         }
 
-        public override void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime, Player p)
         {
-            Hitbox.X = (int)pos.X;
-            Hitbox.Y = (int)pos.Y;
-            base.Update(gameTime);
+            Hitbox.X = (int)(pos.X - (ori.X/2));
+            Hitbox.Y = (int)(pos.Y - (ori.Y/2));
+            base.Update(gameTime, p);
         }
     }
 }

@@ -26,8 +26,8 @@ namespace Legend.characters
                 return hitbox;
             }
         }
-        float speedy = 0;
-        float speedx = 0;
+        public float speedy = 0;
+        public float speedx = 0;
         int currentFrame = 0;
 
         public TimeSpan _elapsedTime;
@@ -76,6 +76,7 @@ namespace Legend.characters
         Keys k2;
         public PlayerState State = PlayerState.Idle;
         bool attackedlast = false;
+        public bool resetspeed;
         public Player(Texture2D playermove, Texture2D playerattack, Vector2 position)
         {
             this.playermove = playermove;
@@ -96,8 +97,16 @@ namespace Legend.characters
         }
 
         public void Update(KeyboardState ks, List<Sprite> grassbarriers, MouseState ms, GameTime gameTime)
-        {            
-
+        {
+            if (resetspeed)
+            {
+                speedx = 0;
+                speedy = 0;
+            }
+            else
+            {
+                resetspeed = true;
+            }
             if (ks.IsKeyDown(Keys.LeftShift))
             {
                 _position.X = ms.X/Settings.Scale;
@@ -318,10 +327,6 @@ namespace Legend.characters
                 _position.Y += speedy * speed;
                 _position.X = MathHelper.Clamp(_position.X, 0, 298);
                 _position.Y = MathHelper.Clamp(_position.Y, 0, 295);
-
-
-                speedy = 0;
-                speedx = 0;
 
                 if (ks.IsKeyDown(Keys.J))
                 {
