@@ -21,7 +21,7 @@ namespace Legend.levels
             List<Level> levellist = new List<Level>();
             l1 = new L1(playermove, playerattack, grass, grassbarrier, foamsword, portal, eightbit);
             levellist.Add(l1);
-            l2intro = new L2Intro(playermove, portal, cantina_theme, normalfont, button, buttonhover, tshirt);
+            l2intro = new L2Intro(playermove, playerattack, portal, cantina_theme, normalfont, button, buttonhover, tshirt);
             levellist.Add(l2intro);
             l2 = new L2(playermove, playerattack, portal, arcade, pixel);
             levellist.Add(l2);

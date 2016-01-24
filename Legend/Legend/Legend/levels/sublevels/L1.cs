@@ -21,7 +21,6 @@ namespace Legend.levels.sublevels
         Texture2D _grassbarrier;
         Texture2D _foamsword;
         ItemOnFloor sword;
-        List<Sprite> grassBarriers = new List<Sprite>();
         ParticleSystem particleSystem;
 
         public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song)
@@ -58,7 +57,6 @@ namespace Legend.levels.sublevels
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
-            player.Update(ks, grassBarriers, ms, gameTime);
             sword.Update(gameTime);
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);

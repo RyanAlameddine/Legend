@@ -76,7 +76,7 @@ namespace Legend.characters
         Keys k2;
         public PlayerState State = PlayerState.Idle;
         bool attackedlast = false;
-        public bool resetspeed;
+        public bool resetspeed = true;
         public Player(Texture2D playermove, Texture2D playerattack, Vector2 position)
         {
             this.playermove = playermove;
@@ -105,7 +105,17 @@ namespace Legend.characters
             }
             else
             {
-                resetspeed = true;
+                speedx = MathHelper.Lerp(speedx, 0f, 0.2f);
+                speedy = MathHelper.Lerp(speedy, 0f, 0.2f);
+                _position.X += speedx * speed;
+                _position.Y += speedy * speed;
+                _position.X = MathHelper.Clamp(_position.X, 0, 298);
+                _position.Y = MathHelper.Clamp(_position.Y, 0, 295);
+                if (speedx <= .05f && speedy <= .05f)
+                {
+                    resetspeed = true;
+                    State = PlayerState.Idle;
+                }
             }
             if (ks.IsKeyDown(Keys.LeftShift))
             {

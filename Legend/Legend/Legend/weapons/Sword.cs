@@ -64,7 +64,7 @@ namespace Legend.weapons
                     swinging = false;
                     p.texture = p.playermove;
                     p._frame = f;
-                    position.X = 100000;
+                    position.X = 10000;
                 }
 
             }

@@ -28,19 +28,19 @@ namespace Legend.enemy
 
         public virtual void Update(GameTime gameTime, Player p)
         {
-            if (p._position.X > pos.X) dir.X = 1;
-            else if (p._position.X < pos.X) dir.X = -1;
-            if (p._position.Y > pos.Y) dir.Y = 1;
-            else if (p._position.Y < pos.Y) dir.Y = -1;
+            if (p._position.X - 2 > pos.X) dir.X = 1;
+            else if (p._position.X - 2 < pos.X) dir.X = -1;
+            if (p._position.Y + 5 > pos.Y) dir.Y = 1;
+            else if (p._position.Y + 5 < pos.Y) dir.Y = -1;
             speed = Vector2.Lerp(speed, dir, 0.05f);
-            if (p.Hitbox.Intersects(Hitbox))
+            if (p.Hitbox.Intersects(Hitbox) && p.State != PlayerState.Interacting)
             {
-                alsklfj; skjfalsjfda; lskdf; ajklaklsdjf; alks;jfd//INTERSECTING WHEN SAME DIRECTION
-                Vector2 temp = new Vector2(p.speedx * p.speed * 1.1f, p.speedy * p.speed * 1.1f);
-                p.speedx = speed.X * 1.1f;
-                p.speedy = speed.Y * 1.1f;
+                Vector2 temp = new Vector2(p.speedx * p.speed * 2f, p.speedy * p.speed * 2f);
+                p.speedx = dir.X * 2f;
+                p.speedy = dir.Y * 2f;
                 speed = temp;
                 p.resetspeed = false;
+                p.State = PlayerState.Interacting;
             }
             pos += speed;
         }

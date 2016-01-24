@@ -32,8 +32,10 @@ namespace Legend.levels
         TimeSpan timer;
         TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
+        //public Enemy[] enemies = new Enemy[0];
         public List<Enemy> enemies = new List<Enemy>();
         ParticleSystem particleSystem;
+        protected List<Sprite> grassBarriers = new List<Sprite>();
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
         {
@@ -179,6 +181,7 @@ namespace Legend.levels
             {
                 e.Update(gameTime, player);
             }
+            player.Update(ks, grassBarriers, ms, gameTime);
             if (starting)
             {
                 string[] thing = music.Name.Split('\\');

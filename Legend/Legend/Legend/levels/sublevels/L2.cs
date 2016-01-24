@@ -17,7 +17,6 @@ namespace Legend.levels.sublevels
 {
     public class L2 : Level
     {
-        List<Sprite> grassBarriers = new List<Sprite>();
         Texture2D fourpixels;
 
         public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels)
@@ -35,7 +34,6 @@ namespace Legend.levels.sublevels
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
-            player.Update(ks, grassBarriers, ms, gameTime);
             foreach (Tile tile in background.materials)
             {
                 if (player.Hitbox.Intersects(tile.Hitbox))

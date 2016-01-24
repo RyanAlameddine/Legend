@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Legend.inventory;
+using Legend.characters;
 
 namespace Legend.levels.sublevels
 {
@@ -18,12 +19,13 @@ namespace Legend.levels.sublevels
         Button button;
         int state = 1;
 
-        public L2Intro(Texture2D playertxture, Texture2D portaltxture, Song song, SpriteFont font, Texture2D buttontx2d, Texture2D buttontx2dhover, Texture2D tshirt)
+        public L2Intro(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, SpriteFont font, Texture2D buttontx2d, Texture2D buttontx2dhover, Texture2D tshirt)
             : base(playertxture, portaltxture, song)
         {
             button = new Button(buttontx2d, buttontx2dhover, font, "Continue", new Vector2(120, 270));
             this.font = font;
             this.tshirt = tshirt;
+            player = new Player(playermove, playerattack, new Vector2(0, 0));
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)

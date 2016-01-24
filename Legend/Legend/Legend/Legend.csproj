@@ -95,6 +95,7 @@
     <Compile Include="functions\Tile.cs" />
     <Compile Include="GameContent.cs" />
     <Compile Include="Enum.cs" />
+    <Compile Include="HealthManager.cs" />
     <Compile Include="inventory\Armour.cs" />
     <Compile Include="inventory\Consumable.cs" />
     <Compile Include="inventory\Inventory.cs" />
