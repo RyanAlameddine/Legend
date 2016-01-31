@@ -209,11 +209,13 @@ namespace Legend.levels
 
         public virtual void enemyHit(int index)
         {
+            enemies[index].speed *= -1;
             particleSystem.position = enemies[index].pos;
             for (int i = 0; i < 5; i++)
             {
                 particleSystem.addParticle();
             }
+            
         }
     }
 }

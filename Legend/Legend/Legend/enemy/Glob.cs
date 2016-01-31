@@ -21,8 +21,6 @@ namespace Legend.enemy
 
         public override void Update(GameTime gameTime, Player p)
         {
-            Hitbox.X = (int)(pos.X - (ori.X/2));
-            Hitbox.Y = (int)(pos.Y - (ori.Y/2));
             base.Update(gameTime, p);
         }
     }

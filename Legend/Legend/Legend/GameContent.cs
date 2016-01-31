@@ -28,6 +28,7 @@ namespace Legend
         public static Texture2D fourpixels;
         public static Texture2D logo;
         public static Texture2D glob;
+        public static Texture2D heart;
 
         public static Song cantina_theme;
         public static Song eightbit;
@@ -59,6 +60,7 @@ namespace Legend
             GameContent.fourpixels = content.Load<Texture2D>("fourpixels");
             GameContent.logo = content.Load<Texture2D>("logo");
             GameContent.glob = content.Load<Texture2D>("monsters/glob");
+            GameContent.heart = content.Load<Texture2D>("player/heart");
 
             GameContent.eightbit = content.Load<Song>("music/8bit");
             GameContent.cantina_theme = content.Load<Song>("music/cantina_theme");

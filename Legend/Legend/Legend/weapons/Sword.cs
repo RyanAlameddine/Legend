@@ -57,6 +57,7 @@ namespace Legend.weapons
                 if (rotation > endrotation)
                 {
                     rotation -= 0.15f; // .1
+                    stick();
                 }
                 else
                 {
@@ -64,9 +65,10 @@ namespace Legend.weapons
                     swinging = false;
                     p.texture = p.playermove;
                     p._frame = f;
-                    position.X = 10000;
+                    position.X = 1000;
+                    Hitbox.X = (int)position.X;
+                    Hitbox.Y = (int)position.Y;
                 }
-
             }
         }
 
@@ -117,6 +119,30 @@ namespace Legend.weapons
             if (swinging)
             {
                 spriteBatch.Draw(txture, position * Settings.Scale, null, Color.White, rotation, hilt, .6f * Settings.Scale, SpriteEffects.None, layerDepth);
+            }
+        }
+
+        public void stick()
+        {
+            if (p.dir == Direction.Up)
+            {
+                position.X = p._position.X + 10;
+                position.Y = p._position.Y + 3;
+            }
+            else if (p.dir == Direction.Down)
+            {
+                position.X = p._position.X + 11;
+                position.Y = p._position.Y + 15;
+            }
+            else if (p.dir == Direction.Left)
+            {
+                position.X = p._position.X + 1;
+                position.Y = p._position.Y + 11;
+            }
+            else if (p.dir == Direction.Right)
+            {
+                position.X = p._position.X + 11;
+                position.Y = p._position.Y + 10;
             }
         }
     }

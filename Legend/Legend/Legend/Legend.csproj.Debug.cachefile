@@ -7,6 +7,7 @@ Content\background\grass.xnb
 Content\mouse\mouse.xnb
 Content\obstacles\grassbarrier.xnb
 Content\weapons\foam sword.xnb
+Content\player\heart.xnb
 Content\objects\portal.xnb
 Content\guis\inventory.xnb
 Content\buttons\selectedinventory.xnb
@@ -15,12 +16,12 @@ Content\fourpixels.xnb
 Content\logo.xnb
 Content\player\playerattack.xnb
 Content\player\playermove.xnb
+Content\monsters\glob.xnb
 Content\music\cantina_theme.xnb
 Content\music\8bit.xnb
 Content\sound effects\typewriter.xnb
 Content\sound effects\typewriter-space.xnb
 Content\music\arcade.xnb
-Content\monsters\glob.xnb
 Content\music\cantina_theme.wma
 Content\music\8bit.wma
 Content\music\arcade.wma

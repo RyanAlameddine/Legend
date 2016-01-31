@@ -44,8 +44,8 @@ namespace Legend.levels.sublevels
                 {
                     if (tile.color != Color.White)
                     {
-                        tile.color = Color.Lerp(tile.color, Color.White, 0.07f);
-                        if (tile.color.R > 240 && tile.color.G > 240 && tile.color.B > 240)
+                        tile.color = Color.Lerp(tile.color, Color.White, 0.035f);
+                        if (tile.color.R > 226 && tile.color.G > 226 && tile.color.B > 226)
                         {
                             tile.color = Color.White;
                         }

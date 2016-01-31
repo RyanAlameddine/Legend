@@ -15,8 +15,9 @@ namespace Legend.enemy
         protected Rectangle source;
         protected Texture2D txture;
         public Rectangle Hitbox;
-        Vector2 speed;
+        public Vector2 speed;
         Vector2 dir;
+        Vector2 speedoffset;
         public Enemy(Texture2D txture, Vector2 pos, Rectangle source)
         {
             this.pos = pos;
@@ -24,6 +25,8 @@ namespace Legend.enemy
             this.source = source;
             ori = new Vector2(source.Width / 2, source.Height / 2);
             Hitbox = new Rectangle((int)(pos.X), (int)(pos.Y), (int)(source.Width/2), (int)(source.Height/2));
+            speedoffset.X = ((float)(Game1.rand.Next(-2, 2)) / 15) + 1;
+            speedoffset.Y = speedoffset.X;
         }
 
         public virtual void Update(GameTime gameTime, Player p)
@@ -42,11 +45,14 @@ namespace Legend.enemy
                 p.resetspeed = false;
                 p.State = PlayerState.Interacting;
             }
-            pos += speed;
+            Hitbox.X = (int)(pos.X - (ori.X / 2));
+            Hitbox.Y = (int)(pos.Y - (ori.Y / 2));
+            pos += speed * speedoffset;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            add other glob texture!
             spriteBatch.Draw(txture, pos * Settings.Scale, source, Color.White, 0f, ori, .5f * Settings.Scale, SpriteEffects.None, .45f);
         }
     }

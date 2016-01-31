@@ -43,6 +43,7 @@ namespace Legend
         public static Inventory inventory;
         public static int rendOffset = 0;
         public static bool resetRend = false;
+        HealthManager healthManager;
 
         List<int> Size = new List<int>();
         int currentSize = 0;
@@ -120,6 +121,7 @@ namespace Legend
             continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
             levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
+            healthManager = new HealthManager(GameContent.heart);
         }
         protected override void Update(GameTime gameTime)
         {
@@ -160,6 +162,7 @@ namespace Legend
             {
                 level = 2;
             }
+            healthManager.Update();
 
             base.Update(gameTime);
         }
@@ -179,6 +182,8 @@ namespace Legend
             {
                 levellist[level - 1].Draw(spriteBatch);
             }
+            healthManager.Draw(spriteBatch);
+
             spriteBatch.End();
 
             GraphicsDevice.SetRenderTarget(null);
