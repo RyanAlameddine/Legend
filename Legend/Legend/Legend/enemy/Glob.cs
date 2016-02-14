@@ -10,13 +10,16 @@ namespace Legend.enemy
 {
     public class Glob : Enemy
     {
-        Rectangle[] sources = {
+        static Rectangle[] sources = {
                                 new Rectangle(0, 0, 30, 32),
-                                new Rectangle(32, 0, 30, 30)
+                                new Rectangle(32, 0, 30, 30),
+                                new Rectangle(0, 33, 32, 30),
+                                new Rectangle(32, 33, 30, 28)
                               };
         public Glob(Texture2D txture, Vector2 position)
-            : base(txture, position, new Rectangle(0, 0, 30, 32))
+            : base(txture, position, sources)
         {
+
         }
 
         public override void Update(GameTime gameTime, Player p)

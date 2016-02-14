@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="53248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="53760">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>IVyEnc0HWylE4NGJplaWvDLQUP8=</dsig:DigestValue>
+        <dsig:DigestValue>XuGvys3ZKZ2K+I7DjxBm8MjbbZE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -178,13 +178,13 @@
       <dsig:DigestValue>uu/e+ViGJRrKw5tOYCHunfvlsoU=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\monsters\glob.xnb" size="8123">
+  <file name="Content\monsters\glob.xnb" size="15811">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>IY0j1xdTdSsPkY0Xvmjmp+yYNZQ=</dsig:DigestValue>
+      <dsig:DigestValue>PsNM2rPUkFu3muhlojz2vcmHMvs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\mouse\mouse.xnb" size="587">
