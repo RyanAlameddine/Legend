@@ -20,6 +20,8 @@ namespace Legend.enemy
         public Vector2 speed;
         Vector2 dir;
         Vector2 speedoffset;
+        float rotation = 0f;
+        public Direction direction = Direction.Up;
         public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources)
         {
             this.pos = pos;
@@ -28,7 +30,7 @@ namespace Legend.enemy
             this.sources = sources;
             ori = new Vector2(source.Width / 2, source.Height / 2);
             Hitbox = new Rectangle((int)(pos.X), (int)(pos.Y), (int)(source.Width/2), (int)(source.Height/2));
-            speedoffset.X = ((float)(Game1.rand.Next(-4, 0)) / 15) + 1;
+            speedoffset.X = -6/15 + 1;
             speedoffset.Y = speedoffset.X;
         }
 
@@ -51,33 +53,35 @@ namespace Legend.enemy
                 dir.Y = -1;
             }
             Vector2 distance = p._position - pos;
-            float rotation = (float) Math.Atan2(distance.Y, distance.X);
-            rotation -= (float) (90 * Math.PI / 180);
+            rotation = (float) Math.Atan2(distance.Y, distance.X);
             rotation *= (float) (180 / Math.PI);
             while (rotation > 360)
             {
                 rotation -= 360;
             }
-            asdfasfdasfdasfasf FIX this;
-            if (rotation <= 45 || rotation >= 315)
+            if (rotation <= 45 && rotation >= -45)
             {
-                source = sources[2];
-                effect = SpriteEffects.FlipVertically;
+                direction = Direction.Right;
+                source = sources[0];
+                effect = SpriteEffects.None;
             }
             else if (rotation >= 45 && rotation <= 135)
             {
-                source = sources[0];
-                effect = SpriteEffects.None;
+                direction = Direction.Up;
+                source = sources[2];
+                effect = SpriteEffects.FlipVertically;
             }
-            else if (rotation >= 135 && rotation <= 225)
+            else if (rotation >= 135 || rotation <= -135)
             {
+                direction = Direction.Left;
+                source = sources[0];
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else if (rotation >= -135 && rotation <= -45)
+            {
+                direction = Direction.Down;
                 source = sources[2];
                 effect = SpriteEffects.None;
-            }
-            else if (rotation >= 225 && rotation <= 315)
-            {
-                source = sources[0];
-                effect = SpriteEffects.FlipVertically;
             }
 
             speed = Vector2.Lerp(speed, dir, 0.05f);
@@ -90,14 +94,13 @@ namespace Legend.enemy
                 p.resetspeed = false;
                 p.State = PlayerState.Interacting;
             }
-            Hitbox.X = (int)(pos.X - (ori.X / 2));
-            Hitbox.Y = (int)(pos.Y - (ori.Y / 2));
+            Hitbox.X = (int)((pos.X - (ori.X / 2)));
+            Hitbox.Y = (int)((pos.Y - (ori.Y / 2)));
             pos += speed * speedoffset;
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
             spriteBatch.Draw(txture, pos * Settings.Scale, source, Color.White, 0f, ori, .5f * Settings.Scale, effect, .45f);
         }
     }

@@ -60,10 +60,10 @@ namespace Legend
 
         protected override void Initialize()
         {
+
             MediaPlayer.IsVisualizationEnabled = true;
             base.Initialize();
             DisplayMode display = GraphicsDevice.DisplayMode;
-            this.Window.AllowUserResizing = true;
             if (display.Width > display.Height)
             {
                 int num = display.Height - 100;

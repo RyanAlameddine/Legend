@@ -21,7 +21,7 @@ namespace Legend.particles
         public TimeSpan SpawnTime;
         bool fadeOut;
         float test;
-        float times;
+        public float times;
         TimeSpan Timer = new TimeSpan();
 
         public List<Particle> particles = new List<Particle>();

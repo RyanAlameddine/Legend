@@ -13,7 +13,7 @@ namespace Legend.weapons
     public class Sword
     {
         Texture2D txture;
-        Vector2 position;
+        public Vector2 position;
         float rotation;
         float endrotation;
         Rectangle Hitbox;

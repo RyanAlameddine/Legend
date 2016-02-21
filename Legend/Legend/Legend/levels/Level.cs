@@ -34,7 +34,7 @@ namespace Legend.levels
         public ExitPortal exitportal;
         //public Enemy[] enemies = new Enemy[0];
         public List<Enemy> enemies = new List<Enemy>();
-        ParticleSystem particleSystem;
+        protected ParticleSystem particleSystem;
         protected List<Sprite> grassBarriers = new List<Sprite>();
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
@@ -179,6 +179,19 @@ namespace Legend.levels
         {
             foreach (Enemy e in enemies)
             {
+                foreach (Enemy en in enemies)
+                {
+                    if (e == en)
+                    {
+                        continue;
+                    }
+                    if (e.Hitbox.Intersects(en.Hitbox))
+                    {
+                        Vector2 distance = e.pos - en.pos;
+                        e.speed = distance/15;
+                        en.speed = -distance/15;
+                    }
+                }
                 e.Update(gameTime, player);
             }
             player.Update(ks, grassBarriers, ms, gameTime);
@@ -209,9 +222,10 @@ namespace Legend.levels
 
         public virtual void enemyHit(int index)
         {
-            enemies[index].speed *= -1;
+            Vector2 test = enemies[index].pos - Game1.inventory.sword.position;
+            enemies[index].speed = test / 7;            
             particleSystem.position = enemies[index].pos;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 particleSystem.addParticle();
             }

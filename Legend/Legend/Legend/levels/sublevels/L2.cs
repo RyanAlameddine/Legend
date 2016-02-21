@@ -30,6 +30,7 @@ namespace Legend.levels.sublevels
             player._frame = player._downWalkingFrames[1];
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30)));
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150)));
+            particleSystem.times = .00015f;
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
@@ -44,8 +45,8 @@ namespace Legend.levels.sublevels
                 {
                     if (tile.color != Color.White)
                     {
-                        tile.color = Color.Lerp(tile.color, Color.White, 0.035f);
-                        if (tile.color.R > 226 && tile.color.G > 226 && tile.color.B > 226)
+                        tile.color = Color.Lerp(tile.color, Color.White, 0.025f);
+                        if (tile.color.R > 214 && tile.color.G > 214 && tile.color.B > 214)
                         {
                             tile.color = Color.White;
                         }
