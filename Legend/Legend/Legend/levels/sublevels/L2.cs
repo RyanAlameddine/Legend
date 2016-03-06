@@ -35,6 +35,9 @@ namespace Legend.levels.sublevels
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
+            exitportal.Update();
+            ExitPortal();
+            base.Update(ks, ms, gameTime);
             foreach (Tile tile in background.materials)
             {
                 if (player.Hitbox.Intersects(tile.Hitbox))
@@ -53,9 +56,6 @@ namespace Legend.levels.sublevels
                     }
                 }
             }
-            exitportal.Update();
-            ExitPortal();
-            base.Update(ks, ms, gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

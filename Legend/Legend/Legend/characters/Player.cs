@@ -333,8 +333,8 @@ namespace Legend.characters
                     }
                 }
 
-                _position.X += speedx * speed;
-                _position.Y += speedy * speed;
+                _position.X += speedx * speed * Game1.deathspeed;
+                _position.Y += speedy * speed * Game1.deathspeed;
                 _position.X = MathHelper.Clamp(_position.X, 0, 298);
                 _position.Y = MathHelper.Clamp(_position.Y, 0, 295);
 

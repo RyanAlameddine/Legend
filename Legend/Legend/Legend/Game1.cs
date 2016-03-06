@@ -43,7 +43,9 @@ namespace Legend
         public static Inventory inventory;
         public static int rendOffset = 0;
         public static bool resetRend = false;
-        HealthManager healthManager;
+        public static HealthManager healthManager;
+        public static float deathspeed = 1;
+        public static bool toinitialize = false;
 
         List<int> Size = new List<int>();
         int currentSize = 0;
@@ -60,7 +62,6 @@ namespace Legend
 
         protected override void Initialize()
         {
-
             MediaPlayer.IsVisualizationEnabled = true;
             base.Initialize();
             DisplayMode display = GraphicsDevice.DisplayMode;
@@ -121,7 +122,7 @@ namespace Legend
             continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
             levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
-            healthManager = new HealthManager(GameContent.heart);
+            healthManager = new HealthManager(GameContent.heartparticle, GameContent.fourpixels);
         }
         protected override void Update(GameTime gameTime)
         {
@@ -153,15 +154,6 @@ namespace Legend
                 resetRendInfo();
 
             ttle.Update();
-
-            if (ks.IsKeyDown(Keys.F3))
-            {
-                level = 3;
-            }
-            if (ks.IsKeyDown(Keys.F2))
-            {
-                level = 2;
-            }
             healthManager.Update();
 
             base.Update(gameTime);
@@ -202,12 +194,29 @@ namespace Legend
             if (rendColor != Color.White)
             {
                 MediaPlayer.Volume += 1f / 255f;
-                rendColor.R++;
-                rendColor.G++;
-                rendColor.B++;
+                rendColor = new Color(rendColor.R + 1, rendColor.G + 1, rendColor.B + 1);
             }
             else
             {
+
+                if (toinitialize)
+                {
+                    transitioneffect = false;
+                    rendpos = Vector2.Zero;
+                    rendColor = Color.White;
+                    level = 1;
+                    levellist = new List<Level>();
+                    rendscale = 1f;
+                    name = "";
+                    screen = Screens.Home;
+                    rendOffset = 0;
+                    resetRend = false;
+                    deathspeed = 1;
+                    toinitialize = false;
+                    Size = new List<int>();
+                    currentSize = 0;
+                    Initialize();
+                }
                 resetRend = false;
             }
         }

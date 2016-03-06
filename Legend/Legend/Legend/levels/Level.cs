@@ -79,7 +79,7 @@ namespace Legend.levels
                     if (timer > timeUntilNextLevel)
                     {
                         Game1.transitioneffect = false;
-                        Game1.ttle.Reset();
+                        Game1.ttle.Reset(false);
                         Game1.level++;
                         save();
                     }

@@ -87,8 +87,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="player\heart.png">
-      <Name>heart</Name>
+    <Compile Include="player\heartparticle.png">
+      <Name>heartparticle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

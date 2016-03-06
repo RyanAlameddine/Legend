@@ -22,12 +22,14 @@ namespace Legend.enemy
         Vector2 speedoffset;
         float rotation = 0f;
         public Direction direction = Direction.Up;
-        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources)
+        public int damage;
+        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage)
         {
             this.pos = pos;
             this.txture = txture;
             this.source = sources[0];
             this.sources = sources;
+            this.damage = damage;
             ori = new Vector2(source.Width / 2, source.Height / 2);
             Hitbox = new Rectangle((int)(pos.X), (int)(pos.Y), (int)(source.Width/2), (int)(source.Height/2));
             speedoffset.X = -6/15 + 1;
@@ -93,10 +95,11 @@ namespace Legend.enemy
                 speed = temp;
                 p.resetspeed = false;
                 p.State = PlayerState.Interacting;
+                Game1.healthManager.health -= damage / Game1.inventory.armour.defence;
             }
             Hitbox.X = (int)((pos.X - (ori.X / 2)));
             Hitbox.Y = (int)((pos.Y - (ori.Y / 2)));
-            pos += speed * speedoffset;
+            pos += speed * speedoffset * Game1.deathspeed;
         }
 
         public void Draw(SpriteBatch spriteBatch)

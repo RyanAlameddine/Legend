@@ -83,15 +83,6 @@
       <Time>2015-03-14T11:12:08-07:00</Time>
     </Item>
     <Item>
-      <Source>player\heart.png</Source>
-      <Name>player\heart</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\heart.xnb</Output>
-      <Time>2016-01-24T10:43:26.1035561-08:00</Time>
-    </Item>
-    <Item>
       <Source>objects\swirl portal.png</Source>
       <Name>objects\portal</Name>
       <Importer>TextureImporter</Importer>
@@ -219,6 +210,15 @@
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb</Output>
       <Extra>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma</Extra>
       <Time>2015-11-08T10:18:10-08:00</Time>
+    </Item>
+    <Item>
+      <Source>player\heartparticle.png</Source>
+      <Name>player\heartparticle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\heartparticle.xnb</Output>
+      <Time>2016-01-24T10:43:26.1035561-08:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

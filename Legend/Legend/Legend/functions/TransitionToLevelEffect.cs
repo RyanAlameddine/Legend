@@ -31,8 +31,12 @@ namespace Legend.levels.functions
             rand.Z = random.Next(1, 20);
         }
 
-        public void Reset()
+        public void Reset(bool initialize)
         {
+            if (initialize)
+            {
+                Game1.toinitialize = true;
+            }
             Game1.resetRend = true;
             Game1.rendColor = Color.Black;
             Game1.rendpos = Vector2.Zero;

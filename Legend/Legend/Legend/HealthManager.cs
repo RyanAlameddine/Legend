@@ -9,20 +9,36 @@ namespace Legend
 {
     public class HealthManager
     {
-        public float health = 3;
-        Texture2D heart;
+        public float health = 10;
+        Texture2D heartparticle;
+        Texture2D pixels;
         Vector2 position;
         List<int> noshow = new List<int>();
-        public HealthManager(Texture2D heart)
+        public HealthManager(Texture2D heartparticle, Texture2D pixels)
         {
-            this.heart = heart;
+            this.heartparticle = heartparticle;
+            this.pixels = pixels;
             position = new Vector2(10, 10);
             noshow.Add(2);
         }
 
         public void Update()
         {
-
+            position = Game1.levellist[Game1.level - 1].player._position;
+            position.Y -= 7;
+            position.X -= 2;
+            if (health <= 0)
+            {
+                Game1.rendColor = Color.Lerp(Game1.rendColor, Color.Black, .009f);
+                Game1.deathspeed = MathHelper.Lerp(Game1.deathspeed, 0f, .02f);
+                if (Game1.rendColor.R < 2 && Game1.rendColor.G < 2 && Game1.rendColor.B < 2)
+                {
+                    Game1.screen = Screens.Home; //CHANGE TO NEW GAME LEVEL
+                    Game1.ttle.Reset(true);
+                    Game1.deathspeed = 1;
+                    Reset();
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -41,13 +57,14 @@ namespace Legend
             }
             if (show)
             {
-                for (int i = 0; i < health; i++)
-                {
-                    Vector2 temp = position;
-                    temp.X += i * 30;
-                    spriteBatch.Draw(heart, temp, null, Color.White, 0f, Vector2.Zero, .03f, SpriteEffects.None, 0.8f);
-                }
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Red, 0f, Vector2.Zero, new Vector2(4, 1) * Settings.Scale, SpriteEffects.None, .6f);
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Lime, 0f, Vector2.Zero, new Vector2(.4f*health, 1) * Settings.Scale, SpriteEffects.None, .61f);
             }
+        }
+
+        void Reset()
+        {
+            health = 10;
         }
     }
 }

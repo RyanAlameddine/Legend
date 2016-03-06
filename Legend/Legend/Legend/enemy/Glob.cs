@@ -17,7 +17,7 @@ namespace Legend.enemy
                                 new Rectangle(32, 33, 30, 28)
                               };
         public Glob(Texture2D txture, Vector2 position)
-            : base(txture, position, sources)
+            : base(txture, position, sources, 1)
         {
 
         }

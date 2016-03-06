@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="53760">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="54784">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>uspXvyOc5QQtPcf/HM4/A4Zz/Gw=</dsig:DigestValue>
+        <dsig:DigestValue>c3Sv/vg2ZWOHy98Yox3nnuGcGB8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -268,7 +268,7 @@
       <dsig:DigestValue>M3YaeE/QDS9quAt9qFPP+rARh08=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\player\heart.xnb" size="2560187">
+  <file name="Content\player\heartparticle.xnb" size="2560187">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
