@@ -218,7 +218,25 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\heartparticle.xnb</Output>
-      <Time>2016-01-24T10:43:26.1035561-08:00</Time>
+      <Time>2016-03-13T15:20:31.0533455-07:00</Time>
+    </Item>
+    <Item>
+      <Source>guis\gameovertexture.png</Source>
+      <Name>guis\gameovertexture</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\gameovertexture.xnb</Output>
+      <Time>2016-03-13T15:42:09.5668227-07:00</Time>
+    </Item>
+    <Item>
+      <Source>monsters\slimeparticle.png</Source>
+      <Name>monsters\slimeparticle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\slimeparticle.xnb</Output>
+      <Time>2016-03-13T17:48:35.7505284-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

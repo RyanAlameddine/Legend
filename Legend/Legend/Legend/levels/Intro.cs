@@ -21,7 +21,7 @@ namespace Legend.levels
         int x = 105;
         Button button;
         string text = "";
-        string targetText = "One  day,  in  a  land  called  gliir,\noverrun  with  monsters,  there  was  a\nperson  who  must  bring  order\nand  stop  the  chaos  that  has\ncovered  the  land.  You  are  that  person.\nfirst,  enter  your  name.\nThen  press  k  to  recover  your  first  sword.....";
+        string targetText = "One  day,  in  a  land  ovverrun\nwith  monsters  called  gliir,  there  was\na  person  who  must  bring  order\nand  stop  the  chaos  that  has\ncovered  the  land.  You  are  that  person.\nfirst,  enter  your  name.\nThen  press  k  to  recover  your  first  sword.....";
         public TimeSpan timer = new TimeSpan(0, 0, -1);
         SoundEffect typewriter;
         SoundEffect spacebar;

@@ -33,8 +33,8 @@ namespace Legend
                 Game1.deathspeed = MathHelper.Lerp(Game1.deathspeed, 0f, .02f);
                 if (Game1.rendColor.R < 2 && Game1.rendColor.G < 2 && Game1.rendColor.B < 2)
                 {
-                    Game1.screen = Screens.Home; //CHANGE TO NEW GAME LEVEL
-                    Game1.ttle.Reset(true);
+                    Game1.screen = Screens.GameOver;
+                    Game1.ttle.Reset(false);
                     Game1.deathspeed = 1;
                     Reset();
                 }
@@ -57,8 +57,8 @@ namespace Legend
             }
             if (show)
             {
-                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Red, 0f, Vector2.Zero, new Vector2(4, 1) * Settings.Scale, SpriteEffects.None, .6f);
-                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Lime, 0f, Vector2.Zero, new Vector2(.4f*health, 1) * Settings.Scale, SpriteEffects.None, .61f);
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Red, 0f, Vector2.Zero, new Vector2(4, 1) * Settings.Scale, SpriteEffects.None, .55f);
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Lime, 0f, Vector2.Zero, new Vector2(.4f*health, 1) * Settings.Scale, SpriteEffects.None, .56f);
             }
         }
 

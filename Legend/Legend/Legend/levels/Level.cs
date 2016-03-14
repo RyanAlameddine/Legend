@@ -32,7 +32,6 @@ namespace Legend.levels
         TimeSpan timer;
         TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
-        //public Enemy[] enemies = new Enemy[0];
         public List<Enemy> enemies = new List<Enemy>();
         protected ParticleSystem particleSystem;
         protected List<Sprite> grassBarriers = new List<Sprite>();
@@ -42,7 +41,7 @@ namespace Legend.levels
             this.music = music;
             this.portal = portal;
             this.playermove = playermove;
-            particleSystem = new ParticleSystem(GameContent.fourpixels, 0f, 1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, .00015f);
+            particleSystem = new ParticleSystem(GameContent.heartparticle, 0f, .1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, .00015f);
         }
 
         public void Portal(GameTime gameTime, Color portalcolor)
@@ -68,6 +67,7 @@ namespace Legend.levels
                 {
                     player.scale -= 0.001f;
                     spinRadius = spinRadius - .17f;
+                    spinRadius = MathHelper.Clamp(spinRadius, 0, 34);
                 }
                 else
                 {
@@ -177,22 +177,25 @@ namespace Legend.levels
 
         public virtual void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
-            foreach (Enemy e in enemies)
+            for (int ei = 0; ei < enemies.Count; ei++)
             {
                 foreach (Enemy en in enemies)
                 {
-                    if (e == en)
+                    if (enemies[ei] == en)
                     {
                         continue;
                     }
-                    if (e.Hitbox.Intersects(en.Hitbox))
+                    if (enemies[ei].speedoffset != Vector2.Zero && en.speedoffset != Vector2.Zero)
                     {
-                        Vector2 distance = e.pos - en.pos;
-                        e.speed = distance/15;
-                        en.speed = -distance/15;
+                        if (enemies[ei].Hitbox.Intersects(en.Hitbox))
+                        {
+                            Vector2 distance = enemies[ei].pos - en.pos;
+                            enemies[ei].speed = distance / 15;
+                            en.speed = -distance / 15;
+                        }
                     }
                 }
-                e.Update(gameTime, player);
+                enemies[ei].Update(gameTime, player);
             }
             player.Update(ks, grassBarriers, ms, gameTime);
             if (starting)
@@ -222,14 +225,25 @@ namespace Legend.levels
 
         public virtual void enemyHit(int index)
         {
-            Vector2 test = enemies[index].pos - Game1.inventory.sword.position;
-            enemies[index].speed = test / 7;            
-            particleSystem.position = enemies[index].pos;
-            for (int i = 0; i < 6; i++)
+            if (enemies[index].speedoffset != Vector2.Zero)
             {
-                particleSystem.addParticle();
+                Vector2 test = enemies[index].pos - Game1.inventory.sword.position;
+                enemies[index].speed = test / 7;
+                particleSystem.position = enemies[index].pos;
+                enemies[index].hurt(Game1.inventory.weapon.damage);
+                for (int i = 0; i < 3; i++)
+                {
+                    particleSystem.addParticle();
+                }
             }
-            
+        }
+
+        public virtual void deadenemyparticle(ParticleSystem deathparticles, int count)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                deathparticles.addParticle();
+            }
         }
     }
 }

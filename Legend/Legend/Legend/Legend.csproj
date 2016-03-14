@@ -104,6 +104,7 @@
     <Compile Include="inventory\Misc.cs" />
     <Compile Include="inventory\Weapon.cs" />
     <Compile Include="functions\Background.cs" />
+    <Compile Include="levels\GameOver.cs" />
     <Compile Include="levels\objects\ExitPortal.cs" />
     <Compile Include="functions\TransitionToLevelEffect.cs" />
     <Compile Include="levels\Level.cs" />

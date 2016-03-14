@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="54784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="56320">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>c3Sv/vg2ZWOHy98Yox3nnuGcGB8=</dsig:DigestValue>
+        <dsig:DigestValue>Gw6a8mXmB3hMCzsa6I6WS1dUT+w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,6 +151,15 @@
       <dsig:DigestValue>yJZXNYOrmSeUL4nRPA86pIf5MKg=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\guis\gameovertexture.xnb" size="522187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>RbewIM1p49J+jg0XKoBeDxQxvxU=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\guis\inventory.xnb" size="61999">
     <hash>
       <dsig:Transforms>
@@ -185,6 +194,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>PsNM2rPUkFu3muhlojz2vcmHMvs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\monsters\slimeparticle.xnb" size="763">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>V+88CuReA/NkFJwTboVcMRFrGjw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\mouse\mouse.xnb" size="587">
@@ -268,13 +286,13 @@
       <dsig:DigestValue>M3YaeE/QDS9quAt9qFPP+rARh08=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\player\heartparticle.xnb" size="2560187">
+  <file name="Content\player\heartparticle.xnb" size="443">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>7v8n2mBAuLDwwgjDsvDAUext9Y0=</dsig:DigestValue>
+      <dsig:DigestValue>rhvoheEaSfXWWIpzKJufNDHl5PI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\player\playerattack.xnb" size="112939">

@@ -29,7 +29,7 @@ namespace Legend.particles
             this.color = color;
             this.speed = new Vector2((float)(rand.Next((int)speedX.X, (int)speedX.Y)+rand.NextDouble()), (float)(rand.Next((int)speedY.X, (int)speedY.Y)+rand.NextDouble()));
             this.rotationSpeed = ((float)(rand.Next((int)rotation.X, (int)rotation.Y) + rand.NextDouble())) / 10;
-            this.drag = (float)(rand.Next((int)drag.X, (int)drag.Y));
+            this.drag = (float)(rand.Next((int)(drag.X*100), (int)(drag.Y*100)))/100;
             this.position = position;
             this.origin = new Vector2((particleTxt.Width) / 2, (particleTxt.Height) / 2);
         }

@@ -5,6 +5,7 @@ using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 using Legend.characters;
+using Legend.particles;
 
 namespace Legend.enemy
 {
@@ -16,8 +17,8 @@ namespace Legend.enemy
                                 new Rectangle(0, 33, 32, 30),
                                 new Rectangle(32, 33, 30, 28)
                               };
-        public Glob(Texture2D txture, Vector2 position)
-            : base(txture, position, sources, 1)
+        public Glob(Texture2D txture, Vector2 position, Texture2D slimeparticle)
+            : base(txture, position, sources, 1, 15, new ParticleSystem(slimeparticle, 0f, 1f, Color.White, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 3), 1.1f, 1.1f, -3f, 2f, Vector2.Zero, new TimeSpan(10000, 0, 0, 0), true, 0.000005f))
         {
 
         }

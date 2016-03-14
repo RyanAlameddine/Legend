@@ -19,7 +19,7 @@ namespace Legend.levels.sublevels
     {
         Texture2D fourpixels;
 
-        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels)
+        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels, Texture2D slimeparticle)
             : base(playertxture, portaltxture, song)
         {
             player = new Player(playertxture, playerattack, new Vector2(150, 245));
@@ -28,8 +28,8 @@ namespace Legend.levels.sublevels
             exitportal = new ExitPortal(portaltxture, new Vector2(155, 250));
             player.State = PlayerState.Interacting;
             player._frame = player._downWalkingFrames[1];
-            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30)));
-            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150)));
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30), slimeparticle));
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150), slimeparticle));
             particleSystem.times = .00015f;
         }
 

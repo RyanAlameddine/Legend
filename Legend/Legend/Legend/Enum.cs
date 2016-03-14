@@ -18,7 +18,8 @@ namespace Legend
         Home,
         Intro,
         Continue,
-        Level
+        Level,
+        GameOver
     }
 
     public enum PlayerState
