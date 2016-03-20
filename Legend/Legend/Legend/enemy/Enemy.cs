@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Legend.characters;
 using Legend.particles;
+using Legend.inventory;
+using Legend.weapons;
 
 namespace Legend.enemy
 {
@@ -28,7 +30,8 @@ namespace Legend.enemy
         ParticleSystem deadparticles;
         TimeSpan deathtimer;
         bool draw = true;
-        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage, int health, ParticleSystem deadparticles)
+        Dictionary<inventory.Item, Vector2> itemdrops = new Dictionary<inventory.Item, Vector2>();
+        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage, int health, ParticleSystem deadparticles, Dictionary<inventory.Item, Vector2> itemdrops)
         {
             this.pos = pos;
             this.txture = txture;
@@ -42,6 +45,7 @@ namespace Legend.enemy
             Hitbox = new Rectangle((int)(pos.X), (int)(pos.Y), (int)(source.Width/2), (int)(source.Height/2));
             speedoffset.X = -6/15 + 1;
             speedoffset.Y = speedoffset.X;
+            this.itemdrops = itemdrops;
         }
 
         public virtual void Update(GameTime gameTime, Player p)
@@ -155,6 +159,18 @@ namespace Legend.enemy
                 Game1.levellist[Game1.level - 1].deadenemyparticle(deadparticles, 100);
                 speedoffset = Vector2.Zero;
                 draw = false;
+                Item add = new Weapon("", GameContent.fourpixels, 0, WeaponPower.no, 0);
+                for (int i = 0; i < itemdrops.Count; i++)
+                {
+                    if (Game1.rand.Next((int)itemdrops[itemdrops.Keys.ToList()[i]].X, (int)itemdrops[itemdrops.Keys.ToList()[i]].Y) == 0)
+                    {
+                        add = itemdrops.Keys.ToList()[i];
+                        break;
+                    }
+                }
+                if(add.name != ""){
+                    Game1.levellist[Game1.level - 1].mobdropsonfloor.Add(new ItemOnFloor(add, pos, .2f));
+                }
             }
         }
     }

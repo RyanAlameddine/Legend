@@ -212,15 +212,6 @@
       <Time>2015-11-08T10:18:10-08:00</Time>
     </Item>
     <Item>
-      <Source>player\heartparticle.png</Source>
-      <Name>player\heartparticle</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\heartparticle.xnb</Output>
-      <Time>2016-03-13T15:20:31.0533455-07:00</Time>
-    </Item>
-    <Item>
       <Source>guis\gameovertexture.png</Source>
       <Name>guis\gameovertexture</Name>
       <Importer>TextureImporter</Importer>
@@ -237,6 +228,24 @@
       <Options>None</Options>
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\slimeparticle.xnb</Output>
       <Time>2016-03-13T17:48:35.7505284-07:00</Time>
+    </Item>
+    <Item>
+      <Source>player\hitparticle.png</Source>
+      <Name>player\hitparticle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\hitparticle.xnb</Output>
+      <Time>2016-03-13T15:20:31.0533455-07:00</Time>
+    </Item>
+    <Item>
+      <Source>items\gold.png</Source>
+      <Name>items\gold</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\items\gold.xnb</Output>
+      <Time>2016-03-20T10:43:30.8029134-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

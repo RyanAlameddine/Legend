@@ -125,7 +125,7 @@ namespace Legend
             levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels, GameContent.slimeparticle);
             gameover = new GameOver(GameContent.gameovertexture, GameContent.button, GameContent.buttonhover, GameContent.normalfont);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
-            healthManager = new HealthManager(GameContent.heartparticle, GameContent.fourpixels);
+            healthManager = new HealthManager(GameContent.hitparticle, GameContent.fourpixels);
         }
         protected override void Update(GameTime gameTime)
         {

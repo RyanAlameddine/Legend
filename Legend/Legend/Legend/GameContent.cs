@@ -28,9 +28,10 @@ namespace Legend
         public static Texture2D fourpixels;
         public static Texture2D logo;
         public static Texture2D glob;
-        public static Texture2D heartparticle;
+        public static Texture2D hitparticle;
         public static Texture2D slimeparticle;
         public static Texture2D gameovertexture;
+        public static Texture2D gold;
 
         public static Song cantina_theme;
         public static Song eightbit;
@@ -62,9 +63,10 @@ namespace Legend
             GameContent.fourpixels = content.Load<Texture2D>("fourpixels");
             GameContent.logo = content.Load<Texture2D>("logo");
             GameContent.glob = content.Load<Texture2D>("monsters/glob");
-            GameContent.heartparticle = content.Load<Texture2D>("player/heartparticle");
+            GameContent.hitparticle = content.Load<Texture2D>("player/hitparticle");
             GameContent.gameovertexture = content.Load<Texture2D>("guis/gameovertexture");
             GameContent.slimeparticle = content.Load<Texture2D>("monsters/slimeparticle");
+            GameContent.gold = content.Load<Texture2D>("items/gold");
 
             GameContent.eightbit = content.Load<Song>("music/8bit");
             GameContent.cantina_theme = content.Load<Song>("music/cantina_theme");

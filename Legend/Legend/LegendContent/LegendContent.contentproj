@@ -87,8 +87,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="player\heartparticle.png">
-      <Name>heartparticle</Name>
+    <Compile Include="player\hitparticle.png">
+      <Name>hitparticle</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>
@@ -209,6 +209,14 @@
   <ItemGroup>
     <Compile Include="monsters\slimeparticle.png">
       <Name>slimeparticle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="items\gold.png">
+      <Name>gold</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
     </Compile>

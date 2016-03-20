@@ -12,6 +12,7 @@ using Legend.levels.objects;
 using Legend.functions;
 using Legend.enemy;
 using Legend.particles;
+using Legend.inventory;
 
 namespace Legend.levels.sublevels
 {
@@ -28,8 +29,10 @@ namespace Legend.levels.sublevels
             exitportal = new ExitPortal(portaltxture, new Vector2(155, 250));
             player.State = PlayerState.Interacting;
             player._frame = player._downWalkingFrames[1];
-            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30), slimeparticle));
-            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150), slimeparticle));
+            Dictionary<inventory.Item, Vector2> globdrops = new Dictionary<inventory.Item, Vector2>();
+            globdrops.Add(Items.GetItem("Gold Nugget"), new Vector2(0, 2));
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30), slimeparticle, globdrops));
+            enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150), slimeparticle, globdrops));
             particleSystem.times = .00015f;
         }
 

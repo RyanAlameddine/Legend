@@ -21,9 +21,10 @@ Content\music\8bit.xnb
 Content\sound effects\typewriter.xnb
 Content\sound effects\typewriter-space.xnb
 Content\music\arcade.xnb
-Content\player\heartparticle.xnb
 Content\guis\gameovertexture.xnb
 Content\monsters\slimeparticle.xnb
+Content\player\hitparticle.xnb
+Content\items\gold.xnb
 Content\music\cantina_theme.wma
 Content\music\8bit.wma
 Content\music\arcade.wma

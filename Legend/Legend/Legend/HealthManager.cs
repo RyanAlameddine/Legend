@@ -10,13 +10,13 @@ namespace Legend
     public class HealthManager
     {
         public float health = 10;
-        Texture2D heartparticle;
+        Texture2D hitparticle;
         Texture2D pixels;
         Vector2 position;
         List<int> noshow = new List<int>();
-        public HealthManager(Texture2D heartparticle, Texture2D pixels)
+        public HealthManager(Texture2D hitparticle, Texture2D pixels)
         {
-            this.heartparticle = heartparticle;
+            this.hitparticle = hitparticle;
             this.pixels = pixels;
             position = new Vector2(10, 10);
             noshow.Add(2);

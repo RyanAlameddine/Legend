@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="56320">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="57344">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Gw6a8mXmB3hMCzsa6I6WS1dUT+w=</dsig:DigestValue>
+        <dsig:DigestValue>zs+89UsUy6JDcctV0UX52yXgH5k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -176,6 +176,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>8ZPfcy++9WmJvRDwh/vXRx6JQvQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\items\gold.xnb" size="3307">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>40ytMqbmlB0i8KmmcUyEFjZwcIo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\logo.xnb" size="122907">
@@ -286,7 +295,7 @@
       <dsig:DigestValue>M3YaeE/QDS9quAt9qFPP+rARh08=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\player\heartparticle.xnb" size="443">
+  <file name="Content\player\hitparticle.xnb" size="443">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />

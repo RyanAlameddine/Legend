@@ -275,6 +275,7 @@ C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Deb
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playerattack.xnb
 C:\Users\Ryan\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\glob.xnb
-C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\heartparticle.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\gameovertexture.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\slimeparticle.xnb
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\hitparticle.xnb
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\items\gold.xnb

@@ -13,6 +13,7 @@ using System.Xml;
 using Legend.inventory;
 using Legend.enemy;
 using Legend.particles;
+using Legend.weapons;
 
 namespace Legend.levels
 {
@@ -35,13 +36,14 @@ namespace Legend.levels
         public List<Enemy> enemies = new List<Enemy>();
         protected ParticleSystem particleSystem;
         protected List<Sprite> grassBarriers = new List<Sprite>();
+        public List<ItemOnFloor> mobdropsonfloor = new List<ItemOnFloor>();
 
         public Level(Texture2D playermove, Texture2D portal, Song music)
         {
             this.music = music;
             this.portal = portal;
             this.playermove = playermove;
-            particleSystem = new ParticleSystem(GameContent.heartparticle, 0f, .1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, .00015f);
+            particleSystem = new ParticleSystem(GameContent.hitparticle, 0f, .1f, Color.Red, new Vector2(-2, 2), new Vector2(-2, 2), new TimeSpan(0, 0, 0, 0, 500), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, .00015f);
         }
 
         public void Portal(GameTime gameTime, Color portalcolor)
@@ -197,6 +199,21 @@ namespace Legend.levels
                 }
                 enemies[ei].Update(gameTime, player);
             }
+            for (int i = 0; i < mobdropsonfloor.Count; i++)
+            {
+                mobdropsonfloor[i].Update(gameTime);
+                if (player.DidPickUpWeapon(ks, mobdropsonfloor[i]) && mobdropsonfloor[i].State != ItemOnGroundState.GettingPickedUp)
+                {
+                    player.State = PlayerState.Interacting;
+                    mobdropsonfloor[i].State = ItemOnGroundState.GettingPickedUp;
+                }
+                if (mobdropsonfloor[i].State == ItemOnGroundState.DoneAnimating)
+                {
+                    mobdropsonfloor[i].State = ItemOnGroundState.OnGround;
+                    player.State = PlayerState.Moving;
+                    mobdropsonfloor.Remove(mobdropsonfloor[i]);
+                }
+            }
             player.Update(ks, grassBarriers, ms, gameTime);
             if (starting)
             {
@@ -220,6 +237,10 @@ namespace Legend.levels
             foreach (Enemy e in enemies)
             {
                 e.Draw(spriteBatch);
+            }
+            foreach (ItemOnFloor iof in mobdropsonfloor)
+            {
+                iof.Draw(spriteBatch);
             }
         }
 
