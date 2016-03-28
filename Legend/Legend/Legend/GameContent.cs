@@ -22,6 +22,7 @@ namespace Legend
         public static Texture2D grassbarrier;
         public static Texture2D foamsword;
         public static Texture2D portal;
+        public static Texture2D skyportal;
         public static Texture2D invtxture;
         public static Texture2D selectedinventory;
         public static Texture2D tshirt;
@@ -58,6 +59,7 @@ namespace Legend
             GameContent.playerattack = content.Load<Texture2D>("player/playerattack");
             GameContent.grassbarrier = content.Load<Texture2D>("obstacles/grassbarrier");
             GameContent.portal = content.Load<Texture2D>("objects/portal");
+            GameContent.skyportal = content.Load<Texture2D>("objects/skyportal");
             GameContent.invtxture = content.Load<Texture2D>("guis/inventory");
             GameContent.selectedinventory = content.Load<Texture2D>("buttons/selectedinventory");
             GameContent.fourpixels = content.Load<Texture2D>("fourpixels");

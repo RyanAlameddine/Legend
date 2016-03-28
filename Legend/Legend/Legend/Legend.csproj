@@ -123,7 +123,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Sprite.cs" />
-    <Compile Include="weapons\ItemOnFloor.cs" />
+    <Compile Include="inventory\ItemOnFloor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

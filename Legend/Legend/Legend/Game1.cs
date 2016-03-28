@@ -122,7 +122,7 @@ namespace Legend
             home = new Home(GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.logo);
             intro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, false);
             continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
-            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels, GameContent.slimeparticle);
+            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels, GameContent.slimeparticle, GameContent.skyportal);
             gameover = new GameOver(GameContent.gameovertexture, GameContent.button, GameContent.buttonhover, GameContent.normalfont);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
             healthManager = new HealthManager(GameContent.hitparticle, GameContent.fourpixels);
@@ -208,25 +208,26 @@ namespace Legend
             }
             else
             {
+                resetRend = false;
+            }
 
-                if (toinitialize)
-                {
-                    transitioneffect = false;
-                    rendpos = Vector2.Zero;
-                    rendColor = Color.White;
-                    level = 1;
-                    levellist = new List<Level>();
-                    rendscale = 1f;
-                    name = "";
-                    screen = Screens.Home;
-                    rendOffset = 0;
-                    resetRend = false;
-                    deathspeed = 1;
-                    toinitialize = false;
-                    Size = new List<int>();
-                    currentSize = 0;
-                    Initialize();
-                }
+            if (toinitialize)
+            {
+                transitioneffect = false;
+                rendpos = Vector2.Zero;
+                rendColor = Color.White;
+                level = 1;
+                levellist = new List<Level>();
+                rendscale = 1f;
+                name = "";
+                screen = Screens.Home;
+                rendOffset = 0;
+                resetRend = false;
+                deathspeed = 1;
+                toinitialize = false;
+                Size = new List<int>();
+                currentSize = 0;
+                Initialize();
                 resetRend = false;
             }
         }

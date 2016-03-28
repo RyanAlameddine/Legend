@@ -169,7 +169,7 @@ namespace Legend.enemy
                     }
                 }
                 if(add.name != ""){
-                    Game1.levellist[Game1.level - 1].mobdropsonfloor.Add(new ItemOnFloor(add, pos, .2f));
+                    Game1.levellist[Game1.level - 1].mobdropsonfloor.Add(new ItemOnFloor(add, pos, .2f, .001f, 0.08f, 6.25f));
                 }
             }
         }

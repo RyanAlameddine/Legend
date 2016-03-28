@@ -57,8 +57,9 @@ namespace Legend
             }
             if (show)
             {
-                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Red, 0f, Vector2.Zero, new Vector2(4, 1) * Settings.Scale, SpriteEffects.None, .55f);
-                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Lime, 0f, Vector2.Zero, new Vector2(.4f*health, 1) * Settings.Scale, SpriteEffects.None, .56f);
+                float scalemultiplier = (float) (Game1.levellist[Game1.level - 1].player.scale * 5.5);
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Red, 0f, Vector2.Zero, new Vector2(4, 1) * scalemultiplier * Settings.Scale, SpriteEffects.None, .55f);
+                spriteBatch.Draw(pixels, position * Settings.Scale, null, Color.Lime, 0f, Vector2.Zero, new Vector2(.4f * health, 1) * scalemultiplier * Settings.Scale, SpriteEffects.None, .56f);
             }
         }
 

@@ -9,13 +9,15 @@ namespace Legend.inventory
 {
     public class Misc : Item
     {
-        public Misc(string name, Texture2D texture, int cost, string description)
+        string _description;
+        public Misc(string name, Texture2D texture, int cost, string _description)
             :base(texture)
         {
             this.name = name;
             this.cost = cost;
-            this.description = name + " is a " + description + ".\nYou can sell it for " + cost + " coins.";
+            this.description = "This " + name + " is " + _description + ".\nYou can sell it for " + cost + " coins.";
             type = ItemType.Misc;
+            this._description = _description;
         }
 
         public override void Update()
@@ -30,7 +32,7 @@ namespace Legend.inventory
 
         public override Item Copy()
         {
-            return new Misc(name, texture, cost, description);
+            return new Misc(name, texture, cost, _description);
         }
     }
 }

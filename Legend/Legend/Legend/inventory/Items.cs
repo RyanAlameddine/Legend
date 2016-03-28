@@ -11,7 +11,7 @@ namespace Legend.inventory
         {
             { "Foam Sword", new Weapon("Foam Sword", GameContent.foamsword, 1, WeaponPower.no, 1) },
             { "T-Shirt Armour", new Armour("T-Shirt Armour", GameContent.tshirt, 1, 1) },
-            { "Gold Nugget", new Misc("Gold Nugget", GameContent.gold, 5, "A shiny gold nugget!") }
+            { "Gold Nugget", new Misc("Gold Nugget", GameContent.gold, 5, "shiny!") }
         };
 
 

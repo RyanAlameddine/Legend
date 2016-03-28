@@ -120,6 +120,10 @@ namespace Legend.weapons
             {
                 spriteBatch.Draw(txture, position * Settings.Scale, null, Color.White, rotation, hilt, .6f * Settings.Scale, SpriteEffects.None, layerDepth);
             }
+            else
+            {
+                position = new Vector2(-1000, -1000);
+            }
         }
 
         public void stick()

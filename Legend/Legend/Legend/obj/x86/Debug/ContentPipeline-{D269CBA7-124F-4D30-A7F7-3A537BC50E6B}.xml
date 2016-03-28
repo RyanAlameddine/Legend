@@ -245,7 +245,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\items\gold.xnb</Output>
-      <Time>2016-03-20T10:43:30.8029134-07:00</Time>
+      <Time>2016-03-27T17:02:23.6787598-07:00</Time>
+    </Item>
+    <Item>
+      <Source>objects\sky portal.png</Source>
+      <Name>objects\skyportal</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\skyportal.xnb</Output>
+      <Time>2016-03-27T17:47:42.0692366-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

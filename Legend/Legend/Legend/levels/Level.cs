@@ -23,6 +23,7 @@ namespace Legend.levels
         public Player player;
         public Background background;
         public bool spinning;
+        public bool exitspinning;
         public Vector2 playerToPortalCenter;
         public float spinRadius, angle;
         public Portal portalobj;
@@ -30,8 +31,8 @@ namespace Legend.levels
         bool starting = true;
         bool smaller = false;
         Song music;
-        TimeSpan timer;
-        TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
+        public TimeSpan timer;
+        public TimeSpan timeUntilNextLevel = new TimeSpan(0, 0, 0, 5, 0);
         public ExitPortal exitportal;
         public List<Enemy> enemies = new List<Enemy>();
         protected ParticleSystem particleSystem;
@@ -141,15 +142,15 @@ namespace Legend.levels
 
         public void ExitPortal()
         {
-            if (player.Hitbox.Intersects(exitportal.Hitbox) && !spinning && !exitportal.hidden && !smaller)
+            if (player.Hitbox.Intersects(exitportal.Hitbox) && !exitspinning && !exitportal.hidden && !smaller)
             {
-                spinning = true;
+                exitspinning = true;
                 playerToPortalCenter = new Vector2(player._position.X + player.Hitbox.Width / 2 - exitportal.Position.X + exitportal.Hitbox.Width / 2, player._position.Y + player.Hitbox.Height / 2 - exitportal.Position.Y + exitportal.Hitbox.Height / 2);
                 spinRadius = playerToPortalCenter.Length();
                 angle = MathHelper.ToDegrees((float)Math.Atan2(playerToPortalCenter.Y, playerToPortalCenter.X));
                 player.scale = 0f;
             }
-            if (spinning)
+            if (exitspinning)
             {
 
                 angle -= .12f;
@@ -168,7 +169,7 @@ namespace Legend.levels
                     player.scale = 1/5.5f;
                     player.State = PlayerState.Idle;
                     exitportal.state = PortalState.Smaller;
-                    spinning = false;
+                    exitspinning = false;
                 }
                 if (angle > 360)
                 {

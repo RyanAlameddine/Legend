@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="57344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="58368">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>zs+89UsUy6JDcctV0UX52yXgH5k=</dsig:DigestValue>
+        <dsig:DigestValue>WPJqtu0Rbw6r+dDOhCBDudYlD98=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -178,13 +178,13 @@
       <dsig:DigestValue>8ZPfcy++9WmJvRDwh/vXRx6JQvQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\items\gold.xnb" size="3307">
+  <file name="Content\items\gold.xnb" size="3787">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>40ytMqbmlB0i8KmmcUyEFjZwcIo=</dsig:DigestValue>
+      <dsig:DigestValue>wyhUCzqLwhpJHcEBzeBeVa6T3/k=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\logo.xnb" size="122907">
@@ -284,6 +284,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>ERplJ0Yx24d2WP/DNmeyC/HdWR0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\objects\skyportal.xnb" size="40187">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OYzmHqGLZuXzFbaTdtwL438BB/M=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\obstacles\grassbarrier.xnb" size="16571">

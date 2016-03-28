@@ -20,7 +20,7 @@ namespace Legend.levels.sublevels
     {
         Texture2D fourpixels;
 
-        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels, Texture2D slimeparticle)
+        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels, Texture2D slimeparticle, Texture2D skyportal)
             : base(playertxture, portaltxture, song)
         {
             player = new Player(playertxture, playerattack, new Vector2(150, 245));
@@ -31,16 +31,24 @@ namespace Legend.levels.sublevels
             player._frame = player._downWalkingFrames[1];
             Dictionary<inventory.Item, Vector2> globdrops = new Dictionary<inventory.Item, Vector2>();
             globdrops.Add(Items.GetItem("Gold Nugget"), new Vector2(0, 2));
+
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30), slimeparticle, globdrops));
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150), slimeparticle, globdrops));
+
             particleSystem.times = .00015f;
+            portalobj = new Portal(skyportal, new Vector2(155, 100));
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
+            portalobj.Update();
+            Portal(gameTime, Color.DarkBlue);
             exitportal.Update();
             ExitPortal();
-            base.Update(ks, ms, gameTime);
+            if (enemies.Count == 0)
+            {
+                portalobj.hidden = false;
+            }
             foreach (Tile tile in background.materials)
             {
                 if (player.Hitbox.Intersects(tile.Hitbox))
@@ -59,10 +67,12 @@ namespace Legend.levels.sublevels
                     }
                 }
             }
+            base.Update(ks, ms, gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            portalobj.Draw(spriteBatch);
             exitportal.Draw(spriteBatch);
             background.Draw(spriteBatch);
             player.Draw(spriteBatch);

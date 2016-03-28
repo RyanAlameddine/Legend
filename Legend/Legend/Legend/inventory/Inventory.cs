@@ -133,14 +133,17 @@ namespace Legend
             {
                 Vector2 pos = new Vector2(0, 0);
                 spriteBatch.Draw(invtxture, pos * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.7f);
-                spriteBatch.DrawString(font, description, new Vector2(12, 111) * Settings.Scale, Color.White, 0f, Vector2.Zero,(float)(.11  * Settings.Scale), SpriteEffects.None, .8f);
+                spriteBatch.DrawString(font, description, new Vector2(12, 111) * Settings.Scale, Color.White, 0f, Vector2.Zero, (float)(.11 * Settings.Scale), SpriteEffects.None, .8f);
                 pos.X += 11;
                 pos.Y += 28;
 
                 int counter = 1;
                 foreach (Item item in items)
                 {
-
+                    if (item.count > 1)
+                    {
+                        spriteBatch.DrawString(font, item.count.ToString(), (pos + new Vector2(4, 0)) * Settings.Scale, Color.Green, 0f, Vector2.Zero, (float)(.11 * Settings.Scale), SpriteEffects.None, .91f);
+                    }
                     if (item.equiptstatus == "equipped.")
                     {
                         spriteBatch.Draw(selectedinventory, pos * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1f * Settings.Scale, SpriteEffects.None, 0.8f);

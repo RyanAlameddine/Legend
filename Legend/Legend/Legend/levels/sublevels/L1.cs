@@ -28,9 +28,9 @@ namespace Legend.levels.sublevels
         {
             _grassbarrier = grassbarrier;
             _grass = grass;
-            _foamsword = foamsword;
+            _foamsword = foamsword; 
             sword = new ItemOnFloor(Items.GetItem("Foam Sword"), new Vector2(150, 30), 0.5f);
-            particleSystems = new ParticleSystem(sword.item.texture, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 2f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, 0.00002f);
+            particleSystems = new ParticleSystem(sword.item.texture, 0f, 1f, Color.White, new Vector2(-1, 1), new Vector2(-1, 1), new TimeSpan(0, 0, 3), 1f, 1f, 1f, 1f, new Vector2(150, 30), new TimeSpan(1000, 0, 1, 0, 0), true, 0.00002f);
             int dy = 50;
             float layerDepth = .2f;
             for (int i = 0; i < 8; i++)
@@ -89,7 +89,6 @@ namespace Legend.levels.sublevels
             particleSystems.Draw(spriteBatch);
             player.Draw(spriteBatch);
             portalobj.Draw(spriteBatch);
-
             for (int i = 0; i < grassBarriers.Count; i++)
             {
                 grassBarriers[i].Draw(spriteBatch);
