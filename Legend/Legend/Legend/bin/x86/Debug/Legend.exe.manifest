@@ -68,14 +68,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="58368">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Legend.exe" size="59392">
       <assemblyIdentity name="Legend" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WPJqtu0Rbw6r+dDOhCBDudYlD98=</dsig:DigestValue>
+        <dsig:DigestValue>ZazyYxwY1fOjUFbhANAdVJpjKuU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -176,6 +176,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>8ZPfcy++9WmJvRDwh/vXRx6JQvQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\guis\tooltip.xnb" size="170559">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>kgcP4LPqD/N0xf7B1+ebXlAcTbQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\items\gold.xnb" size="3787">
@@ -376,13 +385,13 @@
       <dsig:DigestValue>diNvdcDpDtGEMuMQIHpkKK3qVHc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="save.xml" size="60" writeableType="applicationData">
+  <file name="save.xml" size="64" writeableType="applicationData">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>cPLZFwYRFQ4mpG3D3kVJiDTfesQ=</dsig:DigestValue>
+      <dsig:DigestValue>NIrNzRoQ+5pBnwHIHz9Zl8QQBnM=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

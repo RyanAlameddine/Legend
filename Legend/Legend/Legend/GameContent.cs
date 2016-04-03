@@ -33,6 +33,7 @@ namespace Legend
         public static Texture2D slimeparticle;
         public static Texture2D gameovertexture;
         public static Texture2D gold;
+        public static Texture2D tooltip;
 
         public static Song cantina_theme;
         public static Song eightbit;
@@ -69,6 +70,7 @@ namespace Legend
             GameContent.gameovertexture = content.Load<Texture2D>("guis/gameovertexture");
             GameContent.slimeparticle = content.Load<Texture2D>("monsters/slimeparticle");
             GameContent.gold = content.Load<Texture2D>("items/gold");
+            GameContent.tooltip = content.Load<Texture2D>("guis/tooltip");
 
             GameContent.eightbit = content.Load<Song>("music/8bit");
             GameContent.cantina_theme = content.Load<Song>("music/cantina_theme");

@@ -29,3 +29,4 @@ Content\monsters\slimeparticle.xnb
 Content\player\hitparticle.xnb
 Content\items\gold.xnb
 Content\objects\skyportal.xnb
+Content\guis\tooltip.xnb

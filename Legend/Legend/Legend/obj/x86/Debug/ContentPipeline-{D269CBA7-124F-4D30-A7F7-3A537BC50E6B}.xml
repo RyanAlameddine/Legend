@@ -256,6 +256,15 @@
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\skyportal.xnb</Output>
       <Time>2016-03-27T17:47:42.0692366-07:00</Time>
     </Item>
+    <Item>
+      <Source>guis\tooltip.png</Source>
+      <Name>guis\tooltip</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\tooltip.xnb</Output>
+      <Time>2016-04-03T09:40:47.5532501-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D269CBA7-124F-4D30-A7F7-3A537BC50E6B}</ContentProjectGUID>
