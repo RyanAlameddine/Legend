@@ -281,3 +281,5 @@ C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Deb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\items\gold.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\skyportal.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\tooltip.xnb
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\key.xnb
+C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\keydown.xnb

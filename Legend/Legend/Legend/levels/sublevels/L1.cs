@@ -12,6 +12,7 @@ using Legend.levels.objects;
 using Legend.inventory;
 using Microsoft.Xna.Framework.Media;
 using Legend.particles;
+using Legend.tooltip;
 
 namespace Legend.levels.sublevels
 {
@@ -22,8 +23,10 @@ namespace Legend.levels.sublevels
         Texture2D _foamsword;
         ItemOnFloor sword;
         ParticleSystem particleSystems;
+        bool tooltipenabled;
+        ToolTip tooltip;
 
-        public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song)
+        public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song, Texture2D tooltiptxture, SpriteFont font, Texture2D keytxture, Texture2D keydown)
             :base(playermove, portal, song)
         {
             _grassbarrier = grassbarrier;
@@ -50,14 +53,23 @@ namespace Legend.levels.sublevels
             }
 
             background = new Background(_grass);
-            player = new Player(playermove, playerattack, new Vector2(150, 300));
+            player = new Player(playermove, playerattack, new Vector2(145, 250));
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
+            List<ToolTipObj> objects = new List<ToolTipObj>();
+            objects.Add(new Text(1f, new Vector2(50, 10), .91f, font, "Use the WASD keys to move"));
+            objects.Add(new Key(1f, new Vector2(50, 10), .92f, font, 'A', keytxture, keydown));
+            tooltip = new ToolTip(tooltiptxture, objects);
+            tooltip.endposition = new Vector2(10, 270);
+            tooltip.enabled = !tooltip.enabled;
+            tooltip.velocity = new Vector2(0, 0f);
+            tooltipenabled = true;
         }
 
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
             sword.Update(gameTime);
+            tooltip.Update();
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);
             if (player.DidPickUpWeapon(ks, sword) && sword.State != ItemOnGroundState.GettingPickedUp)
@@ -76,11 +88,25 @@ namespace Legend.levels.sublevels
                 }
             }
             particleSystems.Update(gameTime);
+            if (ks.IsKeyDown(Keys.Space))
+            {
+                if (!tooltipenabled)
+                {
+                    tooltip.enabled = !tooltip.enabled;
+                    tooltip.velocity = new Vector2(0, -4f);
+                    tooltipenabled = true;
+                }
+            }
+            else
+            {
+                tooltipenabled = false;
+            }
             base.Update(ks, ms, gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            tooltip.Draw(spriteBatch);
             background.Draw(spriteBatch);
             if (portalobj.hidden)
             {

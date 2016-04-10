@@ -59,4 +59,10 @@ namespace Legend
         Weapon,
         Misc
     }
+
+    public enum ToolTipObjType
+    {
+        Text,
+        Key
+    }
 }

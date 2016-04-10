@@ -48,8 +48,6 @@ namespace Legend
         public static float deathspeed = 1;
         public static bool toinitialize = false;
         public static bool quitbool = false;
-        public static ToolTip tooltip;
-        bool xyz = false;
 
         List<int> Size = new List<int>();
         int currentSize = 0;
@@ -124,17 +122,15 @@ namespace Legend
             home = new Home(GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.logo);
             intro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, false);
             continueintro = new Intro(GameContent.normalfont, Content.Load<Texture2D>("guis/text box"), GameContent.button, GameContent.buttonhover, GameContent.typewriter, GameContent.spacebar, true);
-            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels, GameContent.slimeparticle, GameContent.skyportal);
+            levellist = SubLevels.registerLevels(GameContent.playermove, GameContent.playerattack, GameContent.grass, GameContent.grassbarrier, GameContent.foamsword, GameContent.portal, GameContent.eightbit, GameContent.cantina_theme, GameContent.arcade, GameContent.normalfont, GameContent.button, GameContent.buttonhover, GameContent.tshirt, GameContent.fourpixels, GameContent.slimeparticle, GameContent.skyportal, GameContent.tooltip, GameContent.descriptionsfont, GameContent.keytxture, GameContent.keydown);
             gameover = new GameOver(GameContent.gameovertexture, GameContent.button, GameContent.buttonhover, GameContent.normalfont);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
             healthManager = new HealthManager(GameContent.hitparticle, GameContent.fourpixels);
-            tooltip = new ToolTip(GameContent.tooltip);
         }
         protected override void Update(GameTime gameTime)
         {
             ms = Mouse.GetState();
             ks = Keyboard.GetState();
-            tooltip.Update();
             if (ks.IsKeyDown(Keys.LeftControl) && lastks.IsKeyUp(Keys.LeftControl))
             {
                 currentSize++;
@@ -169,20 +165,6 @@ namespace Legend
             ttle.Update();
             healthManager.Update();
 
-            if (ks.IsKeyDown(Keys.Space))
-            {
-                if (!xyz)
-                {
-                    tooltip.enabled = !tooltip.enabled;
-                    tooltip.velocity = new Vector2(0, -4f);
-                    xyz = true;
-                }
-            }
-            else
-            {
-                xyz = false;
-            }
-
             base.Update(gameTime);
         }
 
@@ -212,7 +194,6 @@ namespace Legend
 
             spriteBatch.Begin();
             spriteBatch.Draw(rend, rendpos, null, rendColor, 0f, Vector2.Zero, (float)rendscale, SpriteEffects.None, 0.1f);
-            tooltip.Draw(spriteBatch);
             spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
             spriteBatch.End();
             base.Draw(gameTime);

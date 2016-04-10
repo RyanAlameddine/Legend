@@ -265,6 +265,24 @@
       <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\tooltip.xnb</Output>
       <Time>2016-04-03T09:40:47.5532501-07:00</Time>
     </Item>
+    <Item>
+      <Source>buttons\key.png</Source>
+      <Name>buttons\key</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\key.xnb</Output>
+      <Time>2016-04-10T10:47:22.097908-07:00</Time>
+    </Item>
+    <Item>
+      <Source>buttons\keydown.png</Source>
+      <Name>buttons\keydown</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\keydown.xnb</Output>
+      <Time>2016-04-10T10:47:22.097908-07:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <ContentProjectGUID>{D269CBA7-124F-4D30-A7F7-3A537BC50E6B}</ContentProjectGUID>

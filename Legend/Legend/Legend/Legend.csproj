@@ -110,7 +110,10 @@
     <Compile Include="levels\Level.cs" />
     <Compile Include="levels\Home.cs" />
     <Compile Include="levels\Intro.cs" />
-    <Compile Include="ToolTip.cs" />
+    <Compile Include="tooltip\Key.cs" />
+    <Compile Include="tooltip\Text.cs" />
+    <Compile Include="tooltip\ToolTip.cs" />
+    <Compile Include="tooltip\ToolTipObj.cs" />
     <Compile Include="weapons\Sword.cs" />
     <Compile Include="levels\SubLevels.cs" />
     <Compile Include="levels\sublevels\L1.cs" />

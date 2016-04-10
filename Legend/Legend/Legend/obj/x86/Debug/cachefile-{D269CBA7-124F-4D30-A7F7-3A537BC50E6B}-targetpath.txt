@@ -30,3 +30,5 @@ Content\player\hitparticle.xnb
 Content\items\gold.xnb
 Content\objects\skyportal.xnb
 Content\guis\tooltip.xnb
+Content\buttons\key.xnb
+Content\buttons\keydown.xnb
