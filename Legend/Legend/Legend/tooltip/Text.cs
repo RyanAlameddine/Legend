@@ -21,7 +21,7 @@ namespace Legend.tooltip
 
         public override void Draw(SpriteBatch spriteBatch, Vector2 toolTipPos)
         {
-            spriteBatch.DrawString(font, text, (pos + toolTipPos) * Settings.Scale, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, layerdepth);
+            spriteBatch.DrawString(font, text, (pos + toolTipPos) * Settings.Scale, Color.White, 0f, Vector2.Zero, scale * Settings.Scale, SpriteEffects.None, layerdepth);
             base.Draw(spriteBatch, toolTipPos);
         }
     }

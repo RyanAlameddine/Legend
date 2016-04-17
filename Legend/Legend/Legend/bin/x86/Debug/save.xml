@@ -25,4 +25,135 @@
   <user name="." level="1">
     <inventory />
   </user>
+  <user name="cheese" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="awddefcrf" level="1">
+    <inventory />
+  </user>
+  <user name="hi" level="1">
+    <inventory />
+  </user>
+  <user name="a" level="1">
+    <inventory />
+  </user>
+  <user name="asada" level="1">
+    <inventory />
+  </user>
+  <user name="asddfsd" level="1">
+    <inventory />
+  </user>
+  <user name="adad" level="1">
+    <inventory />
+  </user>
+  <user name="adaaa" level="1">
+    <inventory />
+  </user>
+  <user name="cvbgfghd" level="1">
+    <inventory />
+  </user>
+  <user name="adadaad" level="1">
+    <inventory />
+  </user>
+  <user name="NOUN" level="1">
+    <inventory />
+  </user>
+  <user name="aadfaffncg" level="1">
+    <inventory />
+  </user>
+  <user name="gjk" level="1">
+    <inventory />
+  </user>
+  <user name=",,,,  a" level="1">
+    <inventory />
+  </user>
+  <user name="12345678910" level="1">
+    <inventory />
+  </user>
+  <user name="asdf" level="1">
+    <inventory />
+  </user>
+  <user name="ghj,h" level="1">
+    <inventory />
+  </user>
+  <user name="88888888" level="1">
+    <inventory />
+  </user>
+  <user name="adadaadw" level="1">
+    <inventory />
+  </user>
+  <user name="aadadad" level="1">
+    <inventory />
+  </user>
+  <user name="adaadadad" level="1">
+    <inventory />
+  </user>
+  <user name="rar" level="1">
+    <inventory />
+  </user>
+  <user name="faaf" level="1">
+    <inventory />
+  </user>
+  <user name="www" level="1">
+    <inventory />
+  </user>
+  <user name="arararwr" level="1">
+    <inventory />
+  </user>
+  <user name="aadadadadadaw" level="1">
+    <inventory />
+  </user>
+  <user name="rararararar" level="1">
+    <inventory />
+  </user>
+  <user name="ddnedekj" level="1">
+    <inventory />
+  </user>
+  <user name="fhjrjs" level="1">
+    <inventory />
+  </user>
+  <user name="gnafg" level="1">
+    <inventory />
+  </user>
+  <user name="fff" level="1">
+    <inventory />
+  </user>
+  <user name="fuifuk" level="1">
+    <inventory />
+  </user>
+  <user name="v" level="1">
+    <inventory />
+  </user>
+  <user name="fgg" level="1">
+    <inventory />
+  </user>
+  <user name="adaad" level="1">
+    <inventory />
+  </user>
+  <user name="j" level="1">
+    <inventory />
+  </user>
+  <user name="asr" level="1">
+    <inventory />
+  </user>
+  <user name="adaadaaaad" level="1">
+    <inventory />
+  </user>
+  <user name="cx" level="1">
+    <inventory />
+  </user>
+  <user name="LKLLJoj" level="1">
+    <inventory />
+  </user>
+  <user name="xfbmgf" level="1">
+    <inventory />
+  </user>
+  <user name="idk" level="1">
+    <inventory />
+  </user>
+  <user name="aaf" level="1">
+    <inventory />
+  </user>
 </users>

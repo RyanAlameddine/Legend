@@ -57,8 +57,11 @@ namespace Legend.levels.sublevels
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
             List<ToolTipObj> objects = new List<ToolTipObj>();
-            objects.Add(new Text(1f, new Vector2(50, 10), .91f, font, "Use the WASD keys to move"));
-            objects.Add(new Key(1f, new Vector2(50, 10), .92f, font, 'A', keytxture, keydown));
+            objects.Add(new Text(.3f, new Vector2(125, 15), .91f, font, "Use WASD to move"));
+            objects.Add(new Key(.3f, new Vector2(50, 20), .921f, font, 'W', keytxture, keydown));
+            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'A', keytxture, keydown));
+            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'S', keytxture, keydown));
+            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'D', keytxture, keydown));
             tooltip = new ToolTip(tooltiptxture, objects);
             tooltip.endposition = new Vector2(10, 270);
             tooltip.enabled = !tooltip.enabled;

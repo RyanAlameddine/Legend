@@ -28,13 +28,13 @@ namespace Legend.tooltip
         {
             if (!down)
             {
-                spriteBatch.Draw(keytxture, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, layerdepth);
+                spriteBatch.Draw(keytxture, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, new Vector2(keytxture.Width/2, keytxture.Height/2), scale * Settings.Scale, SpriteEffects.None, layerdepth);
             }
             else
             {
-                spriteBatch.Draw(keydown, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, layerdepth);
+                spriteBatch.Draw(keydown, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, new Vector2(keydown.Width / 2, keydown.Height / 2), scale * Settings.Scale, SpriteEffects.None, layerdepth);
             }
-            spriteBatch.DrawString(font, key.ToString(), (pos + toolTipPos + new Vector2(13, 13)) * Settings.Scale, Color.White, 0f, Vector2.Zero, scale, SpriteEffects.None, layerdepth + 0.001f);
+            spriteBatch.DrawString(font, key.ToString(), (pos + toolTipPos) * Settings.Scale, Color.White, 0f, font.MeasureString(key.ToString())/2, scale * Settings.Scale, SpriteEffects.None, layerdepth + 0.001f);
             base.Draw(spriteBatch, toolTipPos);
         }
     }

@@ -110,6 +110,8 @@
     <Compile Include="levels\Level.cs" />
     <Compile Include="levels\Home.cs" />
     <Compile Include="levels\Intro.cs" />
+    <Compile Include="tooltip\KeyAnimation.cs" />
+    <Compile Include="tooltip\ToolTipAnimationManager.cs" />
     <Compile Include="tooltip\Key.cs" />
     <Compile Include="tooltip\Text.cs" />
     <Compile Include="tooltip\ToolTip.cs" />
