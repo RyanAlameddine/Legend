@@ -11,7 +11,7 @@ namespace Legend.tooltip
     {
         protected float scale;
         protected Vector2 pos;
-        protected float layerdepth;
+        public float layerdepth;
         ToolTipObjType type;
 
         public ToolTipObj(float scale, Vector2 pos, float layerdepth, ToolTipObjType type)
@@ -22,7 +22,7 @@ namespace Legend.tooltip
             this.type = type;
         }
 
-        public virtual void Update()
+        public virtual void Update(GameTime gameTime)
         {
 
         }

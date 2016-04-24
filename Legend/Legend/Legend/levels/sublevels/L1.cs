@@ -25,6 +25,7 @@ namespace Legend.levels.sublevels
         ParticleSystem particleSystems;
         bool tooltipenabled;
         ToolTip tooltip;
+        KeyAnimation keyanim;
 
         public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song, Texture2D tooltiptxture, SpriteFont font, Texture2D keytxture, Texture2D keydown)
             :base(playermove, portal, song)
@@ -57,11 +58,19 @@ namespace Legend.levels.sublevels
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
             List<ToolTipObj> objects = new List<ToolTipObj>();
-            objects.Add(new Text(.3f, new Vector2(125, 15), .91f, font, "Use WASD to move"));
-            objects.Add(new Key(.3f, new Vector2(50, 20), .921f, font, 'W', keytxture, keydown));
-            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'A', keytxture, keydown));
-            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'S', keytxture, keydown));
-            objects.Add(new Key(.3f, new Vector2(50, 20), .92f, font, 'D', keytxture, keydown));
+            objects.Add(new Text(.3f, new Vector2(110, 17), .91f, font, "Use WASD to move"));
+            List<Key> keys = new List<Key>();
+            keys.Add(new Key(.3f, new Vector2(50, 25), .911f, font, 'W', keytxture, keydown));
+            keys.Add(new Key(.3f, new Vector2(50, 25), .91f, font, 'A', keytxture, keydown));
+            keys.Add(new Key(.3f, new Vector2(50, 25), .91f, font, 'S', keytxture, keydown));
+            keys.Add(new Key(.3f, new Vector2(50, 25), .91f, font, 'D', keytxture, keydown));
+            ToolTipPlayer tooltipPlayer = new ToolTipPlayer(playermove, playerattack, new Vector2(80, 25), .91f, 1f/5.5f, Direction.Down);
+            objects.Add(tooltipPlayer);
+            keyanim = new KeyAnimation(keys, tooltipPlayer);
+            foreach (Key key in keys)
+            {
+                objects.Add(key);
+            }
             tooltip = new ToolTip(tooltiptxture, objects);
             tooltip.endposition = new Vector2(10, 270);
             tooltip.enabled = !tooltip.enabled;
@@ -72,7 +81,7 @@ namespace Legend.levels.sublevels
         public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
         {
             sword.Update(gameTime);
-            tooltip.Update();
+            tooltip.Update(gameTime);
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);
             if (player.DidPickUpWeapon(ks, sword) && sword.State != ItemOnGroundState.GettingPickedUp)
@@ -91,6 +100,7 @@ namespace Legend.levels.sublevels
                 }
             }
             particleSystems.Update(gameTime);
+            keyanim.Update(gameTime);
             if (ks.IsKeyDown(Keys.Space))
             {
                 if (!tooltipenabled)

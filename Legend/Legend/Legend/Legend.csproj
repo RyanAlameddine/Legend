@@ -111,10 +111,10 @@
     <Compile Include="levels\Home.cs" />
     <Compile Include="levels\Intro.cs" />
     <Compile Include="tooltip\KeyAnimation.cs" />
-    <Compile Include="tooltip\ToolTipAnimationManager.cs" />
     <Compile Include="tooltip\Key.cs" />
     <Compile Include="tooltip\Text.cs" />
     <Compile Include="tooltip\ToolTip.cs" />
+    <Compile Include="tooltip\ToolTipPlayer.cs" />
     <Compile Include="tooltip\ToolTipObj.cs" />
     <Compile Include="weapons\Sword.cs" />
     <Compile Include="levels\SubLevels.cs" />

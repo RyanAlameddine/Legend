@@ -10,7 +10,7 @@ namespace Legend.tooltip
     public class Key : ToolTipObj
     {
         SpriteFont font;
-        char key;
+        public char key;
         public bool down;
         Texture2D keytxture;
         Texture2D keydown;
@@ -29,12 +29,13 @@ namespace Legend.tooltip
             if (!down)
             {
                 spriteBatch.Draw(keytxture, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, new Vector2(keytxture.Width/2, keytxture.Height/2), scale * Settings.Scale, SpriteEffects.None, layerdepth);
+                spriteBatch.DrawString(font, key.ToString(), (pos + toolTipPos) * Settings.Scale, Color.White, 0f, font.MeasureString(key.ToString()) / 2, scale * .9f * Settings.Scale, SpriteEffects.None, layerdepth + 0.0001f);
             }
             else
             {
                 spriteBatch.Draw(keydown, (pos + toolTipPos) * Settings.Scale, null, Color.White, 0f, new Vector2(keydown.Width / 2, keydown.Height / 2), scale * Settings.Scale, SpriteEffects.None, layerdepth);
+                spriteBatch.DrawString(font, key.ToString(), (pos + toolTipPos) * Settings.Scale, Color.LightGray, 0f, font.MeasureString(key.ToString()) / 2, scale * .9f * Settings.Scale, SpriteEffects.None, layerdepth + 0.0001f);
             }
-            spriteBatch.DrawString(font, key.ToString(), (pos + toolTipPos) * Settings.Scale, Color.White, 0f, font.MeasureString(key.ToString())/2, scale * Settings.Scale, SpriteEffects.None, layerdepth + 0.001f);
             base.Draw(spriteBatch, toolTipPos);
         }
     }

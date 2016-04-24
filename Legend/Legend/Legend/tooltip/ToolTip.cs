@@ -32,7 +32,7 @@ namespace Legend
             this.objects = objects;
         }
 
-        public void Update()
+        public void Update(GameTime gameTime)
         {
             //               restoring force                   dampening force
             Vector2 force = k * (targetposition - position) - c * velocity;
@@ -57,7 +57,7 @@ namespace Legend
 
             foreach(ToolTipObj obj in objects)
             {
-                obj.Update();
+                obj.Update(gameTime);
             }
         }
 

@@ -77,6 +77,7 @@ namespace Legend.characters
         public PlayerState State = PlayerState.Idle;
         bool attackedlast = false;
         public bool resetspeed = true;
+
         public Player(Texture2D playermove, Texture2D playerattack, Vector2 position)
         {
             this.playermove = playermove;
@@ -357,7 +358,6 @@ namespace Legend.characters
 
         public void Draw(SpriteBatch spriteBatch)
         {
-
             spriteBatch.Draw(texture, _position * Settings.Scale, _frame, Color.White, 0f, Vector2.Zero, scale * Settings.Scale, SpriteEffects.None, 0.5f);
         }
     }

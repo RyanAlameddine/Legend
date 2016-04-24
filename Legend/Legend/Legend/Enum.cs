@@ -63,6 +63,14 @@ namespace Legend
     public enum ToolTipObjType
     {
         Text,
-        Key
+        Key,
+        Player
+    }
+
+    public enum KeyAnimationType
+    {
+        Inventory,
+        Player,
+        No
     }
 }
