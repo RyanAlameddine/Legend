@@ -20,6 +20,12 @@ namespace Legend
 {
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        int width;
+        int height;
+
+        public static Camera Camera;
+        BasicEffect effect;
+
         public static XmlDocument xmlDoc;
         public static String saveFile = "save.xml";
         public static Random rand = new Random();
@@ -104,10 +110,20 @@ namespace Legend
             }
 
             rend = new RenderTarget2D(GraphicsDevice, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+
+            Camera = new Legend.Camera(GraphicsDevice, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2));
+            effect = new BasicEffect(GraphicsDevice);
+            effect.VertexColorEnabled = true;
+            effect.TextureEnabled = true;
+            effect.World = Matrix.Identity;
+            effect.View = Camera.View;
+            effect.Projection = Camera.Projection;
         }
 
         protected override void LoadContent()
         {
+
+
             ttle = new TransitionToLevelEffect();
 
             GameContent.LoadContent(Content);
@@ -126,11 +142,15 @@ namespace Legend
             gameover = new GameOver(GameContent.gameovertexture, GameContent.button, GameContent.buttonhover, GameContent.normalfont);
             inventory = new Inventory(GameContent.invtxture, GameContent.selectedinventory);
             healthManager = new HealthManager(GameContent.hitparticle, GameContent.fourpixels);
+            width = GraphicsDevice.Viewport.Width;
+            height = GraphicsDevice.Viewport.Height;
         }
         protected override void Update(GameTime gameTime)
         {
             ms = Mouse.GetState();
             ks = Keyboard.GetState();
+            width = GraphicsDevice.Viewport.Width;
+            height = GraphicsDevice.Viewport.Height;
             if (ks.IsKeyDown(Keys.LeftControl) && lastks.IsKeyUp(Keys.LeftControl))
             {
                 currentSize++;
@@ -162,14 +182,24 @@ namespace Legend
                 quit();
             }
 
+            if (ks.IsKeyDown(Keys.F11))
+            {
+                graphics.IsFullScreen = true;
+                graphics.ApplyChanges();
+            }
+
             ttle.Update();
             healthManager.Update();
+
+            Camera.Rotation += .01f;
+            Camera.UpdateView();
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
+            /*
             GraphicsDevice.SetRenderTarget(rend);
 
             GraphicsDevice.Clear(new Color(208, 159, 81));
@@ -185,17 +215,34 @@ namespace Legend
             }
             if (screen == Screens.GameOver) gameover.Draw(spriteBatch);
             healthManager.Draw(spriteBatch);
-
+            spriteBatch.DrawString(GameContent.descriptionsfont, string.Format("Width: {0}, Height: {1}", width, height), Vector2.Zero, Color.White);
             spriteBatch.End();
 
             GraphicsDevice.SetRenderTarget(null);
+            rendpos = new Vector2(GraphicsDevice.Viewport.Width - rend.Width, GraphicsDevice.Viewport.Height - rend.Height) / 2;
 
             GraphicsDevice.Clear(rendColor);
 
             spriteBatch.Begin();
             spriteBatch.Draw(rend, rendpos, null, rendColor, 0f, Vector2.Zero, (float)rendscale, SpriteEffects.None, 0.1f);
             spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
+            spriteBatch.End();*/
+
+            effect.View = Camera.View;
+            effect.Projection = Camera.Projection;
+
+            GraphicsDevice.Clear(new Color(208, 159, 81));
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null, null, null, effect);
+
+            home.Draw(spriteBatch);
+
             spriteBatch.End();
+
+            spriteBatch.Begin();
+
+            spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
+            spriteBatch.End();
+
             base.Draw(gameTime);
         }
 

@@ -34,9 +34,12 @@ namespace Legend
 
         public bool buttonpressed(MouseState ms)
         {
+            //translating to mouse world coordinates
+            MAKE INPUT MANAGER
+            Vector3 mousePosition = _button.GraphicsDevice.Viewport.Unproject(new Vector3(ms.X, ms.Y, 0), Game1.Camera.Projection, Game1.Camera.View, Matrix.Identity);
             _scaledPosition = _position * Settings.Scale;
             hitbox = new Rectangle((int)(_scaledPosition.X), (int)(_scaledPosition.Y), (int)(_button.Width * Settings.Scale), (int)(_button.Height * Settings.Scale));
-            if (hitbox.Contains((int)ms.X, (int)ms.Y))
+            if (hitbox.Contains((int)mousePosition.X, (int)mousePosition.Y))
             {
                 buttontxture = _buttonhover;
                 color = new Color(208, 159, 81);

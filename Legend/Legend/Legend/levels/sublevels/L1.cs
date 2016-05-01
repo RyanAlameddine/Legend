@@ -119,6 +119,7 @@ namespace Legend.levels.sublevels
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            
             tooltip.Draw(spriteBatch);
             background.Draw(spriteBatch);
             if (portalobj.hidden)

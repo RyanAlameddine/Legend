@@ -95,7 +95,7 @@ namespace Legend.levels.functions
                 Game1.rendpos.Y = normalpos.Y + posrand.Y;
                 
             }else if(Game1.rendpos != Vector2.Zero){
-                Game1.rendpos = Vector2.Zero;
+                Game1.rendpos = new Vector2(Game1.graphics.GraphicsDevice.Viewport.Width, Game1.graphics.GraphicsDevice.Viewport.Height)/2;
                 Game1.rendColor = Color.White;
             }
             
