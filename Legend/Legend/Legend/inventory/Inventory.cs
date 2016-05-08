@@ -46,13 +46,13 @@ namespace Legend
             items.Add(add);
         }
 
-        public void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
             sword.Update();
             foreach(Item i in items){
                 i.Update();
             }
-            if (ks.IsKeyDown(Keys.L))
+            if (InputManager.ks.IsKeyDown(Keys.L))
             {
                 draw = true;
             }
@@ -63,10 +63,10 @@ namespace Legend
             this.description = "";
             foreach (Item item in items)
             {
-                if (item.Hitbox.Contains((int)(ms.X / Settings.Scale), (int)(ms.Y / Settings.Scale)))
+                if (item.Hitbox.Contains((int)(InputManager.mousePosition.X / Settings.Scale), (int)(InputManager.mousePosition.Y / Settings.Scale)))
                 {
                     this.description = item.getDescription();
-                    if (ms.LeftButton == ButtonState.Pressed)
+                    if (InputManager.ms.LeftButton == ButtonState.Pressed)
                     {
                         if (!testing)
                         {

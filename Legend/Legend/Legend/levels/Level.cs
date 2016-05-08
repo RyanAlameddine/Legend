@@ -178,7 +178,7 @@ namespace Legend.levels
             }
         }
 
-        public virtual void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        public virtual void Update(GameTime gameTime)
         {
             for (int ei = 0; ei < enemies.Count; ei++)
             {
@@ -203,7 +203,7 @@ namespace Legend.levels
             for (int i = 0; i < mobdropsonfloor.Count; i++)
             {
                 mobdropsonfloor[i].Update(gameTime);
-                if (player.DidPickUpWeapon(ks, mobdropsonfloor[i]) && mobdropsonfloor[i].State != ItemOnGroundState.GettingPickedUp)
+                if (player.DidPickUpWeapon(mobdropsonfloor[i]) && mobdropsonfloor[i].State != ItemOnGroundState.GettingPickedUp)
                 {
                     player.State = PlayerState.Interacting;
                     mobdropsonfloor[i].State = ItemOnGroundState.GettingPickedUp;
@@ -215,7 +215,7 @@ namespace Legend.levels
                     mobdropsonfloor.Remove(mobdropsonfloor[i]);
                 }
             }
-            player.Update(ks, grassBarriers, ms, gameTime);
+            player.Update(grassBarriers, gameTime);
             if (starting)
             {
                 string[] thing = music.Name.Split('\\');
@@ -228,7 +228,7 @@ namespace Legend.levels
                 }
                 starting = false;
             }
-            Game1.inventory.Update(ks, ms, gameTime);
+            Game1.inventory.Update(gameTime);
             particleSystem.Update(gameTime);
         }
 

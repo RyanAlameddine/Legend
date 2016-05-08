@@ -21,15 +21,15 @@ namespace Legend.levels
             no = new Button(button, buttonhover, font, "No", new Vector2(120, 200));
         }
 
-        public void Update(MouseState ms)
+        public void Update()
         {
-            if(yes.buttonpressed(ms))
+            if(yes.buttonpressed())
             {
                 Game1.resetRend = true;
                 Game1.toinitialize = true;
                 Game1.screen = Screens.Home;
             }
-            if (no.buttonpressed(ms))
+            if (no.buttonpressed())
             {
                 Game1.quitbool = true;
             }

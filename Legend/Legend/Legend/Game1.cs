@@ -29,7 +29,6 @@ namespace Legend
         public static XmlDocument xmlDoc;
         public static String saveFile = "save.xml";
         public static Random rand = new Random();
-        RenderTarget2D rend;
         public static GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Home home;
@@ -44,7 +43,6 @@ namespace Legend
         public static Color rendColor = Color.White;
         public static int level = 1;
         public static List<Level> levellist = new List<Level>();
-        float rendscale = 1f;
         public static string name = "";
         public static Screens screen = Screens.Home;
         public static Inventory inventory;
@@ -54,7 +52,6 @@ namespace Legend
         public static float deathspeed = 1;
         public static bool toinitialize = false;
         public static bool quitbool = false;
-
         List<int> Size = new List<int>();
         int currentSize = 0;
 
@@ -109,8 +106,6 @@ namespace Legend
                 Size.Add(i);
             }
 
-            rend = new RenderTarget2D(GraphicsDevice, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
-
             Camera = new Legend.Camera(GraphicsDevice, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2));
             effect = new BasicEffect(GraphicsDevice);
             effect.VertexColorEnabled = true;
@@ -118,6 +113,7 @@ namespace Legend
             effect.World = Matrix.Identity;
             effect.View = Camera.View;
             effect.Projection = Camera.Projection;
+            effect.DiffuseColor = rendColor.ToVector3();
         }
 
         protected override void LoadContent()
@@ -149,6 +145,7 @@ namespace Legend
         {
             ms = Mouse.GetState();
             ks = Keyboard.GetState();
+            InputManager.Update(ms, ks);
             width = GraphicsDevice.Viewport.Width;
             height = GraphicsDevice.Viewport.Height;
             if (ks.IsKeyDown(Keys.LeftControl) && lastks.IsKeyUp(Keys.LeftControl))
@@ -162,16 +159,18 @@ namespace Legend
                 graphics.ApplyChanges();
 
                 Settings.Scale = currentSize + 2;
-                rend = new RenderTarget2D(GraphicsDevice, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height);
+                Camera.UpdateProjection();
+                Camera.UpdateView();
+                Camera.Position = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
             }
-            if (screen == Screens.Home) home.Update(ms);
-            if (screen == Screens.Intro) intro.Update(ks, ms, gameTime);
-            if (screen == Screens.Continue) continueintro.Update(ks, ms, gameTime);
+            if (screen == Screens.Home) home.Update();
+            if (screen == Screens.Intro) intro.Update(gameTime);
+            if (screen == Screens.Continue) continueintro.Update(gameTime);
             if (screen == Screens.Level)
             {
-                levellist[level - 1].Update(ks, ms, gameTime);
+                levellist[level - 1].Update(gameTime);
             }
-            if (screen == Screens.GameOver) gameover.Update(ms);
+            if (screen == Screens.GameOver) gameover.Update();
             lastks = ks;
 
             if (resetRend)
@@ -191,20 +190,19 @@ namespace Legend
             ttle.Update();
             healthManager.Update();
 
-            Camera.Rotation += .01f;
             Camera.UpdateView();
+            effect.DiffuseColor = rendColor.ToVector3();
 
             base.Update(gameTime);
         }
 
         protected override void Draw(GameTime gameTime)
         {
-            /*
-            GraphicsDevice.SetRenderTarget(rend);
+            effect.View = Camera.View;
+            effect.Projection = Camera.Projection;
 
             GraphicsDevice.Clear(new Color(208, 159, 81));
-
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend);
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null, null, null, effect);
             inventory.Draw(spriteBatch, GameContent.descriptionsfont);
             if (screen == Screens.Home) home.Draw(spriteBatch);
             if (screen == Screens.Intro) intro.Draw(spriteBatch);
@@ -215,31 +213,10 @@ namespace Legend
             }
             if (screen == Screens.GameOver) gameover.Draw(spriteBatch);
             healthManager.Draw(spriteBatch);
-            spriteBatch.DrawString(GameContent.descriptionsfont, string.Format("Width: {0}, Height: {1}", width, height), Vector2.Zero, Color.White);
-            spriteBatch.End();
-
-            GraphicsDevice.SetRenderTarget(null);
-            rendpos = new Vector2(GraphicsDevice.Viewport.Width - rend.Width, GraphicsDevice.Viewport.Height - rend.Height) / 2;
-
-            GraphicsDevice.Clear(rendColor);
-
-            spriteBatch.Begin();
-            spriteBatch.Draw(rend, rendpos, null, rendColor, 0f, Vector2.Zero, (float)rendscale, SpriteEffects.None, 0.1f);
-            spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
-            spriteBatch.End();*/
-
-            effect.View = Camera.View;
-            effect.Projection = Camera.Projection;
-
-            GraphicsDevice.Clear(new Color(208, 159, 81));
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null, null, null, effect);
-
-            home.Draw(spriteBatch);
 
             spriteBatch.End();
 
             spriteBatch.Begin();
-
             spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
             spriteBatch.End();
 
@@ -265,7 +242,6 @@ namespace Legend
                 rendColor = Color.White;
                 level = 1;
                 levellist = new List<Level>();
-                rendscale = 1f;
                 name = "";
                 screen = Screens.Home;
                 rendOffset = 0;

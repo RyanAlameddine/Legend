@@ -28,13 +28,13 @@ namespace Legend
             continuebutton = new Button(_button, _buttonhover, font, "Continue", new Vector2(118, 200));
         }
 
-        public void Update(MouseState ms)
+        public void Update()
         {
-            if (thebutton.buttonpressed(ms))
+            if (thebutton.buttonpressed())
             {
                 Game1.screen = Screens.Intro;
             }
-            if (continuebutton.buttonpressed(ms) && Game1.xmlDoc.GetElementsByTagName("user")[0] != null)
+            if (continuebutton.buttonpressed() && Game1.xmlDoc.GetElementsByTagName("user")[0] != null)
             {
                 Game1.screen = Screens.Continue;
             }

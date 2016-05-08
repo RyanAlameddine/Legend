@@ -88,16 +88,16 @@ namespace Legend.characters
             _frame = _upWalkingFrames[0];
         }
 
-        public bool DidPickUpWeapon(KeyboardState ks, ItemOnFloor weapon)
+        public bool DidPickUpWeapon(ItemOnFloor weapon)
         {
-            if (hitbox.Intersects(weapon.HitBox) && ks.IsKeyDown(Keys.K))
+            if (hitbox.Intersects(weapon.HitBox) && InputManager.ks.IsKeyDown(Keys.K))
             {
                 return true;
             }
             return false;
         }
 
-        public void Update(KeyboardState ks, List<Sprite> grassbarriers, MouseState ms, GameTime gameTime)
+        public void Update(List<Sprite> grassbarriers, GameTime gameTime)
         {
             if (resetspeed)
             {
@@ -118,10 +118,10 @@ namespace Legend.characters
                     State = PlayerState.Idle;
                 }
             }
-            if (ks.IsKeyDown(Keys.LeftShift))
+            if (InputManager.ks.IsKeyDown(Keys.LeftShift))
             {
-                _position.X = ms.X/Settings.Scale;
-                _position.Y = ms.Y/Settings.Scale;
+                _position.X = InputManager.mousePosition.X/Settings.Scale;
+                _position.Y = InputManager.mousePosition.Y/Settings.Scale;
             }
             if (State == PlayerState.Moving)
             {
@@ -154,20 +154,20 @@ namespace Legend.characters
                 if (!inter)
                 {
                     State = PlayerState.Moving;
-                    if (ks.GetPressedKeys().Length == 0)
+                    if (InputManager.ks.GetPressedKeys().Length == 0)
                     {
                         k1 = Keys.V;
                         k2 = Keys.V;
                     }
-                    else if (ks.GetPressedKeys().Length == 1)
+                    else if (InputManager.ks.GetPressedKeys().Length == 1)
                     {
-                        k1 = ks.GetPressedKeys()[0];
+                        k1 = InputManager.ks.GetPressedKeys()[0];
                         k2 = Keys.V;
                     }
                     else
                     {
-                        k1 = ks.GetPressedKeys()[0];
-                        k2 = ks.GetPressedKeys()[1];
+                        k1 = InputManager.ks.GetPressedKeys()[0];
+                        k2 = InputManager.ks.GetPressedKeys()[1];
                         if (k1 == Keys.S && k2 == Keys.W)
                         {
                             k2 = Keys.V;
@@ -179,7 +179,7 @@ namespace Legend.characters
                             k1 = Keys.A;
                         }
                     }
-                    if (ks.IsKeyDown(Keys.A) && ks.IsKeyDown(Keys.W))
+                    if (InputManager.ks.IsKeyDown(Keys.A) && InputManager.ks.IsKeyDown(Keys.W))
                     {
                         speedy = -0.45f;
                         speedx = -0.45f;
@@ -191,7 +191,7 @@ namespace Legend.characters
                             dir = Direction.Up;
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.A) && ks.IsKeyDown(Keys.S))
+                    else if (InputManager.ks.IsKeyDown(Keys.A) && InputManager.ks.IsKeyDown(Keys.S))
                     {
                         speedy = 0.45f;
                         speedx = -0.45f;
@@ -204,7 +204,7 @@ namespace Legend.characters
                             dir = Direction.Down;
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.D) && ks.IsKeyDown(Keys.W))
+                    else if (InputManager.ks.IsKeyDown(Keys.D) && InputManager.ks.IsKeyDown(Keys.W))
                     {
                         speedy = -0.45f;
                         speedx = 0.45f;
@@ -216,7 +216,7 @@ namespace Legend.characters
                             dir = Direction.Up;
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.D) && ks.IsKeyDown(Keys.S))
+                    else if (InputManager.ks.IsKeyDown(Keys.D) && InputManager.ks.IsKeyDown(Keys.S))
                     {
                         speedy = 0.45f;
                         speedx = 0.45f;
@@ -229,7 +229,7 @@ namespace Legend.characters
                             dir = Direction.Down;
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.W))
+                    else if (InputManager.ks.IsKeyDown(Keys.W))
                     {
                         speedy = -0.5f;
                         if (dir != Direction.Up)
@@ -242,7 +242,7 @@ namespace Legend.characters
                         dir = Direction.Up;
 
                     }
-                    else if (ks.IsKeyDown(Keys.S))
+                    else if (InputManager.ks.IsKeyDown(Keys.S))
                     {
                         speedy = 0.5f;
                         if (dir != Direction.Down)
@@ -255,7 +255,7 @@ namespace Legend.characters
                         dir = Direction.Down;
 
                     }
-                    else if (ks.IsKeyDown(Keys.A))
+                    else if (InputManager.ks.IsKeyDown(Keys.A))
                     {
                         speedx = -0.5f;
                         if (dir != Direction.Left)
@@ -266,7 +266,7 @@ namespace Legend.characters
                         
                         dir = Direction.Left;
                     }
-                    else if (ks.IsKeyDown(Keys.D))
+                    else if (InputManager.ks.IsKeyDown(Keys.D))
                     {
                         speedx = 0.5f;
                         if (dir != Direction.Right)
@@ -285,7 +285,7 @@ namespace Legend.characters
                 else
                 {
                     _frame = _currentAnimation[0];
-                    if (ks.IsKeyDown(Keys.W))
+                    if (InputManager.ks.IsKeyDown(Keys.W))
                     {
                         _currentAnimation = _upWalkingFrames;
                         _frame = _currentAnimation[0];
@@ -297,7 +297,7 @@ namespace Legend.characters
 
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.S))
+                    else if (InputManager.ks.IsKeyDown(Keys.S))
                     {
                         _currentAnimation = _downWalkingFrames;
                         _frame = _currentAnimation[0];
@@ -309,7 +309,7 @@ namespace Legend.characters
 
                         }
                     }
-                    if (ks.IsKeyDown(Keys.A))
+                    if (InputManager.ks.IsKeyDown(Keys.A))
                     {
                         _currentAnimation = _leftWalkingFrames;
                         _frame = _currentAnimation[0];
@@ -320,7 +320,7 @@ namespace Legend.characters
                             dir = Direction.Left;
                         }
                     }
-                    else if (ks.IsKeyDown(Keys.D))
+                    else if (InputManager.ks.IsKeyDown(Keys.D))
                     {
                         
                         _currentAnimation = _rightWalkingFrames;
@@ -339,7 +339,7 @@ namespace Legend.characters
                 _position.X = MathHelper.Clamp(_position.X, 0, 298);
                 _position.Y = MathHelper.Clamp(_position.Y, 0, 295);
 
-                if (ks.IsKeyDown(Keys.J))
+                if (InputManager.ks.IsKeyDown(Keys.J))
                 {
                     if (!attackedlast)
                     {

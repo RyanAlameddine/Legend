@@ -49,9 +49,9 @@ namespace Legend.levels
             }
         }
 
-        public void Update(KeyboardState keyboard, MouseState ms, GameTime gameTime)
+        public void Update(GameTime gameTime)
         {
-            if (keyboard.IsKeyDown(Keys.Escape))
+            if (InputManager.ks.IsKeyDown(Keys.Escape))
             {
                 Game1.screen = Screens.Home;
             }
@@ -89,12 +89,12 @@ namespace Legend.levels
                 soundPlayed = false;
             }
 
-            if (button.buttonpressed(ms))
+            if (button.buttonpressed())
             {
                 levelplus();
 
             }
-            foreach (Keys key in keyboard.GetPressedKeys())
+            foreach (Keys key in InputManager.ks.GetPressedKeys())
             {
                 if(key != Keys.None){
                     if (key == Keys.Enter)
@@ -156,7 +156,7 @@ namespace Legend.levels
                             else
                             {
 
-                                if (keyboard.IsKeyDown(Keys.LeftShift) || keyboard.IsKeyDown(Keys.RightShift))
+                                if (InputManager.ks.IsKeyDown(Keys.LeftShift) || InputManager.ks.IsKeyDown(Keys.RightShift))
                                 {
                                     if (!System.Windows.Forms.Control.IsKeyLocked(System.Windows.Forms.Keys.CapsLock))
                                     {

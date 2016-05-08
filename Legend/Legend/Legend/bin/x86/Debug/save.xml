@@ -176,4 +176,21 @@
   <user name="fghffgh" level="1">
     <inventory />
   </user>
+  <user name="asdfccv" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="asa" level="1">
+    <inventory />
+  </user>
+  <user name="aadfgddf" level="1">
+    <inventory />
+  </user>
+  <user name="zxc" level="3">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+    </inventory>
+  </user>
 </users>

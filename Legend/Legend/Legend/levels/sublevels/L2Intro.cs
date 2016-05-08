@@ -28,11 +28,11 @@ namespace Legend.levels.sublevels
             player = new Player(playermove, playerattack, new Vector2(0, 0));
         }
 
-        public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             if (state == 1)
             {
-                if (button.buttonpressed(ms))
+                if (button.buttonpressed())
                 {
                     if (Game1.inventory.weapon.name == "Foam Sword")
                     {
@@ -43,7 +43,7 @@ namespace Legend.levels.sublevels
             }
             else if (state == 2)
             {
-                if (button.buttonpressed(ms))
+                if (button.buttonpressed())
                 {
                     if (Game1.inventory.armour.name == "T-Shirt Armour")
                     {
@@ -55,7 +55,7 @@ namespace Legend.levels.sublevels
                     }
                 }
             }
-            base.Update(ks, ms, gameTime);
+            base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -39,7 +39,7 @@ namespace Legend.levels.sublevels
             portalobj = new Portal(skyportal, new Vector2(155, 100));
         }
 
-        public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             portalobj.Update();
             Portal(gameTime, Color.DarkBlue);
@@ -67,7 +67,7 @@ namespace Legend.levels.sublevels
                     }
                 }
             }
-            base.Update(ks, ms, gameTime);
+            base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

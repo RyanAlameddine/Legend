@@ -78,13 +78,13 @@ namespace Legend.levels.sublevels
             tooltipenabled = true;
         }
 
-        public override void Update(KeyboardState ks, MouseState ms, GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             sword.Update(gameTime);
             tooltip.Update(gameTime);
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);
-            if (player.DidPickUpWeapon(ks, sword) && sword.State != ItemOnGroundState.GettingPickedUp)
+            if (player.DidPickUpWeapon(sword) && sword.State != ItemOnGroundState.GettingPickedUp)
             {
                 player.State = PlayerState.Interacting;
                 sword.State = ItemOnGroundState.GettingPickedUp;
@@ -101,7 +101,7 @@ namespace Legend.levels.sublevels
             }
             particleSystems.Update(gameTime);
             keyanim.Update(gameTime);
-            if (ks.IsKeyDown(Keys.Space))
+            if (InputManager.ks.IsKeyDown(Keys.Space))
             {
                 if (!tooltipenabled)
                 {
@@ -114,7 +114,7 @@ namespace Legend.levels.sublevels
             {
                 tooltipenabled = false;
             }
-            base.Update(ks, ms, gameTime);
+            base.Update(gameTime);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

@@ -31,7 +31,7 @@ namespace Legend
             {
                 Game1.rendColor = Color.Lerp(Game1.rendColor, Color.Black, .009f);
                 Game1.deathspeed = MathHelper.Lerp(Game1.deathspeed, 0f, .02f);
-                if (Game1.rendColor.R < 2 && Game1.rendColor.G < 2 && Game1.rendColor.B < 2)
+                if (Game1.rendColor.R < 2 && Game1.rendColor.G < 2 && Game1.rendColor.B < 2 || Game1.screen == Screens.Home)
                 {
                     Game1.screen = Screens.GameOver;
                     Game1.ttle.Reset(false);

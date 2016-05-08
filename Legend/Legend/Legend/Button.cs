@@ -32,18 +32,15 @@ namespace Legend
             hitbox = new Rectangle((int) position.X, (int) position.Y, _button.Width, _button.Height);
         }
 
-        public bool buttonpressed(MouseState ms)
+        public bool buttonpressed()
         {
-            //translating to mouse world coordinates
-            MAKE INPUT MANAGER
-            Vector3 mousePosition = _button.GraphicsDevice.Viewport.Unproject(new Vector3(ms.X, ms.Y, 0), Game1.Camera.Projection, Game1.Camera.View, Matrix.Identity);
             _scaledPosition = _position * Settings.Scale;
             hitbox = new Rectangle((int)(_scaledPosition.X), (int)(_scaledPosition.Y), (int)(_button.Width * Settings.Scale), (int)(_button.Height * Settings.Scale));
-            if (hitbox.Contains((int)mousePosition.X, (int)mousePosition.Y))
+            if (hitbox.Contains((int)InputManager.mousePosition.X, (int)InputManager.mousePosition.Y))
             {
                 buttontxture = _buttonhover;
                 color = new Color(208, 159, 81);
-                if (ms.LeftButton == ButtonState.Pressed)
+                if (InputManager.ms.LeftButton == ButtonState.Pressed)
                 {
                     return true;
                 }
