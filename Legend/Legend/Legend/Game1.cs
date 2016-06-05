@@ -23,8 +23,8 @@ namespace Legend
         int width;
         int height;
 
-        public static Camera Camera;
         BasicEffect effect;
+        Camera camera;
 
         public static XmlDocument xmlDoc;
         public static String saveFile = "save.xml";
@@ -39,7 +39,6 @@ namespace Legend
         KeyboardState lastks;
         MouseState ms;
         public static bool transitioneffect = false;
-        public static Vector2 rendpos = Vector2.Zero;
         public static Color rendColor = Color.White;
         public static int level = 1;
         public static List<Level> levellist = new List<Level>();
@@ -106,13 +105,14 @@ namespace Legend
                 Size.Add(i);
             }
 
-            Camera = new Legend.Camera(GraphicsDevice, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2));
+            camera = new Camera(GraphicsDevice, new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2));
+            
             effect = new BasicEffect(GraphicsDevice);
             effect.VertexColorEnabled = true;
             effect.TextureEnabled = true;
             effect.World = Matrix.Identity;
-            effect.View = Camera.View;
-            effect.Projection = Camera.Projection;
+            effect.View = camera.View;
+            effect.Projection = camera.Projection;
             effect.DiffuseColor = rendColor.ToVector3();
         }
 
@@ -159,9 +159,8 @@ namespace Legend
                 graphics.ApplyChanges();
 
                 Settings.Scale = currentSize + 2;
-                Camera.UpdateProjection();
-                Camera.UpdateView();
-                Camera.Position = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
+                camera.UpdateProjection();
+                camera.Position = new Vector2(GraphicsDevice.Viewport.Width / 2, GraphicsDevice.Viewport.Height / 2);
             }
             if (screen == Screens.Home) home.Update();
             if (screen == Screens.Intro) intro.Update(gameTime);
@@ -190,7 +189,6 @@ namespace Legend
             ttle.Update();
             healthManager.Update();
 
-            Camera.UpdateView();
             effect.DiffuseColor = rendColor.ToVector3();
 
             base.Update(gameTime);
@@ -198,11 +196,12 @@ namespace Legend
 
         protected override void Draw(GameTime gameTime)
         {
-            effect.View = Camera.View;
-            effect.Projection = Camera.Projection;
+            effect.View = camera.View;
+            effect.Projection = camera.Projection;
 
-            GraphicsDevice.Clear(new Color(208, 159, 81));
+            GraphicsDevice.Clear(Color.White);
             spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null, null, null, effect);
+            spriteBatch.Draw(GameContent.fourpixels, new Rectangle(-200, -200, GraphicsDevice.Viewport.Width + 400, GraphicsDevice.Viewport.Height + 400), new Color(208, 159, 81));
             inventory.Draw(spriteBatch, GameContent.descriptionsfont);
             if (screen == Screens.Home) home.Draw(spriteBatch);
             if (screen == Screens.Intro) intro.Draw(spriteBatch);
@@ -238,7 +237,7 @@ namespace Legend
             if (toinitialize)
             {
                 transitioneffect = false;
-                rendpos = Vector2.Zero;
+                camera.Offset = Vector2.Zero;
                 rendColor = Color.White;
                 level = 1;
                 levellist = new List<Level>();
@@ -252,6 +251,8 @@ namespace Legend
                 currentSize = 0;
                 Initialize();
                 resetRend = false;
+                camera.Rotation = (float)Math.PI;
+                camera.Scale = Vector2.One;
             }
         }
 

@@ -16,7 +16,7 @@ namespace Legend
         public static void Update(MouseState ms, KeyboardState ks)
         {
             //translating to mouse world coordinates
-            mousePosition = Game1.graphics.GraphicsDevice.Viewport.Unproject(new Vector3(ms.X, ms.Y, 0), Game1.Camera.Projection, Game1.Camera.View, Matrix.Identity);
+            mousePosition = Game1.graphics.GraphicsDevice.Viewport.Unproject(new Vector3(ms.X, ms.Y, 0), Camera.Main.Projection, Camera.Main.View, Matrix.Identity);
             InputManager.ms = ms;
             InputManager.ks = ks;
         }

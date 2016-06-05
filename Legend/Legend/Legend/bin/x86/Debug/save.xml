@@ -193,4 +193,95 @@
       <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
     </inventory>
   </user>
+  <user name="zdfgd" level="1">
+    <inventory />
+  </user>
+  <user name="dddhfdff" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="ddhfff" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="cbadfgdf" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="aafghs" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="ddgfghsffds" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="Kevin" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="bdfgddgs" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="ghggddghdf" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="dhdfgff" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="vfdddfddgs" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="dghfnf" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="no  no" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="daadada" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="swah" level="4">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+      <item name="Gold Nugget" type="Misc" cost="5" />
+    </inventory>
+  </user>
+  <user name="aafadaa" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
+  <user name="adfaadfadv" level="3">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+    </inventory>
+  </user>
+  <user name="fgdfgdfg" level="2">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="not equipped." />
+    </inventory>
+  </user>
 </users>
