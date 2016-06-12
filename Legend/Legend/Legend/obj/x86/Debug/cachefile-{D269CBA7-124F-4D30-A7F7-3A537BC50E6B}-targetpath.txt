@@ -7,6 +7,7 @@ Content\background\grass.xnb
 Content\mouse\mouse.xnb
 Content\obstacles\grassbarrier.xnb
 Content\weapons\foam sword.xnb
+Content\player\hitparticle.xnb
 Content\objects\portal.xnb
 Content\guis\inventory.xnb
 Content\buttons\selectedinventory.xnb
@@ -16,6 +17,13 @@ Content\logo.xnb
 Content\player\playerattack.xnb
 Content\player\playermove.xnb
 Content\monsters\glob.xnb
+Content\guis\gameovertexture.xnb
+Content\monsters\slimeparticle.xnb
+Content\items\gold.xnb
+Content\objects\skyportal.xnb
+Content\guis\tooltip.xnb
+Content\buttons\key.xnb
+Content\buttons\keydown.xnb
 Content\music\cantina_theme.xnb
 Content\music\cantina_theme.wma
 Content\music\8bit.xnb
@@ -24,11 +32,3 @@ Content\sound effects\typewriter.xnb
 Content\sound effects\typewriter-space.xnb
 Content\music\arcade.xnb
 Content\music\arcade.wma
-Content\guis\gameovertexture.xnb
-Content\monsters\slimeparticle.xnb
-Content\player\hitparticle.xnb
-Content\items\gold.xnb
-Content\objects\skyportal.xnb
-Content\guis\tooltip.xnb
-Content\buttons\key.xnb
-Content\buttons\keydown.xnb

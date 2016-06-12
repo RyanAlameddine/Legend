@@ -283,3 +283,13 @@ C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Deb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\tooltip.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\key.xnb
 C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\keydown.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml

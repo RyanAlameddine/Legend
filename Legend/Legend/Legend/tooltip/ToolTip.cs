@@ -22,7 +22,7 @@ namespace Legend
 
         float mass = 100f; //mass
         float k = 1f; //spring constant
-        float c = 8f; //dampening coefficient 
+        float c = 8f; //dampening coefficient
 
         public ToolTip(Texture2D texture, List<ToolTipObj> objects)
         {
@@ -63,10 +63,13 @@ namespace Legend
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1.3f * Settings.Scale, SpriteEffects.None, .9f);
-            foreach (ToolTipObj obj in objects)
+            if (position != startingposition)
             {
-                obj.Draw(spriteBatch, position);
+                spriteBatch.Draw(texture, position * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1.3f * Settings.Scale, SpriteEffects.None, .9f);
+                foreach (ToolTipObj obj in objects)
+                {
+                    obj.Draw(spriteBatch, position);
+                }
             }
         }
     }

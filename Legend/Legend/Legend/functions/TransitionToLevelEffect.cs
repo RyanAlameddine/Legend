@@ -19,6 +19,8 @@ namespace Legend.levels.functions
         float rotation = 0.006f;
         float scale = 0f;
         Vector2 toPortal = Vector2.Zero;
+        Vector2 distanceFromCenter;
+        float speed = 0.001f;
 
         Texture2D pixel;
 
@@ -46,6 +48,9 @@ namespace Legend.levels.functions
             Camera.Main.Scale = Vector2.One;
             rotation = 0;
             scale = 0;
+            toPortal = Vector2.Zero;
+            distanceFromCenter = Vector2.Zero;
+            speed = 0.001f;
         }
 
         public void Update()
@@ -93,14 +98,15 @@ namespace Legend.levels.functions
                     Game1.rendColor.B = 0;
                 }
                 MediaPlayer.Volume = (255 - Game1.rendOffset + float.Epsilon)/255;
-                Vector2 normalpos = Vector2.Zero;
                 posrand.X = random.Next(-25, 25);
                 posrand.Y = random.Next(-25, 25);
-                toPortal = Vector2.Lerp(toPortal, Game1.levellist[Game1.level - 1].portalobj.Position, 0.03f);
-                Camera.Main.Offset = new Vector2(normalpos.X + posrand.X, normalpos.Y + posrand.Y);
-                rotation += 0.00015f;
+                speed += 0.00025f;
+                distanceFromCenter = Game1.levellist[Game1.level - 1].portalobj.Position - new Vector2(155);
+                toPortal = Vector2.Lerp(toPortal, distanceFromCenter, speed);
+                Camera.Main.Offset = new Vector2(posrand.X, posrand.Y) + toPortal * Settings.Scale;
+                rotation += speed/100;
                 Camera.Main.Rotation += rotation;
-                scale += 0.002f;
+                scale += speed/10;
                 Camera.Main.Scale = Vector2.One-new Vector2(scale);
             }
             else if (Camera.Main.Offset != Vector2.Zero)
