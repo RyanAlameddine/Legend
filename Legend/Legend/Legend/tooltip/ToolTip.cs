@@ -12,7 +12,7 @@ namespace Legend
     {
         Texture2D texture;
         public bool enabled = false;
-        public Vector2 endposition = new Vector2(10, 250);
+        public Vector2 endposition = new Vector2(10, 270);
         Vector2 targetposition;
         Vector2 startingposition = new Vector2(10, 360);
         Vector2 position;
