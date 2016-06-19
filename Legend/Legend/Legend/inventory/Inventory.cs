@@ -142,7 +142,7 @@ namespace Legend
                 {
                     if (item.count > 1)
                     {
-                        spriteBatch.DrawString(font, item.count.ToString(), (pos + new Vector2(4, 0)) * Settings.Scale, Color.Green, 0f, Vector2.Zero, (float)(.11 * Settings.Scale), SpriteEffects.None, .91f);
+                        spriteBatch.DrawString(font, item.count.ToString(), (pos + new Vector2(11, 10)) * Settings.Scale, Color.Green, 0f, Vector2.Zero, (float)(.11 * Settings.Scale), SpriteEffects.None, .91f);
                     }
                     if (item.equiptstatus == "equipped.")
                     {
