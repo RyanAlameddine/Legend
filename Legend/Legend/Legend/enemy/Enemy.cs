@@ -31,7 +31,8 @@ namespace Legend.enemy
         TimeSpan deathtimer;
         bool draw = true;
         Dictionary<inventory.Item, Vector2> itemdrops = new Dictionary<inventory.Item, Vector2>();
-        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage, int health, ParticleSystem deadparticles, Dictionary<inventory.Item, Vector2> itemdrops)
+        bool isAngry;
+        public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage, int health, ParticleSystem deadparticles, Dictionary<inventory.Item, Vector2> itemdrops, bool isAngry)
         {
             this.pos = pos;
             this.txture = txture;
@@ -40,6 +41,7 @@ namespace Legend.enemy
             this.damage = damage;
             this.health = health;
             this.deadparticles = deadparticles;
+            this.isAngry = isAngry;
             deathtimer = deadparticles.lifetime - new TimeSpan(0, 0, 0, 0, 10);
             ori = new Vector2(source.Width / 2, source.Height / 2);
             Hitbox = new Rectangle((int)(pos.X), (int)(pos.Y), (int)(source.Width/2), (int)(source.Height/2));
@@ -73,7 +75,8 @@ namespace Legend.enemy
                     }
                 }
             }
-            if (speedoffset != Vector2.Zero)
+            //ADD NOT ANGRY MOVEMENT
+            if (speedoffset != Vector2.Zero && isAngry)
             {
                 if (p._position.X - 2 > pos.X)
                 {
@@ -153,6 +156,7 @@ namespace Legend.enemy
         public void hurt(int damage)
         {
             health -= damage;
+            isAngry = true;
             if (health <= 0 && speedoffset != Vector2.Zero)
             {
                 deadparticles.position = pos;
