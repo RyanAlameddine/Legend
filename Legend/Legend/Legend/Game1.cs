@@ -192,7 +192,7 @@ namespace Legend
             effect.Projection = camera.Projection;
 
             GraphicsDevice.Clear(Color.White);
-            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, null, null, null, effect);
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, effect);
             spriteBatch.Draw(GameContent.fourpixels, new Rectangle(-200, -200, GraphicsDevice.Viewport.Width + 400, GraphicsDevice.Viewport.Height + 400), new Color(208, 159, 81));
             inventory.Draw(spriteBatch, GameContent.descriptionsfont);
             if (screen == Screens.Home) home.Draw(spriteBatch);
@@ -207,7 +207,7 @@ namespace Legend
 
             spriteBatch.End();
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.FrontToBack, BlendState.AlphaBlend, SamplerState.PointClamp, null, null, null);
             spriteBatch.Draw(GameContent.mouse, new Vector2(ms.X, ms.Y), null, Color.White, 0f, Vector2.Zero, GraphicsDevice.Viewport.Width / 300, SpriteEffects.None, 1);
             spriteBatch.End();
 

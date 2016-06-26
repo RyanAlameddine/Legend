@@ -79,20 +79,18 @@ namespace Legend.levels.sublevels
             movetip.velocity = new Vector2(0, 0f);
 
             //pickuptip\\
-            objects.Clear();
-            objects.Add(new Text(.3f, new Vector2(110, 17), .91f, font, "Press K to pick up items and drops"));
-            keys.Clear();
-            keys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
-            keys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
-            pickuptipkeyanim = new KeyAnimation(keys);
-            foreach (Key thekey in keys)
+            List<ToolTipObj> pickupobjects = new List<ToolTipObj>();
+            pickupobjects.Add(new Text(.25f, new Vector2(85, 20), .91f, font, "Press K to pick up items and drops"));
+            List<Key> pickupkeys = new List<Key>();
+            pickupkeys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
+            pickupkeys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
+            pickuptipkeyanim = new KeyAnimation(pickupkeys);
+            foreach (Key thekey in pickupkeys)
             {
-                objects.Add(thekey);
+                pickupobjects.Add(thekey);
             }
-            pickuptip = new ToolTip(tooltiptxture, objects);
+            pickuptip = new ToolTip(tooltiptxture, pickupobjects);
             pickuptip.enabled = false;
-            pickuptip.velocity = new Vector2(0, 0f);
-
         }
 
         public override void Update(GameTime gameTime)
@@ -116,6 +114,8 @@ namespace Legend.levels.sublevels
                 {
                     particleSystems.addParticle();
                 }
+                pickuptip.velocity = new Vector2(0, -4f);
+                pickuptip.enabled = false;
             }
             particleSystems.Update(gameTime);
             movetipkeyanim.Update(gameTime);
@@ -124,6 +124,10 @@ namespace Legend.levels.sublevels
             {
                 movetip.velocity = new Vector2(0, -4f);
                 movetip.enabled = false;
+            }
+            if (player.Hitbox.Intersects(sword.HitBox) && portalobj.hidden)
+            {
+                pickuptip.enabled = true;
             }
             base.Update(gameTime);
         }
