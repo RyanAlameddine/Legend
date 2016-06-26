@@ -13,14 +13,17 @@ using Legend.functions;
 using Legend.enemy;
 using Legend.particles;
 using Legend.inventory;
+using Legend.tooltip;
 
 namespace Legend.levels.sublevels
 {
     public class L2 : Level
     {
         Texture2D fourpixels;
+        ToolTip attacktip;
+        KeyAnimation attacktipkeyanim;
 
-        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels, Texture2D slimeparticle, Texture2D skyportal)
+        public L2(Texture2D playertxture, Texture2D playerattack, Texture2D portaltxture, Song song, Texture2D fourpixels, Texture2D slimeparticle, Texture2D skyportal, Texture2D tooltiptxture, SpriteFont font, Texture2D keytxture, Texture2D keydown)
             : base(playertxture, portaltxture, song)
         {
             player = new Player(playertxture, playerattack, new Vector2(150, 245));
@@ -35,6 +38,22 @@ namespace Legend.levels.sublevels
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 30), slimeparticle, globdrops));
             enemies.Add(new Glob(GameContent.glob, new Vector2(150, 150), slimeparticle, globdrops));
 
+            //attacktip\\
+            List<ToolTipObj> objects = new List<ToolTipObj>();
+            objects.Add(new Text(.3f, new Vector2(110, 17), .91f, font, "Press J to attack"));
+            List<Key> keys = new List<Key>();
+            keys.Add(new Key(.3f, new Vector2(50, 25), .911f, font, 'J', keytxture, keydown));
+            keys.Add(new Key(.3f, new Vector2(50, 25), .91f, font, 'J', keytxture, keydown));
+            ToolTipPlayer tooltipPlayer = new ToolTipPlayer(playermove, playerattack, new Vector2(80, 25), .91f, 1f / 5.5f, Direction.Down);
+            objects.Add(tooltipPlayer);
+            attacktipkeyanim = new KeyAnimation(keys, tooltipPlayer);
+            foreach (Key thekey in keys)
+            {
+                objects.Add(thekey);
+            }
+            attacktip = new ToolTip(tooltiptxture, objects);
+            attacktip.enabled = true;
+
             particleSystem.times = .00015f;
             portalobj = new Portal(skyportal, new Vector2(155, 100));
         }
@@ -42,6 +61,8 @@ namespace Legend.levels.sublevels
         public override void Update(GameTime gameTime)
         {
             portalobj.Update();
+            attacktip.Update(gameTime);
+            attacktipkeyanim.Update(gameTime);
             Portal(gameTime, Color.DarkBlue);
             exitportal.Update();
             ExitPortal();
@@ -72,6 +93,7 @@ namespace Legend.levels.sublevels
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            attacktip.Draw(spriteBatch);
             portalobj.Draw(spriteBatch);
             exitportal.Draw(spriteBatch);
             background.Draw(spriteBatch);

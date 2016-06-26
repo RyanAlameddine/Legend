@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using Legend.characters;
 using Legend.inventory;
 using Legend.enemy;
+using Legend.tooltip;
 
 namespace Legend.weapons
 {
@@ -20,6 +21,7 @@ namespace Legend.weapons
         Vector2 hilt;
         bool swinging = false;
         Player p;
+        ToolTipPlayer ttp;
         float layerDepth = .4f;
         Rectangle f;
         public Sword(Texture2D txture, Player p, Vector2 hilt)
@@ -29,6 +31,15 @@ namespace Legend.weapons
             Hitbox.Width = txture.Width;
             Hitbox.Height = txture.Height;
             this.p = p;
+        }
+
+        public Sword(Texture2D txture, ToolTipPlayer p, Vector2 hilt)
+        {
+            this.hilt = hilt;
+            this.txture = txture;
+            Hitbox.Width = txture.Width;
+            Hitbox.Height = txture.Height;
+            ttp = p;
         }
 
         public void Update()

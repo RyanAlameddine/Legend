@@ -23,7 +23,7 @@ namespace Legend.levels
             levellist.Add(l1);
             l2intro = new L2Intro(playermove, playerattack, portal, cantina_theme, normalfont, button, buttonhover, tshirt);
             levellist.Add(l2intro);
-            l2 = new L2(playermove, playerattack, portal, arcade, pixel, slimeparticle, skyportal);
+            l2 = new L2(playermove, playerattack, portal, arcade, pixel, slimeparticle, skyportal, tooltiptxture, descriptionfont, keytxture, keydown);
             levellist.Add(l2);
 
             return levellist;
