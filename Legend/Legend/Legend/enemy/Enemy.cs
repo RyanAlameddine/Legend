@@ -32,6 +32,12 @@ namespace Legend.enemy
         bool draw = true;
         Dictionary<inventory.Item, Vector2> itemdrops = new Dictionary<inventory.Item, Vector2>();
         bool isAngry;
+        TimeSpan timer;
+        int random = Game1.rand.Next(4);
+        TimeSpan randomtime;
+        bool firsttime;
+        int count;
+
         public Enemy(Texture2D txture, Vector2 pos, Rectangle[] sources, int damage, int health, ParticleSystem deadparticles, Dictionary<inventory.Item, Vector2> itemdrops, bool isAngry)
         {
             this.pos = pos;
@@ -52,6 +58,7 @@ namespace Legend.enemy
 
         public virtual void Update(GameTime gameTime, Player p)
         {
+            timer += gameTime.ElapsedGameTime;
             if (speedoffset == Vector2.Zero)
             {
                 deathtimer -= gameTime.ElapsedGameTime;
@@ -75,7 +82,76 @@ namespace Legend.enemy
                     }
                 }
             }
-            //ADD NOT ANGRY MOVEMENT
+            if (!isAngry)
+            {
+                if (timer > randomtime) {
+                    random = Game1.rand.Next(8);
+                    randomtime = new TimeSpan(0, 0, Game1.rand.Next(1, 3));
+                    timer = TimeSpan.Zero;
+                    count++;
+                    if (pos.X < 300)
+                    {
+                        if (pos.X > 10)
+                        {
+                            if (pos.Y > 10)
+                            {
+                                if(pos.Y < 300)
+                                {
+                                    if (random == 1)
+                                    {
+                                        dir = Vector2.Zero;
+                                        dir.X = .7f;
+                                    }
+                                    else if (random == 2)
+                                    {
+                                        dir = Vector2.Zero;
+                                        dir.X = -.7f;
+                                    }
+                                    else if (random == 3 && !firsttime)
+                                    {
+                                        dir = Vector2.Zero;
+                                        dir.Y = .7f;
+                                    }
+                                    else if (random == 4)
+                                    {
+                                        dir = Vector2.Zero;
+                                        dir.Y = -.7f;
+                                    }
+                                    else
+                                    {
+                                        dir = Vector2.Zero;
+                                    }
+                                    if (count > 2)
+                                    {
+                                        firsttime = false;
+                                    }
+                                }
+                                else
+                                {
+                                    dir = Vector2.Zero;
+                                    dir.Y = -.7f;
+                                }
+                            }
+                            else
+                            {
+                                dir = Vector2.Zero;
+                                dir.Y = .7f;
+                            }
+                        }
+                        else
+                        {
+                            dir = Vector2.Zero;
+                            dir.X = .7f;
+                        }
+                    }
+                    else
+                    {
+                        dir = Vector2.Zero;
+                        dir.X = -.7f;
+                    }
+                }
+                rotation = (float)Math.Atan2(dir.Y, dir.X);
+            }
             if (speedoffset != Vector2.Zero && isAngry)
             {
                 if (p._position.X - 2 > pos.X)
@@ -96,51 +172,53 @@ namespace Legend.enemy
                 }
                 Vector2 distance = p._position - pos;
                 rotation = (float)Math.Atan2(distance.Y, distance.X);
-                rotation *= (float)(180 / Math.PI);
-                while (rotation > 360)
-                {
-                    rotation -= 360;
-                }
-                if (rotation <= 45 && rotation >= -45)
-                {
-                    direction = Direction.Right;
-                    source = sources[0];
-                    effect = SpriteEffects.None;
-                }
-                else if (rotation >= 45 && rotation <= 135)
-                {
-                    direction = Direction.Up;
-                    source = sources[2];
-                    effect = SpriteEffects.FlipVertically;
-                }
-                else if (rotation >= 135 || rotation <= -135)
-                {
-                    direction = Direction.Left;
-                    source = sources[0];
-                    effect = SpriteEffects.FlipHorizontally;
-                }
-                else if (rotation >= -135 && rotation <= -45)
-                {
-                    direction = Direction.Down;
-                    source = sources[2];
-                    effect = SpriteEffects.None;
-                }
-
-                speed = Vector2.Lerp(speed, dir, 0.05f);
-                if (p.Hitbox.Intersects(Hitbox) && p.State != PlayerState.Interacting)
-                {
-                    Vector2 temp = new Vector2(p.speedx * p.speed * 2f, p.speedy * p.speed * 2f);
-                    p.speedx = dir.X * 2f;
-                    p.speedy = dir.Y * 2f;
-                    speed = temp;
-                    p.resetspeed = false;
-                    p.State = PlayerState.Interacting;
-                    Game1.healthManager.health -= damage / Game1.inventory.armour.defence;
-                }
-                Hitbox.X = (int)((pos.X - (ori.X / 2)));
-                Hitbox.Y = (int)((pos.Y - (ori.Y / 2)));
-                pos += speed * speedoffset * Game1.deathspeed;
             }
+            rotation *= (float)(180 / Math.PI);
+            while (rotation > 360)
+            {
+                rotation -= 360;
+            }
+            if (rotation <= 45 && rotation >= -45)
+            {
+                direction = Direction.Right;
+                source = sources[0];
+                effect = SpriteEffects.None;
+            }
+            else if (rotation >= 45 && rotation <= 135)
+            {
+                direction = Direction.Up;
+                source = sources[2];
+                effect = SpriteEffects.FlipVertically;
+            }
+            else if (rotation >= 135 || rotation <= -135)
+            {
+                direction = Direction.Left;
+                source = sources[0];
+                effect = SpriteEffects.FlipHorizontally;
+            }
+            else if (rotation >= -135 && rotation <= -45)
+            {
+                direction = Direction.Down;
+                source = sources[2];
+                effect = SpriteEffects.None;
+            }
+            speed = Vector2.Lerp(speed, dir, 0.05f);
+            if (p.Hitbox.Intersects(Hitbox) && p.State != PlayerState.Interacting && speedoffset != Vector2.Zero)
+            {
+                Vector2 temp = new Vector2(p.speedx * p.speed * 2f, p.speedy * p.speed * 2f);
+                p.speedx = dir.X * 2f;
+                p.speedy = dir.Y * 2f;
+                speed = temp;
+                p.resetspeed = false;
+                p.State = PlayerState.Interacting;
+                Game1.healthManager.health -= damage / Game1.inventory.armour.defence;
+                isAngry = true;
+            }
+            Hitbox.X = (int)((pos.X - (ori.X / 2)));
+            Hitbox.Y = (int)((pos.Y - (ori.Y / 2)));
+            pos += speed * speedoffset * Game1.deathspeed;
+            pos.X = MathHelper.Clamp(pos.X, 10, 300);
+            pos.Y = MathHelper.Clamp(pos.Y, 10, 300);
             deadparticles.Update(gameTime);
         }
 
