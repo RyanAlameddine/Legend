@@ -53,7 +53,7 @@ namespace Legend.tooltip
                         }
                         if (key.key.ToString().ToLower() == 'J'.ToString().ToLower())
                         {
-                            Sword sword = new Sword(GameContent.foamsword, player, new Vector2(15, 25));FIX THIS
+                            //ADD SWORD
                         }
                     }
                 }
