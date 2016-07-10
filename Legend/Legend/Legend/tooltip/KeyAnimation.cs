@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Legend.weapons;
 
 namespace Legend.tooltip
 {
@@ -49,6 +50,10 @@ namespace Legend.tooltip
                         else
                         {
                             player.running = false;
+                        }
+                        if (key.key.ToString().ToLower() == 'J'.ToString().ToLower())
+                        {
+                            //ADD SWORD
                         }
                     }
                 }

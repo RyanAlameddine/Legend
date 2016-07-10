@@ -12,10 +12,10 @@ namespace Legend
     {
         Texture2D texture;
         public bool enabled = false;
-        public Vector2 endposition = new Vector2(10, 250);
+        public Vector2 endposition = new Vector2(10, 270);
         Vector2 targetposition;
-        Vector2 startingposition = new Vector2(10, 360);
-        Vector2 position;
+        public Vector2 startingposition = new Vector2(10, 360);
+        public Vector2 position;
         List<ToolTipObj> objects = new List<ToolTipObj>();
 
         public Vector2 velocity = new Vector2(0, 0);
@@ -63,7 +63,8 @@ namespace Legend
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (position != startingposition)
+            //new Point((int)(position.X + .5f), (int)(position.Y + .5f)) != new Point((int)startingposition.X, (int)startingposition.Y)
+            if (new Vector2(position.X - startingposition.X, position.Y - startingposition.Y).Length() > 3)
             {
                 spriteBatch.Draw(texture, position * Settings.Scale, null, Color.White, 0f, Vector2.Zero, 1.3f * Settings.Scale, SpriteEffects.None, .9f);
                 foreach (ToolTipObj obj in objects)

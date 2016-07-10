@@ -23,9 +23,10 @@ namespace Legend.levels.sublevels
         Texture2D _foamsword;
         ItemOnFloor sword;
         ParticleSystem particleSystems;
-        bool tooltipenabled;
-        ToolTip tooltip;
-        KeyAnimation keyanim;
+        ToolTip movetip;
+        ToolTip pickuptip;
+        KeyAnimation movetipkeyanim;
+        KeyAnimation pickuptipkeyanim;
 
         public L1(Texture2D playermove, Texture2D playerattack, Texture2D grass, Texture2D grassbarrier, Texture2D foamsword, Texture2D portal, Song song, Texture2D tooltiptxture, SpriteFont font, Texture2D keytxture, Texture2D keydown)
             :base(playermove, portal, song)
@@ -57,6 +58,8 @@ namespace Legend.levels.sublevels
             player = new Player(playermove, playerattack, new Vector2(145, 250));
             portalobj = new Portal(portal, new Vector2(155, 250));
             spinning = false;
+
+            //movetip\\
             List<ToolTipObj> objects = new List<ToolTipObj>();
             objects.Add(new Text(.3f, new Vector2(110, 17), .91f, font, "Use WASD to move"));
             List<Key> keys = new List<Key>();
@@ -66,22 +69,35 @@ namespace Legend.levels.sublevels
             keys.Add(new Key(.3f, new Vector2(50, 25), .91f, font, 'D', keytxture, keydown));
             ToolTipPlayer tooltipPlayer = new ToolTipPlayer(playermove, playerattack, new Vector2(80, 25), .91f, 1f/5.5f, Direction.Down);
             objects.Add(tooltipPlayer);
-            keyanim = new KeyAnimation(keys, tooltipPlayer);
-            foreach (Key key in keys)
+            movetipkeyanim = new KeyAnimation(keys, tooltipPlayer);
+            foreach (Key thekey in keys)
             {
-                objects.Add(key);
+                objects.Add(thekey);
             }
-            tooltip = new ToolTip(tooltiptxture, objects);
-            tooltip.endposition = new Vector2(10, 270);
-            tooltip.enabled = !tooltip.enabled;
-            tooltip.velocity = new Vector2(0, 0f);
-            tooltipenabled = true;
+            movetip = new ToolTip(tooltiptxture, objects);
+            movetip.enabled = !movetip.enabled;
+            movetip.velocity = new Vector2(0, 0f);
+
+            //pickuptip\\
+            List<ToolTipObj> pickupobjects = new List<ToolTipObj>();
+            pickupobjects.Add(new Text(.25f, new Vector2(85, 20), .91f, font, "Press K to pick up items and drops"));
+            List<Key> pickupkeys = new List<Key>();
+            pickupkeys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
+            pickupkeys.Add(new Key(.3f, new Vector2(40, 25), .91f, font, 'K', keytxture, keydown));
+            pickuptipkeyanim = new KeyAnimation(pickupkeys);
+            foreach (Key thekey in pickupkeys)
+            {
+                pickupobjects.Add(thekey);
+            }
+            pickuptip = new ToolTip(tooltiptxture, pickupobjects);
+            pickuptip.enabled = false;
         }
 
         public override void Update(GameTime gameTime)
         {
             sword.Update(gameTime);
-            tooltip.Update(gameTime);
+            movetip.Update(gameTime);
+            pickuptip.Update(gameTime);
             portalobj.Update();
             Portal(gameTime, Color.OrangeRed);
             if (player.DidPickUpWeapon(sword) && sword.State != ItemOnGroundState.GettingPickedUp)
@@ -98,21 +114,20 @@ namespace Legend.levels.sublevels
                 {
                     particleSystems.addParticle();
                 }
+                pickuptip.velocity = new Vector2(0, -4f);
+                pickuptip.enabled = false;
             }
             particleSystems.Update(gameTime);
-            keyanim.Update(gameTime);
-            if (InputManager.ks.IsKeyDown(Keys.Space))
+            movetipkeyanim.Update(gameTime);
+            pickuptipkeyanim.Update(gameTime);
+            if (movetip.enabled && player.State == PlayerState.Moving)
             {
-                if (!tooltipenabled)
-                {
-                    tooltip.enabled = !tooltip.enabled;
-                    tooltip.velocity = new Vector2(0, -4f);
-                    tooltipenabled = true;
-                }
+                movetip.velocity = new Vector2(0, -4f);
+                movetip.enabled = false;
             }
-            else
+            if (player.Hitbox.Intersects(sword.HitBox) && portalobj.hidden)
             {
-                tooltipenabled = false;
+                pickuptip.enabled = true;
             }
             base.Update(gameTime);
         }
@@ -120,7 +135,8 @@ namespace Legend.levels.sublevels
         public override void Draw(SpriteBatch spriteBatch)
         {
             
-            tooltip.Draw(spriteBatch);
+            movetip.Draw(spriteBatch);
+            pickuptip.Draw(spriteBatch);
             background.Draw(spriteBatch);
             if (portalobj.hidden)
             {
