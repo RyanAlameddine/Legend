@@ -27,7 +27,8 @@ namespace Legend
         Idle,
         Moving,
         Attacking,
-        Interacting
+        Interacting,
+        CancelibleInteracting
     }
 
     public enum ItemOnGroundState
