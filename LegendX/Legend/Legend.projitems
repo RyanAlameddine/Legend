@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>5b6d65de-9206-45eb-839b-b48ee45dfdec</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Legend</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Camera.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)characters\Player.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)enemy\Enemy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)enemy\Glob.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Enum.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)functions\Background.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)functions\Tile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)functions\TransitionToLevelEffect.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameApplication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameContent.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HealthManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InputManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Armour.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Consumable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Inventory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\ItemOnFloor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Items.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Misc.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)inventory\Weapon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\GameOver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\Home.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\Intro.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\Level.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\objects\ExitPortal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\objects\Portal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\SubLevels.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\sublevels\L1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\sublevels\L2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)levels\sublevels\L2Intro.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)particles\Particle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)particles\ParticleSystem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Settings.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Sprite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\Key.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\KeyAnimation.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\Text.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\ToolTip.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\ToolTipObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)tooltip\ToolTipPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)weapons\Sword.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)save.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
