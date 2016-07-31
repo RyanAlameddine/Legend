@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 03b0647acb307574b94e792213c479be
+timeCreated: 1469985018
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: playermove_0
+    21300002: playermove_1
+    21300004: playermove_2
+    21300006: playermove_3
+    21300008: playermove_4
+    21300010: playermove_5
+    21300012: playermove_6
+    21300014: playermove_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: playermove_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 44}
+        - {x: -33, y: 43}
+        - {x: -33, y: -30}
+        - {x: -31, y: -44}
+        - {x: 24, y: -44}
+        - {x: 33, y: -38}
+        - {x: 33, y: 42}
+        - {x: 29, y: 44}
+      tessellationDetail: 0
+    - name: playermove_1
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 171
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26, y: 44}
+        - {x: -33, y: 40}
+        - {x: -33, y: -44}
+        - {x: 32, y: -44}
+        - {x: 33, y: -39}
+        - {x: 33, y: 41}
+        - {x: 23, y: 44}
+      tessellationDetail: 0
+    - name: playermove_2
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 171
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19, y: 37}
+        - {x: 6, y: 40}
+        - {x: -11, y: 40}
+        - {x: -29, y: 25}
+        - {x: -33, y: 20}
+        - {x: -33, y: -44}
+        - {x: 33, y: -44}
+        - {x: 33, y: -2}
+        - {x: 30, y: 22}
+      tessellationDetail: 0
+    - name: playermove_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 83
+        width: 61
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -30.5, y: 44}
+        - {x: -30.5, y: -26}
+        - {x: -21.5, y: -44}
+        - {x: 28.5, y: -44}
+        - {x: 30.5, y: -38}
+        - {x: 30.5, y: 40}
+        - {x: 19.5, y: 44}
+      tessellationDetail: 0
+    - name: playermove_4
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 83
+        width: 66
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -28, y: 40}
+        - {x: -33, y: 30}
+        - {x: -33, y: -44}
+        - {x: 33, y: -44}
+        - {x: 33, y: 34}
+        - {x: 17, y: 40}
+      tessellationDetail: 0
+    - name: playermove_5
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 83
+        width: 60
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -12, y: 44}
+        - {x: -20, y: 41}
+        - {x: -26, y: 36}
+        - {x: -30, y: 26}
+        - {x: -30, y: -44}
+        - {x: 30, y: -44}
+        - {x: 30, y: 39}
+        - {x: 14, y: 44}
+      tessellationDetail: 0
+    - name: playermove_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 71
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 19.5, y: 41.5}
+        - {x: -29.5, y: 41.5}
+        - {x: -35.5, y: 31.5}
+        - {x: -35.5, y: -29.5}
+        - {x: -17.5, y: -41.5}
+        - {x: 27.5, y: -41.5}
+        - {x: 35.5, y: -22.5}
+        - {x: 35.5, y: 21.5}
+      tessellationDetail: 0
+    - name: playermove_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 0
+        width: 72
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -21, y: 41.5}
+        - {x: -32, y: 27.5}
+        - {x: -36, y: 18.5}
+        - {x: -36, y: -24.5}
+        - {x: -28, y: -41.5}
+        - {x: 17, y: -41.5}
+        - {x: 36, y: -29.5}
+        - {x: 36, y: 36.5}
+        - {x: 17, y: 41.5}
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
