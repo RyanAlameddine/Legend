@@ -1,0 +1,55 @@
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\save.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\normal.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fonts\descriptions.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\button hover.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\text box.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\background\grass.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\mouse\mouse.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\obstacles\grassbarrier.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\weapons\foam sword.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\hitparticle.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\portal.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\inventory.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\selectedinventory.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\Armour\tshirt.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\fourpixels.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\logo.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playerattack.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\player\playermove.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\glob.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\gameovertexture.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\monsters\slimeparticle.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\items\gold.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\objects\skyportal.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\guis\tooltip.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\key.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\buttons\keydown.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\sound effects\typewriter-space.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.xnb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\cantina_theme.wma
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\8bit.wma
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Content\music\arcade.wma
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.exe.manifest
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.application
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.exe
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Legend.pdb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Game.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.dll
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Game.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Graphics.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.GamerServices.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\bin\x86\Debug\Microsoft.Xna.Framework.Input.Touch.xml
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe.manifest
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.application
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.exe
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.pdb
+C:\Users\RyanAlameddine\Documents\GitHub\Legend\Legend\Legend\Legend\obj\x86\Debug\Legend.csprojResolveAssemblyReference.cache

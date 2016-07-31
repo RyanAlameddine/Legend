@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<users>
+  <user name="r" level="4">
+    <inventory>
+      <item name="Foam Sword" type="Weapon" cost="1" damage="1" power="no" equiptstatus="equipped." />
+      <item name="T-Shirt Armour" type="Armour" cost="1" defence="1" equiptstatus="equipped." />
+      <item name="Gold Nugget" type="Misc" cost="5" />
+    </inventory>
+  </user>
+</users>

@@ -1,9 +1,0 @@
-C:\Users\RyanAlameddine\Documents\Visual Studio 2010\Projects\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-G:\project\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-F:\test\project\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-F:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-G:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-D:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-E:\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-C:\Users\RyanAlameddine\Documents\github\Legend\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
-C:\Users\Ryan\Documents\github\Legend\Legend\Legend\LegendContent\obj\x86\Debug\LegendContent.contentprojResolveAssemblyReference.cache
