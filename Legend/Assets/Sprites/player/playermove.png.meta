@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 03b0647acb307574b94e792213c479be
-timeCreated: 1469985018
+timeCreated: 1470591654
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 200
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
   textureType: 8
@@ -63,118 +63,121 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 171
+        y: 172
         width: 66
-        height: 88
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -32, y: 44}
-        - {x: -33, y: 43}
-        - {x: -33, y: -30}
-        - {x: -31, y: -44}
-        - {x: 24, y: -44}
-        - {x: 33, y: -38}
-        - {x: 33, y: 42}
-        - {x: 29, y: 44}
+      - - {x: -23, y: 43.5}
+        - {x: -33, y: 38.5}
+        - {x: -33, y: -27.5}
+        - {x: -29, y: -43.5}
+        - {x: 24, y: -43.5}
+        - {x: 33, y: -33.5}
+        - {x: 33, y: 32.5}
+        - {x: 25, y: 43.5}
       tessellationDetail: 0
     - name: playermove_1
       rect:
         serializedVersion: 2
         x: 66
         y: 171
-        width: 66
+        width: 65
         height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -26, y: 44}
-        - {x: -33, y: 40}
-        - {x: -33, y: -44}
-        - {x: 32, y: -44}
-        - {x: 33, y: -39}
-        - {x: 33, y: 41}
-        - {x: 23, y: 44}
+      - - {x: -17.5, y: 44}
+        - {x: -32.5, y: 29}
+        - {x: -32.5, y: -37}
+        - {x: -19.5, y: -44}
+        - {x: 30.5, y: -44}
+        - {x: 32.5, y: -29}
+        - {x: 32.5, y: 40}
+        - {x: 20.5, y: 44}
       tessellationDetail: 0
     - name: playermove_2
       rect:
         serializedVersion: 2
-        x: 132
+        x: 133
         y: 171
-        width: 66
+        width: 65
         height: 88
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 19, y: 37}
-        - {x: 6, y: 40}
-        - {x: -11, y: 40}
-        - {x: -29, y: 25}
-        - {x: -33, y: 20}
-        - {x: -33, y: -44}
-        - {x: 33, y: -44}
-        - {x: 33, y: -2}
-        - {x: 30, y: 22}
+      - - {x: -21.5, y: 40}
+        - {x: -32.5, y: 27}
+        - {x: -32.5, y: -35}
+        - {x: -29.5, y: -44}
+        - {x: 32.5, y: -44}
+        - {x: 32.5, y: 13}
+        - {x: 23.5, y: 40}
       tessellationDetail: 0
     - name: playermove_3
       rect:
         serializedVersion: 2
         x: 0
         y: 83
-        width: 61
-        height: 88
+        width: 60
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -30.5, y: 44}
-        - {x: -30.5, y: -26}
-        - {x: -21.5, y: -44}
-        - {x: 28.5, y: -44}
-        - {x: 30.5, y: -38}
-        - {x: 30.5, y: 40}
-        - {x: 19.5, y: 44}
+      - - {x: -16, y: 43.5}
+        - {x: -30, y: 29.5}
+        - {x: -30, y: -13.5}
+        - {x: -21, y: -43.5}
+        - {x: 27, y: -43.5}
+        - {x: 30, y: -35.5}
+        - {x: 30, y: 42.5}
+        - {x: 25, y: 43.5}
       tessellationDetail: 0
     - name: playermove_4
       rect:
         serializedVersion: 2
-        x: 61
+        x: 62
         y: 83
-        width: 66
-        height: 88
+        width: 64
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -28, y: 40}
-        - {x: -33, y: 30}
-        - {x: -33, y: -44}
-        - {x: 33, y: -44}
-        - {x: 33, y: 34}
-        - {x: 17, y: 40}
+      - - {x: 32, y: 34.5}
+        - {x: 22, y: 40.5}
+        - {x: -23, y: 40.5}
+        - {x: -32, y: 18.5}
+        - {x: -32, y: -43.5}
+        - {x: 29, y: -43.5}
+        - {x: 30, y: -31.5}
+        - {x: 23, y: -24.5}
+        - {x: 32, y: -11.5}
       tessellationDetail: 0
     - name: playermove_5
       rect:
         serializedVersion: 2
-        x: 127
+        x: 128
         y: 83
-        width: 60
-        height: 88
+        width: 59
+        height: 87
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -12, y: 44}
-        - {x: -20, y: 41}
-        - {x: -26, y: 36}
-        - {x: -30, y: 26}
-        - {x: -30, y: -44}
-        - {x: 30, y: -44}
-        - {x: 30, y: 39}
-        - {x: 14, y: 44}
+      - - {x: -24.5, y: 43.5}
+        - {x: -29.5, y: 35.5}
+        - {x: -29.5, y: -36.5}
+        - {x: -27.5, y: -43.5}
+        - {x: 20.5, y: -43.5}
+        - {x: 29.5, y: -29.5}
+        - {x: 29.5, y: 34.5}
+        - {x: 25.5, y: 43.5}
       tessellationDetail: 0
     - name: playermove_6
       rect:
@@ -182,19 +185,18 @@ TextureImporter:
         x: 0
         y: 0
         width: 71
-        height: 83
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: 19.5, y: 41.5}
-        - {x: -29.5, y: 41.5}
-        - {x: -35.5, y: 31.5}
-        - {x: -35.5, y: -29.5}
-        - {x: -17.5, y: -41.5}
-        - {x: 27.5, y: -41.5}
-        - {x: 35.5, y: -22.5}
-        - {x: 35.5, y: 21.5}
+      - - {x: -24.5, y: 41}
+        - {x: -35.5, y: 35}
+        - {x: -35.5, y: -29}
+        - {x: -17.5, y: -41}
+        - {x: 35.5, y: -41}
+        - {x: 35.5, y: 34}
+        - {x: 23.5, y: 41}
       tessellationDetail: 0
     - name: playermove_7
       rect:
@@ -202,20 +204,20 @@ TextureImporter:
         x: 71
         y: 0
         width: 72
-        height: 83
+        height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline:
-      - - {x: -21, y: 41.5}
-        - {x: -32, y: 27.5}
-        - {x: -36, y: 18.5}
-        - {x: -36, y: -24.5}
-        - {x: -28, y: -41.5}
-        - {x: 17, y: -41.5}
-        - {x: 36, y: -29.5}
-        - {x: 36, y: 36.5}
-        - {x: 17, y: 41.5}
+      - - {x: 30, y: 41}
+        - {x: -25, y: 41}
+        - {x: -32, y: 28}
+        - {x: -36, y: 19}
+        - {x: -36, y: -24}
+        - {x: -28, y: -41}
+        - {x: 17, y: -41}
+        - {x: 36, y: -29}
+        - {x: 36, y: 33}
       tessellationDetail: 0
     outline: []
   spritePackingTag: 
