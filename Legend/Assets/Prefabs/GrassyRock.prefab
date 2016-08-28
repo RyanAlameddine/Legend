@@ -20,7 +20,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000012755462404}
   - 212: {fileID: 212000011163517356}
-  - 60: {fileID: 60000011643543898}
+  - 61: {fileID: 61000013067116466}
+  - 114: {fileID: 114000013341989710}
   m_Layer: 0
   m_Name: GrassyRock
   m_TagString: Untagged
@@ -41,8 +42,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &60000011643543898
-PolygonCollider2D:
+--- !u!61 &61000013067116466
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -52,18 +53,20 @@ PolygonCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  m_Points:
-    m_Paths:
-    - - {x: -0.21878068, y: 0.5061544}
-      - {x: -0.49692285, y: 0.2654165}
-      - {x: -0.4969228, y: -0.26305658}
-      - {x: -0.41190657, y: -0.42652774}
-      - {x: -0.01818003, y: -0.50446355}
-      - {x: 0.42519125, y: -0.41383874}
-      - {x: 0.5, y: -0.28104156}
-      - {x: 0.5, y: 0.3125}
-      - {x: 0.25498968, y: 0.5061543}
+  m_Offset: {x: 0, y: 0.25}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.5}
+--- !u!114 &114000013341989710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012633127930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419144d58b7afd946aabff60c6ee7a25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000011163517356
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -91,8 +94,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 1990174015
+  m_SortingOrder: 32
   m_Sprite: {fileID: 21300000, guid: 72515367e4127cd4eaceb16ce5e186fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

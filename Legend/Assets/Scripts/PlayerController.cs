@@ -5,10 +5,11 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
     Animator animator;
     Rigidbody2D rigidbody2d;
-    [SerializeField]
-    float Speed = 1;
+    [Range(1, 100)]
+    public float MaxSpeed = 1;
+    private float currentSpeed = 0;
     Vector2 direction;
-    bool moved;
+
 	void Start () {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -16,35 +17,61 @@ public class PlayerController : MonoBehaviour {
 	
 	void FixedUpdate () {
         direction = Vector2.zero;
-        if (Input.GetKey(KeyCode.W))
+        if (currentSpeed < MaxSpeed)
         {
-            direction += Vector2.up;
-            moved = true;
+            currentSpeed++;
         }
-        else if (Input.GetKey(KeyCode.S))
+        else
         {
-            direction += Vector2.down;
-            moved = true;
+            currentSpeed = MaxSpeed;
         }
+        bool setDirection = false;
+
         if (Input.GetKey(KeyCode.D))
         {
             direction += Vector2.right;
-            moved = true;
+            if (!setDirection)
+            {
+                animator.SetTrigger("Right");
+            }
+            setDirection = true;
         }
         else if (Input.GetKey(KeyCode.A))
         {
             direction += Vector2.left;
-            moved = true;
+            if(!setDirection)
+            {
+                animator.SetTrigger("Left");
+            }
+            setDirection = true;
         }
-        if (!moved)
+
+        if (Input.GetKey(KeyCode.W))
         {
-            direction += Vector2.zero;
+            direction += Vector2.up;
+            if (!setDirection)
+            {
+                animator.SetTrigger("Up");
+            }
+            setDirection = true;
         }
-        animator.SetBool("Up", Input.GetKey(KeyCode.W));
-        animator.SetBool("Down", Input.GetKey(KeyCode.S));
-        animator.SetBool("Left", Input.GetKey(KeyCode.A));
-        animator.SetBool("Right", Input.GetKey(KeyCode.D));
-        rigidbody2d.AddForce(direction * Speed);
-        moved = false;
+        else if (Input.GetKey(KeyCode.S))
+        {
+            direction += Vector2.down;
+            if (!setDirection)
+            {
+                animator.SetTrigger("Down");
+            }
+            setDirection = true;
+        }
+
+
+        if(direction == Vector2.zero)
+        {
+            currentSpeed = 0;
+        }
+
+        animator.SetFloat("Speed", currentSpeed/10);
+        rigidbody2d.AddForce(direction * currentSpeed);
     }
 }
