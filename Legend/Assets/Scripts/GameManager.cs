@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return instance; } }
 
-    public string UserName;
+    public static User user;
 
     void Awake()
     {
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        Debug.Log("Data Path: " + Application.persistentDataPath);
     }
 
 }
