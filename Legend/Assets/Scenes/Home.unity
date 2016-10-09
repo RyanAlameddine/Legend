@@ -168,7 +168,6 @@ GameObject:
   - 224: {fileID: 38457483}
   - 222: {fileID: 38457485}
   - 114: {fileID: 38457484}
-  - 114: {fileID: 38457486}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -233,17 +232,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 38457482}
---- !u!114 &38457486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 38457482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 145d1ae572f8106479af894079598515, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &62866879
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,12 +971,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 38457486}
+      - m_Target: {fileID: 1129111849}
         m_MethodName: Create
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1380,6 +1379,7 @@ GameObject:
   - 222: {fileID: 1080529370}
   - 114: {fileID: 1080529369}
   - 114: {fileID: 1080529368}
+  - 114: {fileID: 1080529371}
   m_Layer: 5
   m_Name: Continue Button
   m_TagString: Untagged
@@ -1484,6 +1484,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1080529366}
+--- !u!114 &1080529371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1080529366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40db0d2a0f66437459e54107709a2b85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1129111844
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1506,7 @@ GameObject:
   - 222: {fileID: 1129111848}
   - 114: {fileID: 1129111847}
   - 114: {fileID: 1129111846}
+  - 114: {fileID: 1129111849}
   m_Layer: 5
   m_Name: Name Input
   m_TagString: Untagged
@@ -1571,7 +1583,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 4
-  m_CharacterLimit: 0
+  m_CharacterLimit: 16
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -1622,6 +1634,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1129111844}
+--- !u!114 &1129111849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129111844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 145d1ae572f8106479af894079598515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warning: {fileID: 1000012905732596, guid: 5f4fc194a4405d54e92fbad7c6af1620, type: 2}
 --- !u!1 &1331607563
 GameObject:
   m_ObjectHideFlags: 0
