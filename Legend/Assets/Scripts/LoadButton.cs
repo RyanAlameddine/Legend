@@ -4,17 +4,12 @@ using UnityEngine.UI;
 using System.IO;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(Button))]
 public class LoadButton : MonoBehaviour {
     InputField input;
     [SerializeField]
     GameObject warning;
 
     void Start () {
-        if (Directory.GetFiles(Application.persistentDataPath + "/").Length == 0)
-        {
-            GetComponent<Button>().interactable = false;
-        }
         input = GetComponent<InputField>();
 	}
 
