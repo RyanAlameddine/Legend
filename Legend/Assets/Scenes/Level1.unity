@@ -642,7 +642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012541881630, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7.32
       objectReference: {fileID: 0}
     - target: {fileID: 4000012541881630, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
       propertyPath: m_LocalPosition.z
@@ -673,6 +673,27 @@ Prefab:
       propertyPath: PlayerCollider
       value: 
       objectReference: {fileID: 522854098}
+    - target: {fileID: 61000010889963654, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000014090031362, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38,
+        type: 3}
+    - target: {fileID: 212000014090031362, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000014090031362, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: 797436867
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
   m_IsPrefabParent: 0
@@ -721,6 +742,41 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458668013 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000012660352230, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+    type: 2}
+  m_PrefabInternal: {fileID: 956251602}
+--- !u!114 &1458668018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1458668013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemAttributes:
+    type: 2
+    equiptstatus: 0
+    description: 
+    name: 
+    cost: 10
+    sprite: {fileID: 0}
+  type: 2
+  item:
+    type: 0
+    equiptstatus: 0
+    description: 
+    name: 
+    cost: 0
+    sprite: {fileID: 0}
+  defence: 0
+  damage: 1
+  power: 0
+  health: 0
 --- !u!1001 &1464399310
 Prefab:
   m_ObjectHideFlags: 0

@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class WeaponOnFloor : MonoBehaviour
+[RequireComponent(typeof(BoxCollider2D), typeof(ItemStats))]
+public class ItemOnFloor : MonoBehaviour
 {
     BoxCollider2D box;
     [SerializeField]
@@ -18,7 +18,9 @@ public class WeaponOnFloor : MonoBehaviour
         {
             if (box.IsTouching(PlayerCollider))
             {
-                
+                GameManager.user.items.Add(GetComponent<ItemStats>().item);
+                Destroy(transform.gameObject);
+                SaveLoad.Save();
             }
         }
     }
