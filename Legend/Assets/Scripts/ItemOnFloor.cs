@@ -19,6 +19,7 @@ public class ItemOnFloor : MonoBehaviour
             if (box.IsTouching(PlayerCollider))
             {
                 GameManager.user.items.Add(GetComponent<ItemStats>().item);
+                Item item = GetComponent<ItemStats>().item;
                 Destroy(transform.gameObject);
                 SaveLoad.Save();
             }

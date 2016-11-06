@@ -2463,6 +2463,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf1a62721c1ffc444802d5105863ec1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  images:
+  - ImageName: Foam Sword
+    sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
 --- !u!1 &1646881030
 GameObject:
   m_ObjectHideFlags: 0

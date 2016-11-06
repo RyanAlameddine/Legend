@@ -694,6 +694,11 @@ Prefab:
       propertyPath: m_SortingLayerID
       value: 797436867
       objectReference: {fileID: 0}
+    - target: {fileID: 61000010889963654, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
   m_IsPrefabParent: 0
@@ -762,17 +767,21 @@ MonoBehaviour:
     type: 2
     equiptstatus: 0
     description: 
-    name: 
+    name: Foam Sword
     cost: 10
-    sprite: {fileID: 0}
+    spriteName: Foam Sword
   type: 2
   item:
-    type: 0
+    type: 2
     equiptstatus: 0
-    description: 
-    name: 
-    cost: 0
-    sprite: {fileID: 0}
+    description: 'This Foam Sword deals 1 damage.
+
+      It has no powers.
+
+      You can sell it for 10 coins.'
+    name: Foam Sword
+    cost: 10
+    spriteName: Foam Sword
   defence: 0
   damage: 1
   power: 0

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
+[System.Serializable]
 public class ItemStats : MonoBehaviour {
     public Item itemAttributes;
     public ItemType type;
@@ -12,81 +13,96 @@ public class ItemStats : MonoBehaviour {
     public int damage;
     public WeaponPower power;
     public int health;
+
+    void Start()
+    {
+        Debug.Log(damage);
+    }
 }
 
 
 [CustomEditor(typeof(ItemStats))]
 public class StatsEditor : Editor
 {
+
     override public void OnInspectorGUI()
     {
-        var myScript = target as ItemStats;
+        ItemStats stats = (ItemStats) target;
 
-        myScript.type = (ItemType) EditorGUILayout.EnumPopup("Item Type:", myScript.type);
+        stats.type = (ItemType) EditorGUILayout.EnumPopup("Item Type:", stats.type);
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Cost:");
-        myScript.itemAttributes.cost = EditorGUILayout.IntSlider(myScript.itemAttributes.cost, 0, 1000);
+        stats.itemAttributes.cost = EditorGUILayout.IntSlider(stats.itemAttributes.cost, 0, 1000);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Equipped:");
-        myScript.itemAttributes.equiptstatus = GUILayout.Toggle(myScript.itemAttributes.equiptstatus, "");
+        stats.itemAttributes.equiptstatus = GUILayout.Toggle(stats.itemAttributes.equiptstatus, "");
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Item Name:");
-        myScript.itemAttributes.name = EditorGUILayout.TextField("");
+        stats.itemAttributes.name = EditorGUILayout.TextField(stats.itemAttributes.name);
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PrefixLabel("Image:");
-        myScript.itemAttributes.sprite = (Sprite)EditorGUILayout.ObjectField(myScript.itemAttributes.sprite, typeof(Sprite), true);
+        EditorGUILayout.PrefixLabel("Image Name:");
+        stats.itemAttributes.spriteName = EditorGUILayout.TextField(stats.itemAttributes.spriteName);
         EditorGUILayout.EndHorizontal();
-        myScript.itemAttributes.type = myScript.type;
-        if (myScript.type == ItemType.Armour)
+        stats.itemAttributes.type = stats.type;
+        if (stats.type == ItemType.Armour)
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PrefixLabel("Defence:");
-            myScript.defence = EditorGUILayout.IntSlider(myScript.defence, 0, 100);
+            stats.defence = EditorGUILayout.IntSlider(stats.defence, 0, 100);
             EditorGUILayout.EndHorizontal();
 
             if (GUILayout.Button("Generate"))
             {
-                myScript.item = new Armor(myScript.itemAttributes.name, myScript.defence, myScript.itemAttributes.cost, myScript.itemAttributes.sprite);
+                stats.item = new Armor(stats.itemAttributes.name, stats.defence, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                Undo.RecordObject(stats, "Changed ItemStats");
+                EditorUtility.SetDirty(stats);
             }
         }
-        else if (myScript.type == ItemType.Weapon)
+        else if (stats.type == ItemType.Weapon)
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PrefixLabel("Damage:");
-            myScript.damage = EditorGUILayout.IntSlider(myScript.damage, 0, 100);
+            stats.damage = EditorGUILayout.IntSlider(stats.damage, 0, 100);
             EditorGUILayout.EndHorizontal();
-            myScript.power = (WeaponPower) EditorGUILayout.EnumPopup("Weapon Power:", myScript.power);
+            stats.power = (WeaponPower) EditorGUILayout.EnumPopup("Weapon Power:", stats.power);
 
             if (GUILayout.Button("Generate"))
             {
-                myScript.item = new Weapon(myScript.itemAttributes.name, myScript.damage, myScript.power, myScript.itemAttributes.cost, myScript.itemAttributes.sprite);
+                stats.item = new Weapon(stats.itemAttributes.name, stats.damage, stats.power, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                Undo.RecordObject(stats, "Changed ItemStats");
+                EditorUtility.SetDirty(stats);
             }
         }
-        else if (myScript.type == ItemType.Misc)
+        else if (stats.type == ItemType.Misc)
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PrefixLabel("Description:");
-            myScript.itemAttributes.description = EditorGUILayout.TextField("");
+            stats.itemAttributes.description = EditorGUILayout.TextField("");
             EditorGUILayout.EndHorizontal();
             if (GUILayout.Button("Generate"))
             {
-                myScript.item = new Misc(myScript.itemAttributes.name, myScript.itemAttributes.cost, myScript.itemAttributes.description, myScript.itemAttributes.sprite);
+                stats.item = new Misc(stats.itemAttributes.name, stats.itemAttributes.cost, stats.itemAttributes.description, stats.itemAttributes.spriteName);
+                Undo.RecordObject(stats, "Changed ItemStats");
+                EditorUtility.SetDirty(stats);
             }
         }
-        else if (myScript.type == ItemType.Consumable)
+        else if (stats.type == ItemType.Consumable)
         {
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.PrefixLabel("Health:");
-            myScript.health = EditorGUILayout.IntSlider(myScript.health, 0, 100);
+            stats.health = EditorGUILayout.IntSlider(stats.health, 0, 100);
             EditorGUILayout.EndHorizontal();
             if (GUILayout.Button("Generate"))
             {
-                myScript.item = new Consumable(myScript.itemAttributes.name, myScript.itemAttributes.sprite, myScript.health, myScript.itemAttributes.cost);
+                stats.item = new Consumable(stats.itemAttributes.name, stats.health, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                Undo.RecordObject(stats, "Changed ItemStats");
+                EditorUtility.SetDirty(stats);
             }
         }
-        
+        Undo.RecordObject(stats, "Changed ItemStats");
+        EditorUtility.SetDirty(stats);
     }
 }

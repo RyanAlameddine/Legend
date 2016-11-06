@@ -4,7 +4,7 @@ public class Weapon : Item {
     public int damage;
     public WeaponPower power;
 
-    public Weapon(string name, int damage, WeaponPower power, int cost, Sprite sprite)
+    public Weapon(string name, int damage, WeaponPower power, int cost, string spriteName)
     {
         this.name = name;
         this.power = power;
@@ -12,6 +12,6 @@ public class Weapon : Item {
         this.cost = cost;
         this.description = "This " + name + " deals " + damage + " damage.\nIt has " + power + " powers.\nYou can sell it for " + cost + " coins.";
         type = ItemType.Weapon;
-        this.sprite = sprite;
+        this.spriteName = spriteName;
     }
 }

@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +11,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return instance; } }
 
     public static User user;
+
+    public static List<ImageReference> imageReferences = new List<ImageReference>();
+
+    public List<ImageReference> images = new List<ImageReference>();
 
     void Awake()
     {
@@ -21,7 +27,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+        imageReferences = images;
         Debug.Log("Data Path: " + Application.persistentDataPath);
     }
-
 }
