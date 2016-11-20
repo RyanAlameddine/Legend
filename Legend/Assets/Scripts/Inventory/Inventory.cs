@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
     [SerializeField]
     GameObject UIItem;
     [SerializeField]
@@ -15,28 +17,40 @@ public class Inventory : MonoBehaviour {
     float startx;
     float starty;
 
-    void Start () {
+    void Start()
+    {
         startx = x;
         starty = y;
         loadItems();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     void addItem(Item item)
     {
         GameObject obj = (GameObject)Instantiate(UIItem);
         obj.transform.SetParent(transform);
-        SetSize((RectTransform)obj.transform, Vector2.one);
+        foreach (ImageReference im in GameManager.Instance.images)
+        {
+            if (im.ImageName == item.spriteName)
+            {
+                int test = obj.transform.childCount;
+                obj.transform.GetChild(0).GetComponent<Image>().sprite = im.sprite;
+            }
+        }
+        ((RectTransform)obj.transform).localScale = Vector3.one;
         ((RectTransform)obj.transform).anchoredPosition = new Vector2(x, y);
-        if ((x-startx) / increment > increments)
+        obj.GetComponent<Image>().enabled = item.equiptstatus;
+        if ((x - startx) / increment > increments)
         {
             x = startx;
             y -= increment;
-        }else
+        }
+        else
         {
             x += increment;
         }
@@ -44,26 +58,6 @@ public class Inventory : MonoBehaviour {
 
     void loadItems()
     {
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-        addItem(new Item());
-    }
-
-    void SetSize(this RectTransform trans, Vector2 newSize)
-    {
-        Vector2 oldSize = trans.rect.size;
-        Vector2 deltaSize = newSize - oldSize;
-        trans.offsetMin = trans.offsetMin - new Vector2(deltaSize.x * trans.pivot.x, deltaSize.y * trans.pivot.y);
-        trans.offsetMax = trans.offsetMax + new Vector2(deltaSize.x * (1f - trans.pivot.x), deltaSize.y * (1f - trans.pivot.y));
+        addItem(new Weapon("Foam Sword", 1, WeaponPower.no, 10, "Foam Sword"));
     }
 }

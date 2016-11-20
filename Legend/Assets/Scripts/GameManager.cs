@@ -12,8 +12,6 @@ public class GameManager : MonoBehaviour
 
     public static User user;
 
-    public static List<ImageReference> imageReferences = new List<ImageReference>();
-
     public List<ImageReference> images = new List<ImageReference>();
 
     void Awake()
@@ -27,7 +25,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-        imageReferences = images;
+        Cursor.visible = true;
         Debug.Log("Data Path: " + Application.persistentDataPath);
     }
 }
