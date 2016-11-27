@@ -23,7 +23,7 @@ public class CreateUser : MonoBehaviour {
             {
                 User user = new User();
                 user.name = input.text;
-                GameManager.user = user;
+                GameManager.Instance.user = user;
                 SaveLoad.Save();
                 SceneManager.LoadScene(1);
             }else

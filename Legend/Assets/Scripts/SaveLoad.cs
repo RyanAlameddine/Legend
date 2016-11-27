@@ -10,8 +10,8 @@ public static class SaveLoad
     public static void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/" + GameManager.user.name + ".PUFFYDATA");
-        bf.Serialize(file, GameManager.user);
+        FileStream file = File.Create(Application.persistentDataPath + "/" + GameManager.Instance.user.name + ".PUFFYDATA");
+        bf.Serialize(file, GameManager.Instance.user);
         file.Close();
     }
 
@@ -21,7 +21,7 @@ public static class SaveLoad
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/" + name + ".PUFFYDATA", FileMode.Open);
-            GameManager.user = (User)bf.Deserialize(file);
+            GameManager.Instance.user = (User)bf.Deserialize(file);
             file.Close();
             return true;
         }

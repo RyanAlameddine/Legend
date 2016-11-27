@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public static GameManager Instance { get { return instance; } }
 
-    public static User user;
+    public User user;
 
     public List<ImageReference> images = new List<ImageReference>();
 
