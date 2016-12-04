@@ -78,12 +78,9 @@ public class Inventory : MonoBehaviour
 
     void loadItems()
     {
-        /*
         foreach(Item i in GameManager.Instance.user.items)
         {
             addItem(i);
         }
-        */
-        addItem(new Weapon("Foam", 1, WeaponPower.no, 1, "Foam Sword"));
     }
 }

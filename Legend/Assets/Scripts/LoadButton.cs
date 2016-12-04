@@ -13,6 +13,14 @@ public class LoadButton : MonoBehaviour {
         input = GetComponent<InputField>();
 	}
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            Load();
+        }
+    }
+
     public void Load()
     {
         if (SaveLoad.Load(input.text))

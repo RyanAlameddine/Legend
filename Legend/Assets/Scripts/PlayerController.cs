@@ -7,16 +7,29 @@ public class PlayerController : MonoBehaviour {
     Rigidbody2D rigidbody2d;
     [Range(1, 100)]
     public float MaxSpeed = 1;
+    float StartMaxSpeed;
     private float currentSpeed = 0;
     Vector2 direction;
 
 	void Start () {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
+        StartMaxSpeed = MaxSpeed;
 	}
 	
 	void FixedUpdate () {
         direction = Vector2.zero;
+
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            MaxSpeed = StartMaxSpeed + 20;
+            StaminaController.Stamina -= .005f;
+        }else
+        {
+            MaxSpeed = StartMaxSpeed;
+            StaminaController.Stamina += .003f;
+        }
+
         if (currentSpeed < MaxSpeed)
         {
             currentSpeed++;

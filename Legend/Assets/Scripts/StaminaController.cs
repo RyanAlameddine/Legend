@@ -1,0 +1,26 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+
+public class StaminaController : MonoBehaviour {
+    public static float Stamina;
+    Image image;
+    public float startHue;
+    public float endHue;
+    float hue = 1;
+    float saturation = 1;
+    float value = 1;
+
+    void Start () {
+        hue = startHue;
+        image = GetComponent<Image>();
+        image.color = Color.HSVToRGB(hue, saturation, value);
+    }
+	
+	void Update () {
+        Stamina = Mathf.Clamp(Stamina, 0, 1);
+        image.fillAmount = Stamina;
+        image.color = Color.HSVToRGB(Mathf.Lerp(endHue, startHue, Stamina), saturation, value);
+	}
+}

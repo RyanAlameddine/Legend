@@ -18,6 +18,6 @@ public class UIItem : MonoBehaviour {
 
     public void onClick()
     {
-        transform.GetChild(0).GetComponent<Image>().enabled = true;
+        transform.GetComponent<Image>().enabled = true;
     }
 }
