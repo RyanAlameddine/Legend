@@ -2,6 +2,11 @@
 using System.Collections;
 
 public class ToolTip : MonoBehaviour {
+    public ToolTip()
+    {
+        GameManager.Instance.AddInvokableInstance(this);
+    }
+
     public bool view = false;
     public Vector2 endposition = new Vector2(10, 270);
     Vector2 targetposition;
@@ -42,5 +47,11 @@ public class ToolTip : MonoBehaviour {
             c = 2f;
         }
         transform.localPosition = position;
+    }
+
+    [Event("Move-Up")]
+    public void TrueView()
+    {
+        view = true;
     }
 }
