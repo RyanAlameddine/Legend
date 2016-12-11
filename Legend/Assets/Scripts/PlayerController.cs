@@ -20,11 +20,17 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
         direction = Vector2.zero;
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (StaminaController.dead)
+        {
+            MaxSpeed = StartMaxSpeed - 10;
+            StaminaController.Stamina += .003f;
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
         {
             MaxSpeed = StartMaxSpeed + 20;
             StaminaController.Stamina -= .005f;
-        }else
+        }
+        else
         {
             MaxSpeed = StartMaxSpeed;
             StaminaController.Stamina += .003f;
@@ -82,6 +88,21 @@ public class PlayerController : MonoBehaviour {
         if(direction == Vector2.zero)
         {
             currentSpeed = 0;
+            if (StaminaController.dead)
+            {
+                StaminaController.Stamina += .002f;
+            }
+            else
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    StaminaController.Stamina += .01f;
+                }
+                else
+                {
+                    StaminaController.Stamina += .002f;
+                }
+            }
         }
 
         animator.SetFloat("Speed", currentSpeed/10);

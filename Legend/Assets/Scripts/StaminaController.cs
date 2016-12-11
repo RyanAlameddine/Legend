@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class StaminaController : MonoBehaviour {
-    public static float Stamina;
+    public static float Stamina = 1;
+    public static bool dead;
+    public static bool lockcolor;
     Image image;
     public float startHue;
     public float endHue;
@@ -21,6 +23,19 @@ public class StaminaController : MonoBehaviour {
 	void Update () {
         Stamina = Mathf.Clamp(Stamina, 0, 1);
         image.fillAmount = Stamina;
-        image.color = Color.HSVToRGB(Mathf.Lerp(endHue, startHue, Stamina), saturation, value);
+        if (!lockcolor)
+        {
+            image.color = Color.HSVToRGB(Mathf.Lerp(endHue, startHue, Stamina), saturation, value);
+        }
+        if(Stamina <= 0)
+        {
+            dead = true;
+            lockcolor = true;
+        }
+        if(Stamina >= 1)
+        {
+            dead = false;
+            lockcolor = false;
+        }
 	}
 }
