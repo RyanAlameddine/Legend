@@ -1,17 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ToolTip : MonoBehaviour {
-    public ToolTip()
-    {
-        GameManager.Instance.AddInvokableInstance(this);
-    }
+public class ToolTip : MonoBehaviour
+{
 
     public bool view = false;
     public Vector2 endposition = new Vector2(10, 270);
     Vector2 targetposition;
     public Vector2 startingposition = new Vector2(10, 360);
     Vector2 position;
+    public bool run;
 
     Vector2 velocity = new Vector2(0, 0);
 
@@ -21,6 +19,7 @@ public class ToolTip : MonoBehaviour {
 
     public void Start()
     {
+        GameManager.Instance.AddClass(this);
         position = startingposition;
     }
 
@@ -47,6 +46,11 @@ public class ToolTip : MonoBehaviour {
             c = 2f;
         }
         transform.localPosition = position;
+        if(run == true)
+        {
+            run = false;
+            GameManager.Instance.runEvent("Move-Up");
+        }
     }
 
     [Event("Move-Up")]
