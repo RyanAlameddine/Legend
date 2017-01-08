@@ -10,11 +10,17 @@ public class PlayerController : MonoBehaviour {
     float StartMaxSpeed;
     private float currentSpeed = 0;
     Vector2 direction;
+    int facing;
 
 	void Start () {
         animator = GetComponent<Animator>();
         rigidbody2d = GetComponent<Rigidbody2D>();
         StartMaxSpeed = MaxSpeed;
+        facing = 0;
+        //0-up
+        //1-down
+        //2-left
+        //3-right
 	}
 	
 	void FixedUpdate () {
@@ -54,6 +60,7 @@ public class PlayerController : MonoBehaviour {
                 animator.SetTrigger("Right");
             }
             setDirection = true;
+            facing = 3;
         }
         else if (Input.GetKey(KeyCode.A))
         {
@@ -63,6 +70,7 @@ public class PlayerController : MonoBehaviour {
                 animator.SetTrigger("Left");
             }
             setDirection = true;
+            facing = 2;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -72,6 +80,8 @@ public class PlayerController : MonoBehaviour {
             {
                 animator.SetTrigger("Up");
             }
+            if (!setDirection)
+                facing = 0;
             setDirection = true;
         }
         else if (Input.GetKey(KeyCode.S))
@@ -81,6 +91,8 @@ public class PlayerController : MonoBehaviour {
             {
                 animator.SetTrigger("Down");
             }
+            if (!setDirection)
+                facing = 1;
             setDirection = true;
         }
 
@@ -102,6 +114,26 @@ public class PlayerController : MonoBehaviour {
                 {
                     StaminaController.Stamina += .002f;
                 }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if(facing == 0)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("W");
+            }
+            else if (facing == 1)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("S");
+            }
+            else if (facing == 2)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("A");
+            }
+            else if (facing == 3)
+            {
+                transform.GetChild(0).GetComponent<Animator>().SetTrigger("D");
             }
         }
 

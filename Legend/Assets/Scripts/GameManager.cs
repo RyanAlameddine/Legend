@@ -13,6 +13,8 @@ public class EventReference
     public string eventName;
     public MethodInfo info;
     public object Class;
+    public EventDelegate Delegate;
+
     public EventReference(string eventName, MethodInfo info, Type type)
     {
         this.type = type;
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
             if(reference.type == t)
             {
                 reference.Class = obj;
+                reference.Delegate = (EventDelegate)Delegate.CreateDelegate(typeof(EventDelegate), obj, reference.info, true);
             }
         }
         //references.Add(new EventReference(ex.eventName, info, ));
@@ -92,9 +95,10 @@ public class GameManager : MonoBehaviour
         {
             if(r.eventName == name)
             {
-                
+
                 //r.func(r.Class);
-                r.info.Invoke(r.Class, new object[0]);
+                r.Delegate();
+                //r.info.Invoke(r.Class, new object[0]);
             }
         }
     }

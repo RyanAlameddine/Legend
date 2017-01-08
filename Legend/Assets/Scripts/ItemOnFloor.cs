@@ -21,7 +21,6 @@ public class ItemOnFloor : MonoBehaviour
                 GameManager.Instance.user.items.Add(GetComponent<ItemStats>().item);
                 Destroy(transform.gameObject);
                 Inventory.Instance.resetInv();                
-                SaveLoad.Save();
             }
         }
     }

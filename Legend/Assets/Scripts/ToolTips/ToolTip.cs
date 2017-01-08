@@ -9,7 +9,6 @@ public class ToolTip : MonoBehaviour
     Vector2 targetposition;
     public Vector2 startingposition = new Vector2(10, 360);
     Vector2 position;
-    public bool run;
 
     Vector2 velocity = new Vector2(0, 0);
 
@@ -46,16 +45,11 @@ public class ToolTip : MonoBehaviour
             c = 2f;
         }
         transform.localPosition = position;
-        if(run == true)
-        {
-            run = false;
-            GameManager.Instance.runEvent("Move-Up");
-        }
     }
 
-    [Event("Move-Up")]
+    [Event("closetooltip")]
     public void TrueView()
     {
-        view = true;
+        view = false;
     }
 }

@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e309a59b37844148bf399963cdbff44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view: 0
-  endposition: {x: 0, y: -100}
+  view: 1
+  endposition: {x: 0, y: -150}
   startingposition: {x: 0, y: -400}
 --- !u!114 &114000012908863450
 MonoBehaviour:
