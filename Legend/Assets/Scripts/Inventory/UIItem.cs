@@ -4,11 +4,11 @@ using UnityEngine.UI;
 
 public class UIItem : MonoBehaviour {
 
-    public string description;
+    public Item item;
 
     public void onHover()
     {
-        transform.parent.FindChild("Description").GetComponent<Text>().text = description;
+        transform.parent.FindChild("Description").GetComponent<Text>().text = item.description;
     }
 
     public void onExit()
@@ -19,5 +19,10 @@ public class UIItem : MonoBehaviour {
     public void onClick()
     {
         transform.GetComponent<Image>().enabled = !transform.GetComponent<Image>().enabled;
+        if(item.type == ItemType.Weapon)
+        {
+            Inventory.EquippedSword = this;
+        }
+        GameManager.Instance.runEvent("EquipChange");
     }
 }

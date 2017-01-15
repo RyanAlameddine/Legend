@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     public User user;
 
+    public string scene;
+
     public List<ImageReference> images = new List<ImageReference>();
 
     public List<EventReference> references = new List<EventReference>();

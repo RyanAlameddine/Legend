@@ -8,6 +8,25 @@ public class Inventory : MonoBehaviour
 
     public static Inventory Instance { get { return instance; } }
 
+    public static UIItem EquippedSword {
+        get
+        {
+            return equippedSword;
+        }
+        set
+        {
+            if (equippedSword == value)
+            {
+                equippedSword = null;
+                return;
+            }
+            if(equippedSword != null) equippedSword.onClick();
+            equippedSword = value;
+        }
+    }
+    static UIItem equippedSword;
+    bool setEquipped;
+
     [SerializeField]
     GameObject UIItem;
     [SerializeField]
@@ -19,6 +38,7 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     float increments;
     float startx;
+    float starty;
 
     void Awake()
     {
@@ -35,6 +55,7 @@ public class Inventory : MonoBehaviour
     void Start()
     {
         startx = x;
+        starty = y;
         loadItems();
     }
 
@@ -52,7 +73,12 @@ public class Inventory : MonoBehaviour
         ((RectTransform)obj.transform).localScale = Vector3.one;
         ((RectTransform)obj.transform).anchoredPosition = new Vector2(x, y);
         obj.GetComponent<Image>().enabled = item.equiptstatus;
-        obj.GetComponent<UIItem>().description = item.description;
+        obj.GetComponent<UIItem>().item = item;
+        if(Inventory.equippedSword != null && item == Inventory.equippedSword.item && !setEquipped)
+        {
+            obj.GetComponent<UIItem>().onClick();
+            setEquipped = true;
+        }
         if ((x - startx) / increment > increments)
         {
             x = startx;
@@ -65,7 +91,7 @@ public class Inventory : MonoBehaviour
     }
 
     public void resetInv() {
-        for(int i = 0; i < transform.childCount - 1; i++)
+        for(int i = 0; i < transform.childCount; i++)
         {
             GameObject obj = transform.GetChild(i).gameObject;
             if(obj.name != "Description")
@@ -78,9 +104,12 @@ public class Inventory : MonoBehaviour
 
     void loadItems()
     {
+        setEquipped = false;
         foreach(Item i in GameManager.Instance.user.items)
         {
             addItem(i);
         }
+        x = startx;
+        y = starty;
     }
 }

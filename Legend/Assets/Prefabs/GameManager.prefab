@@ -59,3 +59,5 @@ MonoBehaviour:
   images:
   - ImageName: Foam Sword
     sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
+  - ImageName: Rusty Sword
+    sprite: {fileID: 21300000, guid: 0f1301d6dcb37db4f9ee156d522ddd7f, type: 3}
