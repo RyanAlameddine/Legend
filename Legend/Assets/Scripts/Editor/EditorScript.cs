@@ -12,6 +12,8 @@ public class EditorScript : EditorWindow
     {
         if (!EditorApplication.isPlaying)
         {
+            EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
+            EditorApplication.SaveAssets();
             EditorSceneManager.OpenScene("Assets/Scenes/Home.unity");
             EditorApplication.isPlaying = true;
         }

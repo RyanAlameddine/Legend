@@ -23,7 +23,8 @@ GameObject:
   - 114: {fileID: 114000011156050434}
   - 95: {fileID: 95000012317408990}
   - 61: {fileID: 61000013363929288}
-  m_Layer: 0
+  - 114: {fileID: 114000012985721484}
+  m_Layer: 10
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -225,6 +226,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxSpeed: 30
+--- !u!114 &114000012985721484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010057946924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 556eb1d68025a65488638fd3eafc3000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013169918988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -299,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1990174015
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

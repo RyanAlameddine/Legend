@@ -34,10 +34,10 @@ public class StatsEditor : Editor
         EditorGUILayout.PrefixLabel("Cost:");
         stats.itemAttributes.cost = EditorGUILayout.IntSlider(stats.itemAttributes.cost, 0, 1000);
         EditorGUILayout.EndHorizontal();
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.PrefixLabel("Equipped:");
-        stats.itemAttributes.equiptstatus = GUILayout.Toggle(stats.itemAttributes.equiptstatus, "");
-        EditorGUILayout.EndHorizontal();
+        //EditorGUILayout.BeginHorizontal();
+        //EditorGUILayout.PrefixLabel("Equipped:");
+        //stats.itemAttributes.equiptstatus = GUILayout.Toggle(stats.itemAttributes.equiptstatus, "");
+        //EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Item Name:");
         stats.itemAttributes.name = EditorGUILayout.TextField(stats.itemAttributes.name);

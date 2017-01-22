@@ -13,29 +13,34 @@ public class StaminaController : MonoBehaviour {
     float hue = 1;
     float saturation = 1;
     float value = 1;
+    public bool colorChange = true;
 
     void Start () {
         hue = startHue;
         image = GetComponent<Image>();
+        if(colorChange)
         image.color = Color.HSVToRGB(hue, saturation, value);
     }
 	
 	void Update () {
         Stamina = Mathf.Clamp(Stamina, 0, 1);
         image.fillAmount = Stamina;
-        if (!lockcolor)
+        if (colorChange)
         {
-            image.color = Color.HSVToRGB(Mathf.Lerp(endHue, startHue, Stamina), saturation, value);
-        }
-        if(Stamina <= 0)
-        {
-            dead = true;
-            lockcolor = true;
-        }
-        if(Stamina >= 1)
-        {
-            dead = false;
-            lockcolor = false;
+            if (!lockcolor)
+            {
+                image.color = Color.HSVToRGB(Mathf.Lerp(endHue, startHue, Stamina), saturation, value);
+            }
+            if (Stamina <= 0)
+            {
+                dead = true;
+                lockcolor = true;
+            }
+            if (Stamina >= 1)
+            {
+                dead = false;
+                lockcolor = false;
+            }
         }
 	}
 }

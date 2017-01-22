@@ -7,10 +7,14 @@ public class EquippedSword : MonoBehaviour {
     public void Start()
     {
         GameManager.Instance.AddClass(this);
+        GetComponent<SpriteRenderer>().enabled = false;
+        GetComponent<Layering>().enabled = false;
+        GetComponent<Animator>().enabled = false;
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 	
     [Event("EquipChange")]
-	void updateSword () {
+	public void updateSword () {
         if(Inventory.EquippedSword == null)
         {
             GetComponent<SpriteRenderer>().enabled = false;

@@ -22,6 +22,8 @@ GameObject:
   - 212: {fileID: 212000014090031362}
   - 61: {fileID: 61000010889963654}
   - 114: {fileID: 114000013578364734}
+  - 114: {fileID: 114000012397142254}
+  - 114: {fileID: 114000013532964456}
   m_Layer: 0
   m_Name: ItemOnFloor
   m_TagString: Untagged
@@ -36,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012660352230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 7.32, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -56,6 +58,55 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
+--- !u!114 &114000012397142254
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012660352230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemAttributes:
+    type: 2
+    equiptstatus: 0
+    description: 
+    name: Foam Sword
+    cost: 10
+    spriteName: Foam Sword
+  type: 2
+  item:
+    type: 2
+    equiptstatus: 0
+    description: 'This Foam Sword deals 1 damage.
+
+      It has no powers.
+
+      You can sell it for 10 coins.'
+    name: Foam Sword
+    cost: 10
+    spriteName: Foam Sword
+  defence: 0
+  damage: 1
+  power: 0
+  health: 0
+--- !u!114 &114000013532964456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012660352230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b2086bf233998649b68591033ac1f4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Key: 0
+  EventName: ShowPortal
+  disableafter: 0
+  whenDestroyed: 1
 --- !u!114 &114000013578364734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,9 +146,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 797436867
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
