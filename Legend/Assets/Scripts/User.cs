@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class User {
 
     public string name;
-    public int health = 3;
+    public float health = 10;
     public int level = 0;
     public List<string> items = new List<string>();
 }

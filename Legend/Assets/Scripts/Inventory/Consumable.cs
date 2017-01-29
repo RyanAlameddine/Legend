@@ -10,7 +10,7 @@ public class Consumable : Item {
         this.name = name;
         this.health = health;
         this.cost = cost;
-        this.description = name + " restore " + health + " health.\nYou can sell it for " + cost + " coins.";
+        this.description = name + " restores " + health + " health.\nYou can sell it for " + cost + " coins.";
         type = ItemType.Consumable;
         this.sprite = sprite;
     }

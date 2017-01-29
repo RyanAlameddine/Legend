@@ -23,16 +23,16 @@ public class EquippedSword : MonoBehaviour {
             GetComponent<BoxCollider2D>().enabled = false;
             itemName = "";
         }
-        else if (Inventory.EquippedSword.item.name != name)
+        else if (Inventory.EquippedSword.item.name != itemName)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<Layering>().enabled = true;
             GetComponent<Animator>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
 
-            if (GameManager.Instance.itemReferences.ContainsKey(itemName))
+            if (GameManager.Instance.itemReferences.ContainsKey(Inventory.EquippedSword.item.name))
             {
-                var reference = GameManager.Instance.itemReferences[itemName];
+                var reference = GameManager.Instance.itemReferences[Inventory.EquippedSword.item.name];
                 if (reference == Inventory.EquippedSword.item)
                 {
                     GetComponent<SpriteRenderer>().sprite = reference.sprite;

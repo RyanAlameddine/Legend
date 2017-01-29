@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Portal : MonoBehaviour
 {
@@ -10,10 +11,14 @@ public class Portal : MonoBehaviour
     List<Vector2> playerToPortalCenter = new List<Vector2>();
     List<float> spinRadius = new List<float>();
     List<float> angle = new List<float>();
+    SpriteRenderer sr;
+    [SerializeField]
+    Image screenTint;
 
     public void Start()
     {
         GameManager.Instance.AddClass(this);
+        sr = GetComponent<SpriteRenderer>();
     }
 
     [Event("ShowPortal")]
@@ -87,14 +92,26 @@ public class Portal : MonoBehaviour
     {
         Camera c = Camera.main;
         yield return new WaitForSeconds(2);
-        while (transform.localScale.x > 0)
+        while (transform.localScale.x > 0.03)
         {
-            transform.localScale -= new Vector3(.001f, .001f, 0);
+            transform.localScale -= new Vector3(.01f, .01f, 0);
             yield return new WaitForEndOfFrame();
         }
-        while(c.transform.localPosition.z < 10)
+        c.transform.position = transform.position;
+        sr.enabled = false;
+        screenTint.color = Color.black;
+        screenTint.color -= new Color(0, 0, 0, 1);
+        while (c.orthographicSize > 0)
         {
-            c.transform.localPosition += new Vector3(0, 0, .001f);
+            c.orthographicSize -= .02f;
+            c.transform.Rotate(new Vector3(0, 0, 3f * (1-(c.orthographicSize/3))));
+            screenTint.color += new Color(0, 0, 0, .005f);
+            yield return new WaitForEndOfFrame();
+        }
+        while(screenTint.color.a < 1)
+        {
+            screenTint.color += new Color(0, 0, 0, .005f);
+            yield return new WaitForEndOfFrame();
         }
     }
 }
