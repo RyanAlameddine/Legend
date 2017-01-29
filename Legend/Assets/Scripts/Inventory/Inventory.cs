@@ -63,13 +63,7 @@ public class Inventory : MonoBehaviour
     {
         GameObject obj = (GameObject)Instantiate(UIItem);
         obj.transform.SetParent(transform);
-        foreach (ImageReference im in GameManager.Instance.images)
-        {
-            if (im.ImageName == item.spriteName)
-            {
-                obj.transform.GetChild(0).GetComponent<Image>().sprite = im.sprite;
-            }
-        }
+        obj.transform.GetChild(0).GetComponent<Image>().sprite = item.sprite;
         ((RectTransform)obj.transform).localScale = Vector3.one;
         ((RectTransform)obj.transform).anchoredPosition = new Vector2(x, y);
         obj.GetComponent<Image>().enabled = item.equiptstatus;
@@ -105,9 +99,9 @@ public class Inventory : MonoBehaviour
     void loadItems()
     {
         setEquipped = false;
-        foreach(Item i in GameManager.Instance.user.items)
+        foreach(string i in GameManager.Instance.user.items)
         {
-            addItem(i);
+            addItem(GameManager.Instance.itemReferences[i]);
         }
         x = startx;
         y = starty;

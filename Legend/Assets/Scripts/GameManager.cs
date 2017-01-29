@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Reflection;
+using UnityEditor;
 
 public delegate void EventDelegate();
 
@@ -41,7 +42,9 @@ public class GameManager : MonoBehaviour
 
     public string scene;
 
-    public List<ImageReference> images = new List<ImageReference>();
+    //public List<ImageReference> images = new List<ImageReference>();
+
+    public Dictionary<string, Item> itemReferences = new Dictionary<string, Item>();
 
     public List<EventReference> references = new List<EventReference>();
 
@@ -85,6 +88,14 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+        }
+
+        string[] ScriptableIDs = AssetDatabase.FindAssets("", new string[] { "Assets/ScriptableItems" } );
+        //var ScriptableObjects = AssetDatabase.LoadAllAssetsAtPath("Assets/ScriptableItems");
+        foreach(string str in ScriptableIDs)
+        {
+            ItemStats objectItem = AssetDatabase.LoadAssetAtPath<ItemStats>(AssetDatabase.GUIDToAssetPath(str));
+            itemReferences.Add(objectItem.item.name, objectItem.item);
         }
         DontDestroyOnLoad(gameObject);
         Cursor.visible = true;

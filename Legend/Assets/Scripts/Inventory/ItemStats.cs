@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEditor;
 
 [System.Serializable]
-public class ItemStats : MonoBehaviour {
+public class ItemStats : ScriptableObject {
     public Item itemAttributes;
     public ItemType type;
     public Item item;
@@ -44,7 +44,7 @@ public class StatsEditor : Editor
         EditorGUILayout.EndHorizontal();
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.PrefixLabel("Image Name:");
-        stats.itemAttributes.spriteName = EditorGUILayout.TextField(stats.itemAttributes.spriteName);
+        stats.itemAttributes.sprite = (Sprite) EditorGUILayout.ObjectField("Sprite", stats.itemAttributes.sprite, typeof(Sprite), false);
         EditorGUILayout.EndHorizontal();
         stats.itemAttributes.type = stats.type;
         if (stats.type == ItemType.Armour)
@@ -56,7 +56,7 @@ public class StatsEditor : Editor
 
             if (GUILayout.Button("Generate"))
             {
-                stats.item = new Armor(stats.itemAttributes.name, stats.defence, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                stats.item = new Armor(stats.itemAttributes.name, stats.defence, stats.itemAttributes.cost, stats.itemAttributes.sprite);
                 Undo.RecordObject(stats, "Changed ItemStats");
                 EditorUtility.SetDirty(stats);
             }
@@ -71,7 +71,7 @@ public class StatsEditor : Editor
 
             if (GUILayout.Button("Generate"))
             {
-                stats.item = new Weapon(stats.itemAttributes.name, stats.damage, stats.power, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                stats.item = new Weapon(stats.itemAttributes.name, stats.damage, stats.power, stats.itemAttributes.cost, stats.itemAttributes.sprite);
                 Undo.RecordObject(stats, "Changed ItemStats");
                 EditorUtility.SetDirty(stats);
             }
@@ -84,7 +84,7 @@ public class StatsEditor : Editor
             EditorGUILayout.EndHorizontal();
             if (GUILayout.Button("Generate"))
             {
-                stats.item = new Misc(stats.itemAttributes.name, stats.itemAttributes.cost, stats.itemAttributes.description, stats.itemAttributes.spriteName);
+                stats.item = new Misc(stats.itemAttributes.name, stats.itemAttributes.cost, stats.itemAttributes.description, stats.itemAttributes.sprite);
                 Undo.RecordObject(stats, "Changed ItemStats");
                 EditorUtility.SetDirty(stats);
             }
@@ -97,7 +97,7 @@ public class StatsEditor : Editor
             EditorGUILayout.EndHorizontal();
             if (GUILayout.Button("Generate"))
             {
-                stats.item = new Consumable(stats.itemAttributes.name, stats.health, stats.itemAttributes.cost, stats.itemAttributes.spriteName);
+                stats.item = new Consumable(stats.itemAttributes.name, stats.health, stats.itemAttributes.cost, stats.itemAttributes.sprite);
                 Undo.RecordObject(stats, "Changed ItemStats");
                 EditorUtility.SetDirty(stats);
             }

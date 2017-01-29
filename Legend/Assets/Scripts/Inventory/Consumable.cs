@@ -5,13 +5,13 @@ using System.Collections;
 public class Consumable : Item {
     public int health;
 
-    public Consumable(string name, int health, int cost, string spriteName)
+    public Consumable(string name, int health, int cost, Sprite sprite)
     {
         this.name = name;
         this.health = health;
         this.cost = cost;
         this.description = name + " restore " + health + " health.\nYou can sell it for " + cost + " coins.";
         type = ItemType.Consumable;
-        this.spriteName = spriteName;
+        this.sprite = sprite;
     }
 }

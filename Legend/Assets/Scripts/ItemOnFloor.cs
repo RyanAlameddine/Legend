@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(BoxCollider2D), typeof(ItemStats))]
+[RequireComponent(typeof(BoxCollider2D), typeof(SpriteRenderer))]
 public class ItemOnFloor : MonoBehaviour
 {
     BoxCollider2D box;
-    [SerializeField]
     Collider2D PlayerCollider;
+    public ItemStats item;
+    SpriteRenderer sr;
     void Start()
     {
         box = GetComponent<BoxCollider2D>();
+        sr = GetComponent<SpriteRenderer>();
+        sr.sprite = item.item.sprite;
+        PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
     }
 
     void Update()
@@ -18,7 +22,7 @@ public class ItemOnFloor : MonoBehaviour
         {
             if (box.IsTouching(PlayerCollider))
             {
-                GameManager.Instance.user.items.Add(GetComponent<ItemStats>().item);
+                GameManager.Instance.user.items.Add(item.name);
                 Destroy(transform.gameObject);
                 Inventory.Instance.resetInv();                
             }

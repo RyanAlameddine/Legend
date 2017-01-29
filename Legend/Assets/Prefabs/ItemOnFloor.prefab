@@ -9,21 +9,20 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000012660352230}
+  m_RootGameObject: {fileID: 1000010130102864}
   m_IsPrefabParent: 1
---- !u!1 &1000012660352230
+--- !u!1 &1000010130102864
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012541881630}
-  - 212: {fileID: 212000014090031362}
-  - 61: {fileID: 61000010889963654}
-  - 114: {fileID: 114000013578364734}
-  - 114: {fileID: 114000012397142254}
-  - 114: {fileID: 114000013532964456}
+  - 4: {fileID: 4000011865186078}
+  - 212: {fileID: 212000011217680900}
+  - 61: {fileID: 61000010725157780}
+  - 114: {fileID: 114000013397091704}
+  - 114: {fileID: 114000010506145156}
   m_Layer: 0
   m_Name: ItemOnFloor
   m_TagString: Untagged
@@ -31,25 +30,25 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000012541881630
+--- !u!4 &4000011865186078
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
+  m_GameObject: {fileID: 1000010130102864}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.32, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61000010889963654
+--- !u!61 &61000010725157780
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
+  m_GameObject: {fileID: 1000010130102864}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -58,46 +57,12 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
---- !u!114 &114000012397142254
+--- !u!114 &114000010506145156
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemAttributes:
-    type: 2
-    equiptstatus: 0
-    description: 
-    name: Foam Sword
-    cost: 10
-    spriteName: Foam Sword
-  type: 2
-  item:
-    type: 2
-    equiptstatus: 0
-    description: 'This Foam Sword deals 1 damage.
-
-      It has no powers.
-
-      You can sell it for 10 coins.'
-    name: Foam Sword
-    cost: 10
-    spriteName: Foam Sword
-  defence: 0
-  damage: 1
-  power: 0
-  health: 0
---- !u!114 &114000013532964456
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
+  m_GameObject: {fileID: 1000010130102864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b2086bf233998649b68591033ac1f4f, type: 3}
@@ -107,24 +72,24 @@ MonoBehaviour:
   EventName: ShowPortal
   disableafter: 0
   whenDestroyed: 1
---- !u!114 &114000013578364734
+--- !u!114 &114000013397091704
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
+  m_GameObject: {fileID: 1000010130102864}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbc2383198c1f29458da1d2bba856dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
---- !u!212 &212000014090031362
+  item: {fileID: 11400000, guid: 405ebce55333f42439c87dd1c1dcf6d7, type: 2}
+--- !u!212 &212000011217680900
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012660352230}
+  m_GameObject: {fileID: 1000010130102864}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -146,9 +111,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 797436867
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
+  m_SortingLayerID: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

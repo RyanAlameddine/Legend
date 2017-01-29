@@ -4,13 +4,13 @@ using System.Collections;
 public class Armor : Item {
     public int defence;
 
-    public Armor(string name, int defence, int cost, string spriteName)
+    public Armor(string name, int defence, int cost, Sprite sprite)
         {
         this.name = name;
         this.defence = defence;
         this.cost = cost;
         this.description = name + " has " + defence + " defence.\nYou can sell it for " + cost + " coins.";
         type = ItemType.Armour;
-        this.spriteName = spriteName;
+        this.sprite = sprite;
     }
 }

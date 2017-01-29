@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
+  m_Name: Rusty Sword
+  m_EditorClassIdentifier: 
+  itemAttributes:
+    type: 2
+    equiptstatus: 0
+    description: 
+    name: Rusty Sword
+    cost: 5
+    sprite: {fileID: 21300000, guid: 0f1301d6dcb37db4f9ee156d522ddd7f, type: 3}
+  type: 2
+  item:
+    type: 2
+    equiptstatus: 0
+    description: 'This Rusty Sword deals 1 damage.
+
+      It has poison powers.
+
+      You can sell it for 5 coins.'
+    name: Rusty Sword
+    cost: 5
+    sprite: {fileID: 21300000, guid: 0f1301d6dcb37db4f9ee156d522ddd7f, type: 3}
+  defence: 0
+  damage: 1
+  power: 1
+  health: 0

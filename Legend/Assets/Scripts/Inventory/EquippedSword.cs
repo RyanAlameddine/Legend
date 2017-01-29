@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EquippedSword : MonoBehaviour {
-    string spriteName;
+    string itemName;
 
     public void Start()
     {
@@ -21,22 +21,25 @@ public class EquippedSword : MonoBehaviour {
             GetComponent<Layering>().enabled = false;
             GetComponent<Animator>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
-            spriteName = "";
+            itemName = "";
         }
-        else if (Inventory.EquippedSword.item.spriteName != spriteName)
+        else if (Inventory.EquippedSword.item.name != name)
         {
             GetComponent<SpriteRenderer>().enabled = true;
             GetComponent<Layering>().enabled = true;
             GetComponent<Animator>().enabled = true;
             GetComponent<BoxCollider2D>().enabled = true;
-            foreach(ImageReference reference in GameManager.Instance.images)
+
+            if (GameManager.Instance.itemReferences.ContainsKey(itemName))
             {
-                if(reference.ImageName == Inventory.EquippedSword.item.spriteName)
+                var reference = GameManager.Instance.itemReferences[itemName];
+                if (reference == Inventory.EquippedSword.item)
                 {
                     GetComponent<SpriteRenderer>().sprite = reference.sprite;
-                    spriteName = reference.ImageName;
+                    itemName = reference.name;
                 }
             }
+            
         }
 	}
 }

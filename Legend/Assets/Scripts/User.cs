@@ -8,5 +8,5 @@ public class User {
     public string name;
     public int health = 3;
     public int level = 0;
-    public List<Item> items = new List<Item>();
+    public List<string> items = new List<string>();
 }

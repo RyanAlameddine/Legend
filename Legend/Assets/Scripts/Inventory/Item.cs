@@ -8,7 +8,7 @@ public class Item {
     public string description = "";
     public string name = "";
     public int cost = 0;
-    public string spriteName;
+    public Sprite sprite;
 
     public void togglequpited()
     {
