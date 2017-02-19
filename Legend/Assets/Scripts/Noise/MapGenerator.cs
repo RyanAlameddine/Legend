@@ -27,11 +27,10 @@ public class MapGenerator : MonoBehaviour
 
     public TerrainType[] regions;
 
-    public bool CombineMap;
-    [HideInInspector]
-    public MapGenerator heatMap;
-    [HideInInspector]
-    public MapGenerator moistureMap;
+    public MapData mapData;
+
+    public enum Mode { Heat, Moisture};
+    public Mode mode;
 
     void Start()
     {
@@ -41,7 +40,7 @@ public class MapGenerator : MonoBehaviour
 
     public void DrawMap()
     {
-        MapData mapData = GenerateMapData();
+        mapData = GenerateMapData();
 
         if (drawMode == DrawMode.NoiseMap)
         {
@@ -59,22 +58,36 @@ public class MapGenerator : MonoBehaviour
 
     MapData GenerateMapData()
     {
-        float[,] noiseMap = Noise.GeterateNoiseMap(mapChunkSize, mapChunkSize, noiseScale, seed, octaves, persistance, lacunarity, offset);
+        Tile[,] noiseMap = Noise.GeterateNoiseMap(mapChunkSize, mapChunkSize, noiseScale, seed, octaves, persistance, lacunarity, offset, mode);
 
         Color[] colorMap = new Color[mapChunkSize * mapChunkSize];
         for (int y = 0; y < mapChunkSize; y++)
         {
             for (int x = 0; x < mapChunkSize; x++)
             {
-                float currentHeight = noiseMap[x, y];
-                for (int i = 0; i < regions.Length; i++)
+                //float currentHeight = noiseMap[x, y].value;
+                switch (noiseMap[x, y].HeatType)
                 {
-                    if (currentHeight <= regions[i].height)
-                    {
-                        colorMap[y * mapChunkSize + x] = regions[i].color;
+                    case HeatType.Coldest:
+                        colorMap[y * mapChunkSize + x] = Region.Coldest;
                         break;
-                    }
+                    case HeatType.Colder:
+                        colorMap[y * mapChunkSize + x] = Region.Colder;
+                        break;
+                    case HeatType.Cold:
+                        colorMap[y * mapChunkSize + x] = Region.Cold;
+                        break;
+                    case HeatType.Warm:
+                        colorMap[y * mapChunkSize + x] = Region.Warm;
+                        break;
+                    case HeatType.Warmer:
+                        colorMap[y * mapChunkSize + x] = Region.Warmer;
+                        break;
+                    case HeatType.Warmest:
+                        colorMap[y * mapChunkSize + x] = Region.Hot;
+                        break;
                 }
+                break;
             }
         }
 
@@ -106,10 +119,10 @@ public class MapGenerator : MonoBehaviour
 
 public struct MapData
 {
-    public readonly float[,] heightMap;
+    public readonly Tile[,] heightMap;
     public readonly Color[] colorMap;
 
-    public MapData(float[,] heightMap, Color[] colorMap)
+    public MapData(Tile[,] heightMap, Color[] colorMap)
     {
         this.heightMap = heightMap;
         this.colorMap = colorMap;
@@ -143,13 +156,6 @@ public class MapGeneratorEditor : Editor
             {
                 mapGen.DrawMap();
             }
-        }
-        if (mapGen.CombineMap)
-        {
-            EditorGUILayout.BeginHorizontal();
-            GUILayout.TextArea("")
-            mapGen.heatMap = (MapGenerator) EditorGUILayout.ObjectField(mapGen.heatMap, typeof(MapGenerator), true);
-            EditorGUILayout.EndHorizontal();
         }
     }
 }

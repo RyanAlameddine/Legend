@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Noise {
-    public static float[,] GeterateNoiseMap(int mapWidth, int mapHeight, float scale, int seed, int octaves, float persistance, float lacunarity, Vector2 offset)
+    public static Tile[,] GeterateNoiseMap(int mapWidth, int mapHeight, float scale, int seed, int octaves, float persistance, float lacunarity, Vector2 offset, MapGenerator.Mode mode)
     {
-        float[,] noiseMap = new float[mapWidth, mapHeight];
+        Tile[,] noiseMap = new Tile[mapWidth, mapHeight];
 
         System.Random rand = new System.Random(seed);
         Vector2[] octaveOffsets = new Vector2[octaves];
@@ -58,7 +58,7 @@ public static class Noise {
                     minNoiseHeight = noiseHeight;
                 }
 
-                noiseMap[x, y] = noiseHeight;
+                noiseMap[x, y].value = noiseHeight;
             }
         }
 
@@ -66,10 +66,32 @@ public static class Noise {
         {
             for (int x = 0; x < mapWidth; x++)
             {
-                noiseMap[x, y] = Mathf.InverseLerp(-1.3f, .9f, noiseMap[x, y]);
+                noiseMap[x, y].value = Mathf.InverseLerp(-1.3f, .9f, noiseMap[x, y].value);
+                if(mode == MapGenerator.Mode.Heat)
+                {
+                    float heatValue = noiseMap[x, y].value;
+                    if (heatValue < Region.ColdestValue)
+                        noiseMap[x, y].HeatType = HeatType.Coldest;
+                    else if (heatValue < Region.ColderValue)
+                        noiseMap[x, y].HeatType = HeatType.Colder;
+                    else if (heatValue < Region.ColdValue)
+                        noiseMap[x, y].HeatType = HeatType.Cold;
+                    else if (heatValue < Region.WarmValue)
+                        noiseMap[x, y].HeatType = HeatType.Warm;
+                    else if (heatValue < Region.WarmerValue)
+                        noiseMap[x, y].HeatType = HeatType.Warmer;
+                    else
+                        noiseMap[x, y].HeatType = HeatType.Warmest;
+                }
             }
         }
 
         return noiseMap;
     }
+}
+
+public struct Tile
+{
+    public float value;
+    public HeatType HeatType;
 }
