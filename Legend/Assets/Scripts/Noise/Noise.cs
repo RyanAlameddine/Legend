@@ -67,7 +67,7 @@ public static class Noise {
             for (int x = 0; x < mapWidth; x++)
             {
                 noiseMap[x, y].value = Mathf.InverseLerp(-1.3f, .9f, noiseMap[x, y].value);
-                if(mode == MapGenerator.Mode.Heat)
+                if (mode == MapGenerator.Mode.Heat)
                 {
                     float heatValue = noiseMap[x, y].value;
                     if (heatValue < Region.ColdestValue)
@@ -83,6 +83,23 @@ public static class Noise {
                     else
                         noiseMap[x, y].HeatType = HeatType.Warmest;
                 }
+
+                if (mode == MapGenerator.Mode.Moisture)
+                {
+                    float moistureValue = noiseMap[x, y].value;
+                    if (moistureValue < Region.DryerValue)
+                        noiseMap[x, y].MoistureType = MoistureType.Dryest;
+                    else if (moistureValue < Region.DryValue)
+                        noiseMap[x, y].MoistureType = MoistureType.Dryer;
+                    else if (moistureValue < Region.WetValue)
+                        noiseMap[x, y].MoistureType = MoistureType.Dry;
+                    else if (moistureValue < Region.WetterValue)
+                        noiseMap[x, y].MoistureType = MoistureType.Wet;
+                    else if (moistureValue < Region.WettestValue)
+                        noiseMap[x, y].MoistureType = MoistureType.Wetter;
+                    else
+                        noiseMap[x, y].MoistureType = MoistureType.Wettest;
+                }
             }
         }
 
@@ -94,4 +111,5 @@ public struct Tile
 {
     public float value;
     public HeatType HeatType;
+    public MoistureType MoistureType;
 }

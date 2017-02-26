@@ -25,7 +25,10 @@ public class MapGenerator : MonoBehaviour
 
     public bool autoUpdate;
 
-    public TerrainType[] regions;
+    [SerializeField]
+    CombineMap map;
+
+    //public TerrainType[] regions;
 
     public MapData mapData;
 
@@ -34,7 +37,7 @@ public class MapGenerator : MonoBehaviour
 
     void Start()
     {
-        seed = Random.Range(0, int.MaxValue);
+        //seed = Random.Range(0, int.MaxValue);
         DrawMap();
     }
 
@@ -45,15 +48,29 @@ public class MapGenerator : MonoBehaviour
         if (drawMode == DrawMode.NoiseMap)
         {
             Texture2D texture = TextureGenerator.TextureFromHeightMap(mapData.heightMap);
-            textureRenderer.sharedMaterial.mainTexture = texture;
-            textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
+            SetTexture(texture);
         }
         else if (drawMode == DrawMode.ColorMap)
         {
             Texture2D texture = TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize);
-            textureRenderer.sharedMaterial.mainTexture = texture;
-            textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
+            SetTexture(texture);
         }
+    }
+
+    void SetTexture(Texture2D texture)
+    {
+        Material tempMaterial = null;
+        if (textureRenderer.sharedMaterial == null)
+        {
+            tempMaterial = new Material(Shader.Find("Unlit/Texture"));
+        }
+        else
+        {
+            tempMaterial = new Material(textureRenderer.sharedMaterial);
+        }
+        tempMaterial.mainTexture = texture;
+        textureRenderer.sharedMaterial = tempMaterial;
+        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
     }
 
     MapData GenerateMapData()
@@ -66,28 +83,53 @@ public class MapGenerator : MonoBehaviour
             for (int x = 0; x < mapChunkSize; x++)
             {
                 //float currentHeight = noiseMap[x, y].value;
-                switch (noiseMap[x, y].HeatType)
+                if (mode == Mode.Heat)
                 {
-                    case HeatType.Coldest:
-                        colorMap[y * mapChunkSize + x] = Region.Coldest;
-                        break;
-                    case HeatType.Colder:
-                        colorMap[y * mapChunkSize + x] = Region.Colder;
-                        break;
-                    case HeatType.Cold:
-                        colorMap[y * mapChunkSize + x] = Region.Cold;
-                        break;
-                    case HeatType.Warm:
-                        colorMap[y * mapChunkSize + x] = Region.Warm;
-                        break;
-                    case HeatType.Warmer:
-                        colorMap[y * mapChunkSize + x] = Region.Warmer;
-                        break;
-                    case HeatType.Warmest:
-                        colorMap[y * mapChunkSize + x] = Region.Hot;
-                        break;
+                    switch (noiseMap[x, y].HeatType)
+                    {
+                        case HeatType.Coldest:
+                            colorMap[y * mapChunkSize + x] = Region.Coldest;
+                            break;
+                        case HeatType.Colder:
+                            colorMap[y * mapChunkSize + x] = Region.Colder;
+                            break;
+                        case HeatType.Cold:
+                            colorMap[y * mapChunkSize + x] = Region.Cold;
+                            break;
+                        case HeatType.Warm:
+                            colorMap[y * mapChunkSize + x] = Region.Warm;
+                            break;
+                        case HeatType.Warmer:
+                            colorMap[y * mapChunkSize + x] = Region.Warmer;
+                            break;
+                        case HeatType.Warmest:
+                            colorMap[y * mapChunkSize + x] = Region.Hot;
+                            break;
+                    }
+                }else
+                {
+                    switch (noiseMap[x, y].MoistureType)
+                    {
+                        case MoistureType.Dryest:
+                            colorMap[y * mapChunkSize + x] = Region.Dryest;
+                            break;
+                        case MoistureType.Dryer:
+                            colorMap[y * mapChunkSize + x] = Region.Dryer;
+                            break;
+                        case MoistureType.Dry:
+                            colorMap[y * mapChunkSize + x] = Region.Dry;
+                            break;
+                        case MoistureType.Wet:
+                            colorMap[y * mapChunkSize + x] = Region.Wet;
+                            break;
+                        case MoistureType.Wetter:
+                            colorMap[y * mapChunkSize + x] = Region.Wetter;
+                            break;
+                        case MoistureType.Wettest:
+                            colorMap[y * mapChunkSize + x] = Region.Wettest;
+                            break;
+                    }
                 }
-                break;
             }
         }
 
@@ -104,13 +146,15 @@ public class MapGenerator : MonoBehaviour
         {
             lacunarity = 0;
         }
+        map.Start();
+        map.DrawMap();
     }
 
     public void DrawTexture(Texture2D texture)
     {
 
-        textureRenderer.sharedMaterial.mainTexture = texture;
-        textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
+        textureRenderer.material.mainTexture = texture;
+        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
     }
 
 
@@ -129,12 +173,12 @@ public struct MapData
     }
 }
 
-[System.Serializable]
-public struct TerrainType
-{
-    public float height;
-    public Color color;
-}
+//[System.Serializable]
+//public struct TerrainType
+//{
+//    public float height;
+//    public Color color;
+//}
 
 [CustomEditor(typeof(MapGenerator))]
 public class MapGeneratorEditor : Editor
@@ -150,12 +194,9 @@ public class MapGeneratorEditor : Editor
                 mapGen.DrawMap();
             }
         }
-        if (!mapGen.autoUpdate)
+        if (GUILayout.Button("Generate"))
         {
-            if (GUILayout.Button("Generate"))
-            {
-                mapGen.DrawMap();
-            }
+            mapGen.DrawMap();
         }
     }
 }

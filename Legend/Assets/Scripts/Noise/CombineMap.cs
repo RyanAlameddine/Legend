@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEditor;
 
+[ExecuteInEditMode]
 public class CombineMap : MonoBehaviour
 {
 
@@ -15,12 +16,21 @@ public class CombineMap : MonoBehaviour
 
     public Renderer textureRenderer;
 
+    public bool generate;
+
     public enum DrawMode { NoiseMap, ColorMap };
     public DrawMode drawMode;
 
     public const int mapChunkSize = 250;
 
-    public CombineType[] regions;
+    public void OnValidate()
+    {
+        moistureMapGenerator.DrawMap();
+        heatMapGenerator.DrawMap();
+        Start();
+        DrawMap();
+        if (generate) generate = false;
+    }
 
 
     public void Start()
@@ -36,78 +46,76 @@ public class CombineMap : MonoBehaviour
         if (drawMode == DrawMode.NoiseMap)
         {
             Texture2D texture = TextureGenerator.TextureFromHeightMap(mapData.heightMap);
-            textureRenderer.sharedMaterial.mainTexture = texture;
-            textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
+            SetTexture(texture);
         }
         else if (drawMode == DrawMode.ColorMap)
         {
             Texture2D texture = TextureGenerator.TextureFromColorMap(mapData.colorMap, mapChunkSize, mapChunkSize);
-            textureRenderer.sharedMaterial.mainTexture = texture;
-            textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
+            SetTexture(texture);
         }
+    }
+
+    void SetTexture(Texture2D texture)
+    {
+        Material tempMaterial = null;
+        if (textureRenderer.sharedMaterial == null)
+        {
+            tempMaterial = new Material(Shader.Find("Unlit/Texture"));
+        }
+        else
+        {
+            tempMaterial = new Material(textureRenderer.sharedMaterial);
+        }
+        tempMaterial.mainTexture = texture;
+        textureRenderer.sharedMaterial = tempMaterial;
+        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
     }
 
     MapData GenerateMapData()
     {
-        //float heat = 0;
-        //float moisture = 0;
         Tile[,] noiseMap = new Tile[mapChunkSize, mapChunkSize];
-
-        //for (int x = 0; x < heatMap.heightMap.GetLength(0); x++)
-        //{
-        //    for (int y = 0; y < heatMap.heightMap.GetLength(1); y++)
-        //    {
-        //        heat = heatMap.heightMap[x, y];
-        //        moisture = moistureMap.heightMap[x, y];
-        //        noiseMap[x, y] = (heat + moisture) / 2f;
-        //    }
-        //}
 
         Color[] colorMap = new Color[mapChunkSize * mapChunkSize];
         for (int y = 0; y < mapChunkSize; y++)
         {
             for (int x = 0; x < mapChunkSize; x++)
             {
-                float heat = heatMap.heightMap[x, y].value;
-                float moisture = moistureMap.heightMap[x, y].value;
-                for (int i = 0; i < regions.Length; i++)
+                switch (Region.BiomeTable[(int)heatMap.heightMap[x, y].HeatType, (int)moistureMap.heightMap[x, y].MoistureType])
                 {
-                    if (heat <= regions[i].heat && moisture <= regions[i].moisture)
-                    {
-                        colorMap[y * mapChunkSize + x] = regions[i].color;
+                    case BiomeType.Ice:
+                        colorMap[y * mapChunkSize + x] = Region.Ice;
                         break;
-                    }
+                    case BiomeType.ColdForest:
+                        colorMap[y * mapChunkSize + x] = Region.ColdForest;
+                        break;
+                    case BiomeType.Desert:
+                        colorMap[y * mapChunkSize + x] = Region.Desert;
+                        break;
+                    case BiomeType.Grassland:
+                        colorMap[y * mapChunkSize + x] = Region.Grassland;
+                        break;
+                    case BiomeType.SeasonalForest:
+                        colorMap[y * mapChunkSize + x] = Region.SeasonalForest;
+                        break;
+                    case BiomeType.Tundra:
+                        colorMap[y * mapChunkSize + x] = Region.Tundra;
+                        break;
+                    case BiomeType.Savanna:
+                        colorMap[y * mapChunkSize + x] = Region.Savanna;
+                        break;
+                    case BiomeType.TemperateRainforest:
+                        colorMap[y * mapChunkSize + x] = Region.TemperateRainforest;
+                        break;
+                    case BiomeType.TropicalRainforest:
+                        colorMap[y * mapChunkSize + x] = Region.TropicalRainforest;
+                        break;
+                    case BiomeType.Woodland:
+                        colorMap[y * mapChunkSize + x] = Region.Woodland;
+                        break;
                 }
             }
         }
 
         return new MapData(noiseMap, colorMap);
-        //return new MapData();
     }
-}
-
-[CustomEditor(typeof(CombineMap))]
-public class CombineMapEditor : Editor
-{
-    public override void OnInspectorGUI()
-    {
-        CombineMap mapGen = (CombineMap)target;
-        DrawDefaultInspector();
-        if (GUILayout.Button("Generate"))
-        {
-            mapGen.moistureMapGenerator.DrawMap();
-            mapGen.heatMapGenerator.DrawMap();
-            mapGen.Start();
-            mapGen.DrawMap();
-        }
-        
-    }
-}
-
-[System.Serializable]
-public struct CombineType
-{
-    public float moisture;
-    public float heat;
-    public Color color;
 }
