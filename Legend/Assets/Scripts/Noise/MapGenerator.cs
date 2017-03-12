@@ -13,7 +13,7 @@ public class MapGenerator : MonoBehaviour
     public enum DrawMode { NoiseMap, ColorMap };
     public DrawMode drawMode;
 
-    public const int mapChunkSize = 250;
+    public const int mapChunkSize = 50;
     public int noiseScale;
 
     public int octaves;
@@ -70,12 +70,12 @@ public class MapGenerator : MonoBehaviour
         }
         tempMaterial.mainTexture = texture;
         textureRenderer.sharedMaterial = tempMaterial;
-        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
+        textureRenderer.transform.localScale = new Vector3(5, 1, 5);
     }
 
     MapData GenerateMapData()
     {
-        Tile[,] noiseMap = Noise.GeterateNoiseMap(mapChunkSize, mapChunkSize, noiseScale, seed, octaves, persistance, lacunarity, offset, mode);
+        Tile[,] noiseMap = Noise.GeterateNoiseMap(mapChunkSize, mapChunkSize, noiseScale, seed, octaves, persistance, lacunarity, offset, mode, false);
 
         Color[] colorMap = new Color[mapChunkSize * mapChunkSize];
         for (int y = 0; y < mapChunkSize; y++)
@@ -154,7 +154,7 @@ public class MapGenerator : MonoBehaviour
     {
 
         textureRenderer.material.mainTexture = texture;
-        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
+        textureRenderer.transform.localScale = new Vector3(5, 1, 5);
     }
 
 

@@ -16,13 +16,20 @@ public class Infinite : MonoBehaviour {
         {
             for (int y = -1; y < 2; y++)
             {
-                Chunk c = ((GameObject)Instantiate(chunk, new Vector3(x * 150, y * 150), Quaternion.identity)).GetComponent<Chunk>();
+                Chunk c = ((GameObject)Instantiate(chunk, new Vector3(x * 50, y * 50), Quaternion.identity)).GetComponent<Chunk>();
                 chunks[x+1, y+1] = c;
                 MapGenerator[] generators = c.GetComponentsInChildren<MapGenerator>();
                 foreach(MapGenerator gen in generators)
                 {
                     gen.offset = new Vector2(-x * MapGenerator.mapChunkSize, -y * MapGenerator.mapChunkSize);
                     gen.seed = seed;
+                }
+                WormGenerator[] wormGenerators = c.GetComponentsInChildren<WormGenerator>();
+                foreach (WormGenerator gen in wormGenerators)
+                {
+                    gen.offset = new Vector2(-x * MapGenerator.mapChunkSize, -y * MapGenerator.mapChunkSize);
+                    gen.seed = seed;
+                    //gen.OnValidate();
                 }
                 CombineMap map = c.GetComponent<CombineMap>();
                 map.OnValidate();
@@ -38,17 +45,16 @@ public class Infinite : MonoBehaviour {
         bool update = false;
         int xIndex = 0;
         int yIndex = 0;
-        //Chunk[,] savedChunks = new Chunk[3,3];
         Chunk[,] changedChunks = new Chunk[3, 3];
         for (int x = 0; x < chunks.GetLength(0); x++)
         {
             for(int y = 0; y < chunks.GetLength(1); y++)
             {
-                if (chunks[x,y] != c)
+                if (chunks[x,y] == c)
                 {
                     xIndex = x;
                     yIndex = y;
-                    if (x != 1 && y != 1)
+                    if (!(x == 1 && y == 1))
                         update = true;
                     break;
                     
@@ -60,34 +66,65 @@ public class Infinite : MonoBehaviour {
             }
         }
 
+        int xOffset  = xIndex - 1;
+        int yOffset = yIndex - 1;
+
         if (update)
         {
             Chunk[,] tempChunks = new Chunk[3, 3];
-            //tempChunks[1, 1] = c;
             for (int x = 0; x < chunks.GetLength(0); x++)
             {
                 for (int y = 0; y < chunks.GetLength(1); y++)
                 {
-                    if(Mathf.Abs(x - xIndex) <= 1 && Mathf.Abs(y - yIndex) <= 1)
+                    if (Mathf.Abs(x - xIndex) <= 1 && Mathf.Abs(y - yIndex) <= 1)
                     {
-                        //savedChunks[x, y] = chunks[x, y];
-                        tempChunks[x, y] = chunks[x, y];
+                        tempChunks[x - xOffset, y - yOffset] = chunks[x, y];
                     }else
                     {
-                        changedChunks[x, y] = chunks[x, y];
-                        FIX THIS NOOOOOOOOW
+                        Destroy(chunks[x, y].gameObject);
                     }
                 }
             }
-            
+            for (int x = 0; x < chunks.GetLength(0); x++)
+            {
+                for (int y = 0; y < chunks.GetLength(1); y++)
+                {
+                    if(tempChunks[x, y] == null)
+                    {
+
+                        Vector2 chunkPosition = new Vector2(x - 1 + tempChunks[1, 1].chunkPosition.x, y - 1 + tempChunks[1, 1].chunkPosition.y);
+                        Chunk ch = ((GameObject)Instantiate(chunk, new Vector3(chunkPosition.x * 50, chunkPosition.y * 50), Quaternion.identity)).GetComponent<Chunk>();
+                        ch.chunkPosition = chunkPosition;
+                        MapGenerator[] generators = ch.GetComponentsInChildren<MapGenerator>();
+                        foreach (MapGenerator gen in generators)
+                        {
+                            gen.offset = new Vector2(-chunkPosition.x * MapGenerator.mapChunkSize, -chunkPosition.y * MapGenerator.mapChunkSize);
+                            gen.seed = seed;
+                        }
+                        WormGenerator[] wormGenerators = ch.GetComponentsInChildren<WormGenerator>();
+                        foreach (WormGenerator gen in wormGenerators)
+                        {
+                            gen.offset = new Vector2(-chunkPosition.x * MapGenerator.mapChunkSize, -chunkPosition.y * MapGenerator.mapChunkSize);
+                            gen.seed = seed;
+                            //gen.OnValidate();
+                        }
+                        CombineMap map = ch.GetComponent<CombineMap>();
+                        map.OnValidate();
+
+
+                        tempChunks[x, y] = ch;
+                    }
+                }
+            }
+            chunks = tempChunks;
         }
         update = false;
 	}
 
     public Chunk GetChunk(Vector3 position)
     {
-        int x = Mathf.FloorToInt(position.x / 150);
-        int z = Mathf.FloorToInt(position.y / 150);
+        int x = Mathf.FloorToInt(position.x / 50);
+        int z = Mathf.FloorToInt(position.y / 50);
         foreach(Chunk chunk in chunks)
         {
             if(chunk.chunkPosition == new Vector2(x, z))

@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     [Range(1, 100)]
     public float MaxSpeed = 1;
     float StartMaxSpeed;
+    [Range(1, 100)]
+    public float SprintSpeed = 20;
     private float currentSpeed = 0;
     Vector2 direction;
     int facing;
@@ -33,7 +35,7 @@ public class PlayerController : MonoBehaviour {
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
-            MaxSpeed = StartMaxSpeed + 20;
+            MaxSpeed = StartMaxSpeed + SprintSpeed;
             StaminaController.Stamina -= .005f;
         }
         else

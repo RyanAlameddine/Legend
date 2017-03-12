@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEditor;
+using System;
 
 [ExecuteInEditMode]
 public class CombineMap : MonoBehaviour
@@ -21,7 +22,7 @@ public class CombineMap : MonoBehaviour
     public enum DrawMode { NoiseMap, ColorMap };
     public DrawMode drawMode;
 
-    public const int mapChunkSize = 250;
+    public const int mapChunkSize = 50;
 
     public void OnValidate()
     {
@@ -68,7 +69,7 @@ public class CombineMap : MonoBehaviour
         }
         tempMaterial.mainTexture = texture;
         textureRenderer.sharedMaterial = tempMaterial;
-        textureRenderer.transform.localScale = new Vector3(15, 1, 15);
+        textureRenderer.transform.localScale = new Vector3(5, 1, 5);
     }
 
     MapData GenerateMapData()

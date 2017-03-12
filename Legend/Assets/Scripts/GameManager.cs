@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public User user;
 
-    public string scene;
+    //public string scene;
 
     //public List<ImageReference> images = new List<ImageReference>();
 

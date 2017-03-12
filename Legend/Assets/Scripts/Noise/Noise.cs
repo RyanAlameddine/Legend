@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public static class Noise {
-    public static Tile[,] GeterateNoiseMap(int mapWidth, int mapHeight, float scale, int seed, int octaves, float persistance, float lacunarity, Vector2 offset, MapGenerator.Mode mode)
+    public static Tile[,] GeterateNoiseMap(int mapWidth, int mapHeight, float scale, int seed, int octaves, float persistance, float lacunarity, Vector2 offset, MapGenerator.Mode mode, bool absolute)
     {
         Tile[,] noiseMap = new Tile[mapWidth, mapHeight];
 
@@ -58,7 +58,7 @@ public static class Noise {
                     minNoiseHeight = noiseHeight;
                 }
 
-                noiseMap[x, y].value = noiseHeight;
+                noiseMap[x, y].value = absolute ? Mathf.Abs(noiseHeight) : noiseHeight;
             }
         }
 

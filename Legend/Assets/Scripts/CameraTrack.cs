@@ -28,9 +28,9 @@ public class CameraTrack : MonoBehaviour {
         if (TrackPosition)
         {
             transform.position = target.position + offset;
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, level.Center.x - level.Width/2 + cam.orthographicSize * cam.aspect + clampoffset.x, level.Center.x + level.Width / 2 - cam.orthographicSize * cam.aspect - clampoffset.x), 
+            transform.position = level != null ? new Vector3(Mathf.Clamp(transform.position.x, level.Center.x - level.Width/2 + cam.orthographicSize * cam.aspect + clampoffset.x, level.Center.x + level.Width / 2 - cam.orthographicSize * cam.aspect - clampoffset.x), 
                                             Mathf.Clamp(transform.position.y, level.Center.y - level.Height / 2 + cam.orthographicSize + clampoffset.y, level.Center.y + level.Height / 2 - cam.orthographicSize + clampoffset.y),
-                                            transform.position.z);
+                                            transform.position.z) : transform.position;
         }
         if (TrackRotation)
         {
