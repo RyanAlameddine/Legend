@@ -19,7 +19,7 @@ public class UIItem : MonoBehaviour {
     public void onClick()
     {
         
-        if(item.type == ItemType.Weapon)
+        if(item is Weapon)
         {
             transform.GetComponent<Image>().enabled = !transform.GetComponent<Image>().enabled;
             GameManager.Instance.runEvent("EquipChange");
@@ -30,11 +30,12 @@ public class UIItem : MonoBehaviour {
             {
                 Inventory.EquippedSword = null;
             } 
-        }else if(item.type == ItemType.Consumable)
+        }else if(item is Consumable)
         {
             GameManager.Instance.user.health += ((Consumable)item).health;
             GameManager.Instance.user.health = Mathf.Clamp(GameManager.Instance.user.health, 0, 10);
             GameManager.Instance.user.items.Remove(item.name);
+            Inventory.Instance.resetInv();
         }
     }
 }

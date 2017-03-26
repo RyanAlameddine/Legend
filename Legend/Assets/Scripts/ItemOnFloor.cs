@@ -6,13 +6,13 @@ public class ItemOnFloor : MonoBehaviour
 {
     BoxCollider2D box;
     Collider2D PlayerCollider;
-    public ItemStats item;
+    public Item item;
     SpriteRenderer sr;
     void Start()
     {
         box = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
-        sr.sprite = item.item.sprite;
+        sr.sprite = item.sprite;
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider2D>();
     }
 

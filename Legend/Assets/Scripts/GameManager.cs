@@ -94,8 +94,8 @@ public class GameManager : MonoBehaviour
         //var ScriptableObjects = AssetDatabase.LoadAllAssetsAtPath("Assets/ScriptableItems");
         foreach(string str in ScriptableIDs)
         {
-            ItemStats objectItem = AssetDatabase.LoadAssetAtPath<ItemStats>(AssetDatabase.GUIDToAssetPath(str));
-            itemReferences.Add(objectItem.item.name, objectItem.item);
+            Item objectItem = AssetDatabase.LoadAssetAtPath<Item>(AssetDatabase.GUIDToAssetPath(str));
+            itemReferences.Add(objectItem.name, objectItem);
         }
         DontDestroyOnLoad(gameObject);
         Cursor.visible = true;

@@ -901,7 +901,7 @@ Prefab:
         type: 2}
       propertyPath: item
       value: 
-      objectReference: {fileID: 11400000, guid: d3dd25ec11350e64c9cde4f4e541d659,
+      objectReference: {fileID: 11400000, guid: 12513ad572a0d194f813d623ed320555,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
@@ -994,6 +994,12 @@ Prefab:
       propertyPath: m_Name
       value: Foam Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013397091704, guid: 32b95c20d1b12df41a1fa6334cc3a0ca,
+        type: 2}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 37bc0405a34320145bc5e93b19448c2f,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b95c20d1b12df41a1fa6334cc3a0ca, type: 2}
   m_IsPrefabParent: 0

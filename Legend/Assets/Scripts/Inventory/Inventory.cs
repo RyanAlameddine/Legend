@@ -20,7 +20,7 @@ public class Inventory : MonoBehaviour
                 equippedSword = null;
                 return;
             }
-            if(equippedSword != null) equippedSword.onClick();
+            //if(equippedSword != null) equippedSword.onClick();
             equippedSword = value;
         }
     }

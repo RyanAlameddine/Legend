@@ -8,29 +8,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
+  m_Script: {fileID: 11500000, guid: c579425387e546846ba9ed79e31f7737, type: 3}
   m_Name: Foam Sword
   m_EditorClassIdentifier: 
-  itemAttributes:
-    type: 2
-    equiptstatus: 0
-    description: 
-    name: Foam Sword
-    cost: 10
-    sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
-  type: 2
-  item:
-    type: 2
-    equiptstatus: 0
-    description: 'This Foam Sword deals 1 damage.
+  equiptstatus: 0
+  description: 'This Foam Sword deals 1 damage.
 
-      It has no powers.
+    It has no powers.
 
-      You can sell it for 10 coins.'
-    name: Foam Sword
-    cost: 10
-    sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
-  defence: 0
+    You can sell it for 10 coins.'
+  name: Foam Sword
+  cost: 10
+  sprite: {fileID: 21300000, guid: 3ab592712e942724995bed76263b5d38, type: 3}
   damage: 1
   power: 0
-  health: 0

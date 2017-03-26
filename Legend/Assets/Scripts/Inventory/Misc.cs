@@ -1,13 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
+
 [System.Serializable]
 public class Misc : Item {
-    public Misc(string name, int cost, string description, Sprite sprite)
+    public override void GenerateDescription()
     {
-        this.name = name;
-        this.cost = cost;
         this.description = description + "\nYou can sell it for " + cost + " coins.";
-        type = ItemType.Misc;
-        this.sprite = sprite;
+    }
+}
+
+[CustomEditor(typeof(Misc))]
+public class MiscInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        Misc i = (Misc)target;
+        base.DrawDefaultInspector();
+        if (GUILayout.Button("Generate"))
+        {
+            i.GenerateDescription();
+            Undo.RecordObject(i, "Generated Item");
+            EditorUtility.SetDirty(i);
+        }
     }
 }

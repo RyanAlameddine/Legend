@@ -8,27 +8,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ce4e88ea15be549b07188493de2383, type: 3}
+  m_Script: {fileID: 11500000, guid: 88e11fee648d3f746b717ffc17d66784, type: 3}
   m_Name: Gold Nugget
   m_EditorClassIdentifier: 
-  itemAttributes:
-    type: 1
-    equiptstatus: 0
-    description: 
-    name: Gold Nugget
-    cost: 100
-    sprite: {fileID: 21300000, guid: 6ee245c95c8cbb741b376ef7fcc498cc, type: 3}
-  type: 1
-  item:
-    type: 1
-    equiptstatus: 0
-    description: 'Gold Nugget restore 100 health.
+  equiptstatus: 0
+  description: 'Gold Nugget restores 3 health.
 
-      You can sell it for 100 coins.'
-    name: Gold Nugget
-    cost: 100
-    sprite: {fileID: 21300000, guid: 6ee245c95c8cbb741b376ef7fcc498cc, type: 3}
-  defence: 0
-  damage: 1
-  power: 1
-  health: 100
+    You can sell it for 5 coins.'
+  name: Gold Nugget
+  cost: 5
+  sprite: {fileID: 21300000, guid: 6ee245c95c8cbb741b376ef7fcc498cc, type: 3}
+  health: 3

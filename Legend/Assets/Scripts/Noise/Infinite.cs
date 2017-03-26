@@ -45,7 +45,6 @@ public class Infinite : MonoBehaviour {
         bool update = false;
         int xIndex = 0;
         int yIndex = 0;
-        Chunk[,] changedChunks = new Chunk[3, 3];
         for (int x = 0; x < chunks.GetLength(0); x++)
         {
             for(int y = 0; y < chunks.GetLength(1); y++)

@@ -1,16 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
+
 [System.Serializable]
-public class Armor : Item {
+public abstract class Armor : Item {
     public int defence;
 
-    public Armor(string name, int defence, int cost, Sprite sprite)
-        {
-        this.name = name;
-        this.defence = defence;
-        this.cost = cost;
+    public override void GenerateDescription()
+    {
         this.description = name + " has " + defence + " defence.\nYou can sell it for " + cost + " coins.";
-        type = ItemType.Armour;
-        this.sprite = sprite;
+    }
+}
+
+[CustomEditor(typeof(Armor))]
+public class ArmorInspector : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        Armor i = (Armor)target;
+        base.DrawDefaultInspector();
+        if (GUILayout.Button("Generate"))
+        {
+            i.GenerateDescription();
+            Undo.RecordObject(i, "Generated Item");
+            EditorUtility.SetDirty(i);
+        }
     }
 }
