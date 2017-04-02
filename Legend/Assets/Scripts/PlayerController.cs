@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour {
 
         if (currentSpeed < MaxSpeed)
         {
-            currentSpeed++;
+            currentSpeed+= 5;
         }
         else
         {

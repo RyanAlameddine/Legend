@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class Portal : MonoBehaviour
     SpriteRenderer sr;
     [SerializeField]
     Image screenTint;
+    [SerializeField]
+    int scene;
 
     public void Start()
     {
@@ -46,12 +49,11 @@ public class Portal : MonoBehaviour
 
                 if (spinRadius[i] > .1f)
                 {
-                    cTrans.localScale -= new Vector3(0.002f, 0.002f, 0);
+                    cTrans.localScale -= new Vector3(0.003f, 0.003f, 0);
                     spinRadius[i] = spinRadius[i] - .005f;
                 }
                 else
                 {
-                    //TODO CHANGE LEVEL STUFF
                     if (cTrans.tag == "Player")
                     {
                         cTrans.GetComponent<SpriteRenderer>().enabled = false;
@@ -113,5 +115,6 @@ public class Portal : MonoBehaviour
             screenTint.color += new Color(0, 0, 0, .005f);
             yield return new WaitForEndOfFrame();
         }
+        SceneManager.LoadScene(scene);
     }
 }
