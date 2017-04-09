@@ -13,3 +13,9 @@ public enum ItemType
     Weapon,
     Misc
 }
+
+public enum RendererType
+{
+    UI,
+    Sprite
+}

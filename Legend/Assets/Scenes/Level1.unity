@@ -546,8 +546,18 @@ MonoBehaviour:
   Height: 20
   border: {fileID: 1718288247}
   levelparent: {fileID: 498575971}
-  background: {fileID: 1000010508077970, guid: f7791e6971997964799edccf475d145c, type: 2}
-  bgtilesize: 1
+  objects:
+  - {fileID: 1000010508077970, guid: f7791e6971997964799edccf475d145c, type: 2}
+  - {fileID: 1000011606756876, guid: 87898b74d3a683243925b6a9f4f7c8ef, type: 2}
+  coordinateFloats:
+  - Coordinate: {x: 2, y: 2}
+    Float: 1
+  - Coordinate: {x: 2, y: 3}
+    Float: 1
+  - Coordinate: {x: 3, y: 2}
+    Float: 1
+  - Coordinate: {x: 3, y: 3}
+    Float: 1
 --- !u!1 &498575970
 GameObject:
   m_ObjectHideFlags: 0

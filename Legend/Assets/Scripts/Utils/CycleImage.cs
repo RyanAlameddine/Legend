@@ -3,17 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class CycleImageUI : MonoBehaviour {
+public class CycleImage : MonoBehaviour {
     public List<Sprite> sprites = new List<Sprite>();
+    SpriteRenderer spriteRenderer;
     Image image;
     int j = 0;
     float time;
     public float timebetween;
+    public RendererType type;
 
 	// Use this for initialization
 	void Start () {
-        image = GetComponent<Image>();
-        image.sprite = sprites[0];
+        if (type == RendererType.UI)
+        {
+            image = GetComponent<Image>();
+            image.sprite = sprites[0];
+        }else
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = sprites[0];
+        }
 	}
 	
 	// Update is called once per frame
@@ -27,7 +36,12 @@ public class CycleImageUI : MonoBehaviour {
             {
                 j = 0;
             }
-            image.sprite = sprites[j];
+            if (type == RendererType.UI) {
+                image.sprite = sprites[j];
+            }else
+            {
+                spriteRenderer.sprite = sprites[j];
+            }
         }
 	}
 }

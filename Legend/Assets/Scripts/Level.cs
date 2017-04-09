@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Level : MonoBehaviour
 {
@@ -12,9 +12,9 @@ public class Level : MonoBehaviour
     [SerializeField]
     Transform levelparent;
     [SerializeField]
-    GameObject background;
+    GameObject[] objects;
     [SerializeField]
-    int bgtilesize;
+    List<CoordinateFloat> coordinateFloats;
 
     void Start()
     {
@@ -34,18 +34,22 @@ public class Level : MonoBehaviour
         }
         #endregion
         #region BackGround
-        for (int row = 0; row < Height / bgtilesize; row++)
+        for (int row = 0; row < Height; row++)
         {
-            for (int col = 0; col < Width / bgtilesize - 1; col++)
+            for (int col = 0; col < Width - 1; col++)
             {
-                ((GameObject)Instantiate(background, new Vector3((col - Width / bgtilesize / 2 + .5f) * bgtilesize + Center.x, (row - Height / bgtilesize / 2 + .5f) * bgtilesize + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                int i = 0;
+                Vector2 coord = new Vector2(col, row);
+                foreach(CoordinateFloat CFloat in coordinateFloats)
+                {
+                    if(CFloat.Coordinate == coord)
+                    {
+                        i = (int) CFloat.Float;
+                    }
+                }
+                ((GameObject)Instantiate(objects[i], new Vector3((col - Width / 2 + .5f) + Center.x, (row - Height / 2 + .5f) + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
             }
         }
         #endregion
-    }
-
-    void Update()
-    {
-
     }
 }

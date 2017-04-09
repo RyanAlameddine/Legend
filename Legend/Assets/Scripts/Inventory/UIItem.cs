@@ -22,14 +22,15 @@ public class UIItem : MonoBehaviour {
         if(item is Weapon)
         {
             transform.GetComponent<Image>().enabled = !transform.GetComponent<Image>().enabled;
-            GameManager.Instance.runEvent("EquipChange");
-            if (transform.GetComponent<Image>().enabled) {
+            if (transform.GetComponent<Image>().enabled)
+            {
                 Inventory.EquippedSword = this;
             }
             else
             {
                 Inventory.EquippedSword = null;
-            } 
+            }
+            GameManager.Instance.runEvent("EquipChange");
         }else if(item is Consumable)
         {
             GameManager.Instance.user.health += ((Consumable)item).health;
