@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour {
         //2-left
         //3-right
 	}
+
+    public void SetSwimming(bool swimming)
+    {
+        animator.SetBool("Swimming", swimming);
+    }
 	
 	void FixedUpdate () {
         direction = Vector2.zero;
