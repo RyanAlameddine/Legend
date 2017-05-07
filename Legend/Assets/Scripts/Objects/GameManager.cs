@@ -48,6 +48,15 @@ public class GameManager : MonoBehaviour
 
     public List<EventReference> references = new List<EventReference>();
 
+    Level level;
+
+    public Level CurrentLevel
+    {
+        get { return level; }
+        set { level = value; }
+    }
+
+
     public void AddClass(object obj)
     {
         Type t = obj.GetType();
@@ -115,5 +124,4 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-
 }

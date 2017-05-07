@@ -24,11 +24,6 @@ public class PlayerController : MonoBehaviour {
         //2-left
         //3-right
 	}
-
-    public void SetSwimming(bool swimming)
-    {
-        animator.SetBool("Swimming", swimming);
-    }
 	
 	void FixedUpdate () {
         direction = Vector2.zero;
@@ -142,6 +137,13 @@ public class PlayerController : MonoBehaviour {
             {
                 transform.GetChild(0).GetComponent<Animator>().SetTrigger("D");
             }
+        }
+        if(GameManager.Instance.CurrentLevel.GetTile(transform.position) == 1f)
+        {
+            animator.SetBool("Swimming", true);
+        }else
+        {
+            animator.SetBool("Swimming", false);
         }
 
         animator.SetFloat("Speed", currentSpeed/10);

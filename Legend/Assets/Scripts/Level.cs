@@ -15,20 +15,40 @@ public class Level : MonoBehaviour
     GameObject[] objects;
     [SerializeField]
     List<CoordinateFloat> coordinateFloats;
+    [HideInInspector]
+    public int[,] levelTiles;
+    public bool connectedToImage = false;
 
     void Start()
     {
-        #region Border
-        Vector2 objectSize = border.GetComponent<BoxCollider2D>().size;
-        for (int row = 0; row < Height / objectSize.y; row++)
+        GameManager.Instance.CurrentLevel = this;
+        if (!connectedToImage)
         {
-            for (int col = 0; col < Width / objectSize.x; col++)
+            initializeLevelTiles();
+            loadLevel();
+        }
+    }
+
+    public void loadLevel()
+    {
+        foreach (CoordinateFloat CFloat in coordinateFloats)
+        {
+            levelTiles[(int)CFloat.Coordinate.x, (int)CFloat.Coordinate.y] = (int)CFloat.Float;
+        }
+        #region Border
+        if (border != null)
+        {
+            Vector2 objectSize = border.GetComponent<BoxCollider2D>().size;
+            for (int row = 0; row < Height / objectSize.y; row++)
             {
-                if (col == 0 || row == 0 ||
-                    col == (int)(Width / objectSize.x) - 1 || row == (int)(Height / objectSize.y) - 1)
+                for (int col = 0; col < Width / objectSize.x; col++)
                 {
-                    ((GameObject)Instantiate(border, new Vector3((col - Width / objectSize.x / 2 + .5f) * objectSize.x + Center.x,
-                                                                    (row - Height / objectSize.y / 2 + .5f) * objectSize.y + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                    if (col == 0 || row == 0 ||
+                        col == (int)(Width / objectSize.x) - 1 || row == (int)(Height / objectSize.y) - 1)
+                    {
+                        ((GameObject)Instantiate(border, new Vector3(col * objectSize.x + Center.x,
+                                                                        row * objectSize.y + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                    }
                 }
             }
         }
@@ -39,17 +59,28 @@ public class Level : MonoBehaviour
             for (int col = 0; col < Width - 1; col++)
             {
                 int i = 0;
-                Vector2 coord = new Vector2(col, row);
-                foreach(CoordinateFloat CFloat in coordinateFloats)
-                {
-                    if(CFloat.Coordinate == coord)
-                    {
-                        i = (int) CFloat.Float;
-                    }
-                }
-                ((GameObject)Instantiate(objects[i], new Vector3((col - Width / 2 + .5f) + Center.x, (row - Height / 2 + .5f) + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                i = levelTiles[col, row];
+                //Vector2 coord = new Vector2(col, row);
+                //foreach(CoordinateFloat CFloat in coordinateFloats)
+                //{
+                //    if(CFloat.Coordinate == coord)
+                //    {
+                //        i = (int) CFloat.Float;
+                //    }
+                //}
+                ((GameObject)Instantiate(objects[i], new Vector3((col) + Center.x, row + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
             }
         }
         #endregion
+    }
+
+    public int GetTile(Vector2 position)
+    {
+        return levelTiles[(int)(position.x + 0.5f - Center.x), (int)(position.y - Center.y)];
+    }
+
+    public void initializeLevelTiles()
+    {
+        levelTiles = new int[Width, Height];
     }
 }
