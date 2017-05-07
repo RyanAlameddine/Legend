@@ -22,7 +22,7 @@ GameObject:
   - 212: {fileID: 212000013810740880}
   - 61: {fileID: 61000011698201980}
   m_Layer: 0
-  m_Name: Grass
+  m_Name: grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

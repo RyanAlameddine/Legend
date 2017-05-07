@@ -118,14 +118,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66e5d7db1ecacd040ab6c2f2897a717c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Center: {x: 0, y: 0}
+  Center: {x: 2.6, y: 1.9}
   Width: 5
   Height: 5
   border: {fileID: 0}
   levelparent: {fileID: 375379571}
-  objects:
-  - {fileID: 1000010508077970, guid: f7791e6971997964799edccf475d145c, type: 2}
-  - {fileID: 1000011606756876, guid: 87898b74d3a683243925b6a9f4f7c8ef, type: 2}
+  Tiles: []
   coordinateFloats: []
   connectedToImage: 1
 --- !u!4 &375379571
@@ -155,12 +153,28 @@ MonoBehaviour:
   loadingImage: {fileID: 2800000, guid: 2d587d23a1cd2434596a6e46553c3f59, type: 3}
   level: {fileID: 375379570}
   colorReferences:
-  - objectIndex: 1
-    colorType: 0
-    colorFloat: 1
   - objectIndex: 0
     colorType: 0
+    colorFloat: 1
+  - objectIndex: 1
+    colorType: 0
     colorFloat: 0.5
+  - objectIndex: 1
+    colorType: 2
+    colorFloat: 1
+  - objectIndex: 1
+    colorType: 1
+    colorFloat: 1
+  Tiles:
+  - {fileID: 1000010508077970, guid: f7791e6971997964799edccf475d145c, type: 2}
+  - {fileID: 1000011606756876, guid: 87898b74d3a683243925b6a9f4f7c8ef, type: 2}
+  Obstacles:
+  - {fileID: 0}
+  - {fileID: 1000012633127930, guid: 5434d7a5dbcecc74692a66575f6f57f4, type: 2}
+  Objects:
+  - {fileID: 0}
+  - {fileID: 1000013974880994, guid: 37e18e0d091348143ac13ddf97ec587b, type: 2}
+  track: {fileID: 1876782493}
 --- !u!1001 &1065035087
 Prefab:
   m_ObjectHideFlags: 0
@@ -198,39 +212,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011575313116, guid: 22698e3e8981ac14cb856bdab2230f69, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 22698e3e8981ac14cb856bdab2230f69, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1247463755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1247463756}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1247463756
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1247463755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1876782491
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13118ee5de965ce49964f5f391c9930b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1247463756}
+  target: {fileID: 0}
   level: {fileID: 375379570}
   TrackRotation: 0
   TrackPosition: 1

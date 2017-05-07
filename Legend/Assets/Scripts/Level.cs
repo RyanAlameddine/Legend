@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -11,8 +12,7 @@ public class Level : MonoBehaviour
     public GameObject border;
     [SerializeField]
     Transform levelparent;
-    [SerializeField]
-    GameObject[] objects;
+    public GameObject[] Tiles;
     [SerializeField]
     List<CoordinateFloat> coordinateFloats;
     [HideInInspector]
@@ -68,7 +68,7 @@ public class Level : MonoBehaviour
                 //        i = (int) CFloat.Float;
                 //    }
                 //}
-                ((GameObject)Instantiate(objects[i], new Vector3((col) + Center.x, row + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                ((GameObject)Instantiate(Tiles[i], new Vector3((col) + Center.x, row + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
             }
         }
         #endregion

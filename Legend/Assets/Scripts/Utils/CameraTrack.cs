@@ -3,8 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Camera))]
 public class CameraTrack : MonoBehaviour {
-    [SerializeField]
-    Transform target;
+    public Transform target;
 
     [SerializeField]
     Level level;
