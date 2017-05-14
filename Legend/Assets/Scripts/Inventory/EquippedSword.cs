@@ -14,7 +14,7 @@ public class EquippedSword : MonoBehaviour {
     }
 	
     [Event("EquipChange")]
-	public void updateSword () {
+	public void updateSword (string parameter) {
         if(Inventory.EquippedSword == null)
         {
             GetComponent<SpriteRenderer>().enabled = false;

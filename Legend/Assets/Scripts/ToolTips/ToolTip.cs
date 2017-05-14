@@ -16,10 +16,19 @@ public class ToolTip : MonoBehaviour
     float k = 1f; //spring constant
     float c = 8f; //dampening coefficient
 
+    [SerializeField]
+    string eventAction;
+
     public void Start()
     {
         GameManager.Instance.AddClass(this);
-        position = startingposition;
+        if (view)
+        {
+            position = startingposition;
+        }else
+        {
+            position = endposition;
+        }
     }
 
     public void Update()
@@ -48,8 +57,20 @@ public class ToolTip : MonoBehaviour
     }
 
     [Event("closetooltip")]
-    public void TrueView()
+    public void TrueView(string parameter)
     {
-        view = false;
+        if (eventAction == parameter)
+        {
+            view = false;
+        }
+    }
+
+    [Event("showtooltip")]
+    public void FalseView(string parameter)
+    {
+        if (eventAction == parameter)
+        {
+            view = true;
+        }
     }
 }

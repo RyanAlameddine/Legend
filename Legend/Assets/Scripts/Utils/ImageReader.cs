@@ -20,11 +20,20 @@ public class ImageReader : MonoBehaviour {
     [SerializeField]
     GameObject[] Objects;
 
-    [SerializeField]
     CameraTrack track;
+    [SerializeField]
+    Camera camera;
     System.Random random = new System.Random();
 
+    [SerializeField]
+    GameObject ExitPortal;
+
+    [SerializeField]
+    GameObject UI;
+
     void Start () {
+        track = Instantiate(camera).GetComponent<CameraTrack>();
+        Instantiate(UI);
         foreach(ColorReference cr in colorReferences)
         {
             int cF = (int) (cr.colorFloat * 255);
@@ -62,11 +71,17 @@ public class ImageReader : MonoBehaviour {
                         obj.transform.position = Vector3.zero;
                         obj.transform.GetChild(0).transform.localPosition = new Vector3(x + level.Center.x, y + level.Center.y, 0);
                         track.target = obj.transform.GetChild(0);
+                        Instantiate(ExitPortal, new Vector3(x + level.Center.x, y + level.Center.y, 0), Quaternion.identity);
+                    }
+                    else
+                    {
+                        obj.transform.SetParent(level.levelparent);
                     }
                 }
                 else if (data.Obstacle != null)
                 {
-                    GameObject obj = (GameObject)Instantiate(data.Obstacle, new Vector3(x + level.Center.x + random.Next(-50, 50)/100, y + level.Center.y + random.Next(-50, 50) / 100, 0), Quaternion.identity); Fix RANDOM CHANGE
+                    GameObject obj = (GameObject)Instantiate(data.Obstacle, new Vector3(x + level.Center.x + random.Next(-2, 2)/100f, y + level.Center.y + random.Next(-2, 2) / 100f, 0), Quaternion.identity);
+                    obj.transform.SetParent(level.levelparent);
                 }
             }
         }

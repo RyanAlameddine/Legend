@@ -7,10 +7,12 @@ public class RunEvent : MonoBehaviour
     public string EventName;
     public bool disableafter;
     public bool whenDestroyed;
+    public bool onTriggerEnter;
+    public bool onTriggerLeave;
 
-    void Run()
+    void Run(string parameter)
     {
-        GameManager.Instance.runEvent(EventName);
+        GameManager.Instance.runEvent(EventName, parameter);
         if (disableafter)
         {
             Destroy(this);
@@ -22,15 +24,25 @@ public class RunEvent : MonoBehaviour
     {
         if (Key != KeyCode.None && Input.GetKeyDown(Key))
         {
-            Run();
+            Run("Key_Down_" + Key.ToString());
         }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (onTriggerEnter) Run("Hover");
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (onTriggerLeave) Run("Hover");
     }
 
     public void OnDestroy()
     {
         if (whenDestroyed)
         {
-            Run();
+            Run("Destroy");
         }
     }
 }

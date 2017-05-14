@@ -5,27 +5,6 @@ using System;
 using System.Reflection;
 using UnityEditor;
 
-public delegate void EventDelegate();
-
-public class EventReference
-{
-    public Type type;
-    public EventDelegate func;
-    public string eventName;
-    public MethodInfo info;
-    public object Class;
-    public EventDelegate Delegate;
-
-    public EventReference(string eventName, MethodInfo info, Type type)
-    {
-        this.type = type;
-        this.eventName = eventName;
-        //this.func = (EventDelegate)Delegate.CreateDelegate(typeof(EventDelegate), info);
-        this.info = info;
-    }
-}
-
-
 public class GameManager : MonoBehaviour
 {
 
@@ -64,8 +43,7 @@ public class GameManager : MonoBehaviour
         {
             if(reference.type == t)
             {
-                reference.Class = obj;
-                reference.Delegate = (EventDelegate)Delegate.CreateDelegate(typeof(EventDelegate), obj, reference.info, true);
+                reference.AddClass(obj);
             }
         }
         //references.Add(new EventReference(ex.eventName, info, ));
@@ -113,13 +91,27 @@ public class GameManager : MonoBehaviour
 
     public void runEvent(string name)
     {
-        foreach(EventReference r in references)
+        foreach (EventReference r in references)
         {
-            if(r.eventName == name)
+            if (r.eventName == name)
             {
 
                 //r.func(r.Class);
-                r.Delegate();
+                r.Invoke("");
+                //r.info.Invoke(r.Class, new object[0]);
+            }
+        }
+    }
+
+    public void runEvent(string name, string parameter)
+    {
+        foreach (EventReference r in references)
+        {
+            if (r.eventName == name)
+            {
+
+                //r.func(r.Class);
+                r.Invoke(parameter);
                 //r.info.Invoke(r.Class, new object[0]);
             }
         }

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000013888970430}
+  m_IsPrefabParent: 1
+--- !u!1 &1000013888970430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011568081574}
+  - 114: {fileID: 114000012295552044}
+  - 114: {fileID: 114000013216283134}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011568081574
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013888970430}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114000012295552044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013888970430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5031eea2c2e034fbad115588852248, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingImage: {fileID: 2800000, guid: 2d587d23a1cd2434596a6e46553c3f59, type: 3}
+  level: {fileID: 114000013216283134}
+  colorReferences:
+  - objectIndex: 0
+    colorType: 0
+    colorFloat: 1
+  - objectIndex: 1
+    colorType: 0
+    colorFloat: 0.5
+  - objectIndex: 1
+    colorType: 2
+    colorFloat: 1
+  - objectIndex: 1
+    colorType: 1
+    colorFloat: 1
+  Tiles:
+  - {fileID: 1000010508077970, guid: f7791e6971997964799edccf475d145c, type: 2}
+  - {fileID: 1000011606756876, guid: 87898b74d3a683243925b6a9f4f7c8ef, type: 2}
+  Obstacles:
+  - {fileID: 0}
+  - {fileID: 1000012633127930, guid: 5434d7a5dbcecc74692a66575f6f57f4, type: 2}
+  Objects:
+  - {fileID: 0}
+  - {fileID: 1000013974880994, guid: 37e18e0d091348143ac13ddf97ec587b, type: 2}
+  camera: {fileID: 20000013914495412, guid: 402b962c55498dd4a9b437e5c4a77b46, type: 2}
+  ExitPortal: {fileID: 1000013238404536, guid: c5e14321b77bd3d4aa522b0ac5c5ebbe, type: 2}
+  UI: {fileID: 1000014018513032, guid: 280b8e7cd5f38fe48afc44e8f2cfaeac, type: 2}
+--- !u!114 &114000013216283134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013888970430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e5d7db1ecacd040ab6c2f2897a717c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Center: {x: 2.6, y: 1.9}
+  Width: 5
+  Height: 5
+  border: {fileID: 0}
+  levelparent: {fileID: 4000011568081574}
+  Tiles: []
+  coordinateFloats: []
+  connectedToImage: 1

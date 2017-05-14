@@ -25,7 +25,7 @@ public class Portal : MonoBehaviour
     }
 
     [Event("ShowPortal")]
-    public void ShowPortal()
+    public void ShowPortal(string parameter)
     {
         portalEnabled = true;
     }

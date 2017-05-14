@@ -10,8 +10,7 @@ public class Level : MonoBehaviour
     [Range(5, 100)]
     public int Height = 5;
     public GameObject border;
-    [SerializeField]
-    Transform levelparent;
+    public Transform levelparent;
     public GameObject[] Tiles;
     [SerializeField]
     List<CoordinateFloat> coordinateFloats;
