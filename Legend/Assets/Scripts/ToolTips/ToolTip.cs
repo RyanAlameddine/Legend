@@ -22,13 +22,7 @@ public class ToolTip : MonoBehaviour
     public void Start()
     {
         GameManager.Instance.AddClass(this);
-        if (view)
-        {
-            position = startingposition;
-        }else
-        {
-            position = endposition;
-        }
+        position = startingposition;
     }
 
     public void Update()

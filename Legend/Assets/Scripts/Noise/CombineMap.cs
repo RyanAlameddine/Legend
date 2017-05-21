@@ -81,6 +81,7 @@ public class CombineMap : MonoBehaviour
         {
             for (int x = 0; x < mapChunkSize; x++)
             {
+                if (heatMap.heightMap == null || moistureMap.heightMap == null) return new MapData(noiseMap, colorMap);
                 switch (Region.BiomeTable[(int)heatMap.heightMap[x, y].HeatType, (int)moistureMap.heightMap[x, y].MoistureType])
                 {
                     case BiomeType.Ice:

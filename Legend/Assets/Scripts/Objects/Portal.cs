@@ -17,6 +17,9 @@ public class Portal : MonoBehaviour
     Image screenTint;
     [SerializeField]
     int scene;
+    [SerializeField]
+    int eventCalls = 1;
+    int callsCount = 0;
 
     public void Start()
     {
@@ -27,7 +30,9 @@ public class Portal : MonoBehaviour
     [Event("ShowPortal")]
     public void ShowPortal(string parameter)
     {
-        portalEnabled = true;
+        callsCount++;
+        if(callsCount >= eventCalls)
+            portalEnabled = true;
     }
 
     void Update()
@@ -92,6 +97,7 @@ public class Portal : MonoBehaviour
 
     IEnumerator ChangingScene()
     {
+        GameManager.Instance.runEvent("TransitionToLevel");
         Camera c = Camera.main;
         yield return new WaitForSeconds(2);
         while (transform.localScale.x > 0.03)

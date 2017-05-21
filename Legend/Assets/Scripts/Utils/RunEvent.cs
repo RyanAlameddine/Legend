@@ -9,10 +9,11 @@ public class RunEvent : MonoBehaviour
     public bool whenDestroyed;
     public bool onTriggerEnter;
     public bool onTriggerLeave;
+    public string overrideParameter;
 
     void Run(string parameter)
     {
-        GameManager.Instance.runEvent(EventName, parameter);
+        GameManager.Instance.runEvent(EventName, overrideParameter == "" ? parameter : overrideParameter);
         if (disableafter)
         {
             Destroy(this);
