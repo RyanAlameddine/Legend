@@ -90,16 +90,16 @@ public class Portal : MonoBehaviour
                 collisions.Add(collision);
                 playerToPortalCenter.Add(new Vector2(player.localPosition.x - transform.localPosition.x, player.localPosition.y - transform.localPosition.y));
                 spinRadius.Add(new Vector2(player.localPosition.x - transform.localPosition.x, player.localPosition.y - transform.localPosition.y).magnitude);
-                angle.Add(Mathf.Rad2Deg * (float)Mathf.Atan2(player.localPosition.y - transform.localPosition.y, player.localPosition.x - transform.localPosition.x));
+                angle.Add(Mathf.Atan2(player.localPosition.y - transform.localPosition.y, player.localPosition.x - transform.localPosition.x));
             }
         }
     }
 
     IEnumerator ChangingScene()
     {
-        GameManager.Instance.runEvent("TransitionToLevel");
         Camera c = Camera.main;
         yield return new WaitForSeconds(2);
+        GameManager.Instance.runEvent("TransitionToLevel");
         while (transform.localScale.x > 0.03)
         {
             transform.localScale -= new Vector3(.01f, .01f, 0);

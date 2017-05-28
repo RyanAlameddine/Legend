@@ -16,14 +16,14 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000012755462404}
-  - 212: {fileID: 212000011163517356}
-  - 61: {fileID: 61000013067116466}
-  - 114: {fileID: 114000013341989710}
+  - component: {fileID: 4000012755462404}
+  - component: {fileID: 212000011163517356}
+  - component: {fileID: 114000013341989710}
+  - component: {fileID: 60786184176989436}
   m_Layer: 0
-  m_Name: GrassyRock
+  m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,8 +42,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61000013067116466
-BoxCollider2D:
+--- !u!60 &60786184176989436
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -53,9 +53,27 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0.25}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5}
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.18734843, y: 1.0009949}
+      - {x: -0.17427048, y: 1}
+      - {x: -0.49629253, y: 0.6859196}
+      - {x: -0.4888428, y: 0.2024552}
+      - {x: -0.28126, y: 0.006887996}
+      - {x: 0.26320952, y: 0.011122261}
+      - {x: 0.5111223, y: 0.1964953}
+      - {x: 0.5037075, y: 0.6848661}
 --- !u!114 &114000013341989710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -67,6 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 419144d58b7afd946aabff60c6ee7a25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disable: 0
 --- !u!212 &212000011163517356
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -80,8 +99,10 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -89,14 +110,19 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1990174015
+  m_SortingLayer: 2
   m_SortingOrder: 32
-  m_Sprite: {fileID: 21300000, guid: 72515367e4127cd4eaceb16ce5e186fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e08fc11351d7444d978905dd477df62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0

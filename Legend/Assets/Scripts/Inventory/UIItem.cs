@@ -8,12 +8,12 @@ public class UIItem : MonoBehaviour {
 
     public void onHover()
     {
-        transform.parent.FindChild("Description").GetComponent<Text>().text = item.description;
+        transform.parent.Find("Description").GetComponent<Text>().text = item.description;
     }
 
     public void onExit()
     {
-        transform.parent.FindChild("Description").GetComponent<Text>().text = "";
+        transform.parent.Find("Description").GetComponent<Text>().text = "";
     }
 
     public void onClick()

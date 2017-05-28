@@ -16,13 +16,12 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000011865186078}
-  - 212: {fileID: 212000011217680900}
-  - 61: {fileID: 61000010725157780}
-  - 114: {fileID: 114000013397091704}
-  - 114: {fileID: 114000010506145156}
+  - component: {fileID: 4000011865186078}
+  - component: {fileID: 212000011217680900}
+  - component: {fileID: 61000010725157780}
+  - component: {fileID: 114000013397091704}
   m_Layer: 0
   m_Name: ItemOnFloor
   m_TagString: Untagged
@@ -54,24 +53,20 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
---- !u!114 &114000010506145156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010130102864}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b2086bf233998649b68591033ac1f4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Key: 0
-  EventName: ShowPortal
-  disableafter: 0
-  whenDestroyed: 1
+  m_EdgeRadius: 0
 --- !u!114 &114000013397091704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc2383198c1f29458da1d2bba856dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 405ebce55333f42439c87dd1c1dcf6d7, type: 2}
+  item: {fileID: 0}
 --- !u!212 &212000011217680900
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,8 +92,10 @@ SpriteRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -106,14 +103,19 @@ SpriteRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 1
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
