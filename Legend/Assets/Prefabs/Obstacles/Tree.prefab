@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000012755462404}
   - component: {fileID: 212000011163517356}
-  - component: {fileID: 61000013067116466}
+  - component: {fileID: 60448209082807646}
   - component: {fileID: 114000013341989710}
   m_Layer: 0
   m_Name: Tree
@@ -42,8 +42,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61000013067116466
-BoxCollider2D:
+--- !u!60 &60448209082807646
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -54,7 +54,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -64,9 +64,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.19947436, y: 1.006843}
+      - {x: -0.4863138, y: 0.7512536}
+      - {x: -0.48289222, y: 0.24635148}
+      - {x: -0.46732423, y: 0.08835462}
+      - {x: -0.3960379, y: 0.05639161}
+      - {x: -0.2634781, y: 0.082864136}
+      - {x: -0.19227906, y: 0.043000624}
+      - {x: -0.10659759, y: 0.020054981}
+      - {x: 0.07781093, y: 0.013636181}
+      - {x: 0.19790275, y: 0.08137415}
+      - {x: 0.3964414, y: 0.054744862}
+      - {x: 0.48289233, y: 0.14416099}
+      - {x: 0.5, y: 0.7543337}
+      - {x: 0.21418719, y: 1.0068432}
 --- !u!114 &114000013341989710
 MonoBehaviour:
   m_ObjectHideFlags: 1

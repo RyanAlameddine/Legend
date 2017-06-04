@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ImageReader : MonoBehaviour {
     [SerializeField]
@@ -28,12 +29,47 @@ public class ImageReader : MonoBehaviour {
     [SerializeField]
     GameObject ExitPortal;
 
-    [SerializeField]
     GameObject UI;
+    [SerializeField]
+    GameObject stamina;
+    [SerializeField]
+    GameObject shade;
+    [SerializeField]
+    GameObject health;
+    [SerializeField]
+    List<GameObject> tooltip;
 
     void Start () {
         track = Instantiate(camera).GetComponent<CameraTrack>();
-        Instantiate(UI);
+        UI = new GameObject();
+        UI.AddComponent<RectTransform>();
+        UI.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
+        UI.AddComponent<CanvasScaler>();
+        UI.AddComponent<GraphicRaycaster>();
+
+        shade = Instantiate(shade);
+        shade.transform.SetParent(UI.transform);
+        RectTransform rectTransform = shade.GetComponent<RectTransform>();
+        rectTransform.offsetMin = new Vector2(0, 0);
+        rectTransform.offsetMax = new Vector2(0, 0);
+
+        stamina = Instantiate(stamina);
+        stamina.transform.SetParent(UI.transform);
+        stamina.GetComponent<RectTransform>().anchoredPosition = new Vector2(40, -40);
+
+        health = Instantiate(health);
+        health.transform.SetParent(UI.transform);
+        health.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, 0);
+
+        foreach (GameObject o in tooltip)
+        {
+            if (o)
+            {
+                Instantiate(o).transform.SetParent(UI.transform);
+            }
+        }
+
+        shade.GetComponent<Image>().color = Color.black;
         foreach(ColorReference cr in colorReferences)
         {
             int cF = (int) (cr.colorFloat * 255);

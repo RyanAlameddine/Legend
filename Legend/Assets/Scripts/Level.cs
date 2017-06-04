@@ -37,16 +37,16 @@ public class Level : MonoBehaviour
         #region Border
         if (border != null)
         {
-            Vector2 objectSize = border.GetComponent<BoxCollider2D>().size;
-            for (int row = 0; row < Height / objectSize.y; row++)
+            //Vector2 objectSize = border.GetComponent<BoxCollider2D>().size;
+            for (int row = 0; row < Height; row++)
             {
-                for (int col = 0; col < Width / objectSize.x; col++)
+                for (int col = 0; col < Width; col++)
                 {
                     if (col == 0 || row == 0 ||
-                        col == (int)(Width / objectSize.x) - 1 || row == (int)(Height / objectSize.y) - 1)
+                        col == (int)(Width) - 1 || row == (int)(Height) - 1)
                     {
-                        ((GameObject)Instantiate(border, new Vector3(col * objectSize.x + Center.x,
-                                                                        row * objectSize.y + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
+                        ((GameObject)Instantiate(border, new Vector3(col + Center.x,
+                                                                        row + Center.y, 0), Quaternion.identity)).transform.SetParent(levelparent);
                     }
                 }
             }

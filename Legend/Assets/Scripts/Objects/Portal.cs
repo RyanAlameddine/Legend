@@ -13,7 +13,6 @@ public class Portal : MonoBehaviour
     List<float> spinRadius = new List<float>();
     List<float> angle = new List<float>();
     SpriteRenderer sr;
-    [SerializeField]
     Image screenTint;
     [SerializeField]
     int scene;
@@ -25,6 +24,7 @@ public class Portal : MonoBehaviour
     {
         GameManager.Instance.AddClass(this);
         sr = GetComponent<SpriteRenderer>();
+        screenTint = GameObject.FindGameObjectWithTag("Shade").GetComponent<Image>();
     }
 
     [Event("ShowPortal")]
