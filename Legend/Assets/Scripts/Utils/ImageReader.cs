@@ -23,7 +23,7 @@ public class ImageReader : MonoBehaviour {
 
     CameraTrack track;
     [SerializeField]
-    Camera camera;
+    Camera Camera;
     System.Random random = new System.Random();
 
     [SerializeField]
@@ -40,7 +40,7 @@ public class ImageReader : MonoBehaviour {
     List<GameObject> tooltip;
 
     void Start () {
-        track = Instantiate(camera).GetComponent<CameraTrack>();
+        track = Instantiate(Camera).GetComponent<CameraTrack>();
         UI = new GameObject();
         UI.AddComponent<RectTransform>();
         UI.AddComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;

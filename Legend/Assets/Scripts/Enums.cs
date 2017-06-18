@@ -19,3 +19,11 @@ public enum RendererType
     UI,
     Sprite
 }
+
+public enum Direction
+{
+    Up,
+    Down,
+    Left,
+    Right
+}

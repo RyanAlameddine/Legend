@@ -95,7 +95,7 @@ public class Portal : MonoBehaviour
         }
     }
 
-    IEnumerator ChangingScene()
+    IEnumerator<YieldInstruction> ChangingScene()
     {
         Camera c = Camera.main;
         yield return new WaitForSeconds(2);

@@ -80,7 +80,7 @@ MonoBehaviour:
   Objects:
   - {fileID: 0}
   - {fileID: 1000013974880994, guid: 37e18e0d091348143ac13ddf97ec587b, type: 2}
-  camera: {fileID: 20000013914495412, guid: 402b962c55498dd4a9b437e5c4a77b46, type: 2}
+  Camera: {fileID: 20000013914495412, guid: 402b962c55498dd4a9b437e5c4a77b46, type: 2}
   ExitPortal: {fileID: 1000013238404536, guid: c5e14321b77bd3d4aa522b0ac5c5ebbe, type: 2}
   stamina: {fileID: 1944495231925066, guid: e58a997a850bc1f47adf7a51b0051993, type: 2}
   shade: {fileID: 1272296425750316, guid: 9827ffb63cad665409ed6deec761a74e, type: 2}
