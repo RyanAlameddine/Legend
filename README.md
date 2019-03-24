@@ -2,4 +2,4 @@
 Legend game
 
 2d topdown game.
-xna c#
+Formerly made in XNA, then ported to Unity 3D
